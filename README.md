@@ -1,6 +1,11 @@
 # SEM-SET08103
 # Group 16
 
-***Module dead LULW in chat***
+***DB Reporting Program***
 
 *This was pushed from IntelliJ*
+
+**Authors**
+
+Colin
+
