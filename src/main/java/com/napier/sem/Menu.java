@@ -75,7 +75,7 @@ public class Menu {
             if (item != null) { item.invoke(); }
 
         }
-        while(!item.isExitItem());
+        while(!item.isExitItem(true, false));
     }
 
     /* Menu uses this to know how to index the exit option. */
@@ -100,7 +100,7 @@ public class Menu {
                         int option = Integer.parseInt(input); // Throws NumberFormatException for non-numeric input
             if (option < 1 || option > this.getExitIndex())
             {
-                System.out.println("\nPrint option error: '" + String.valueOf(option) + "' is not a valid menu option!");
+                System.out.println("\nError: '" + String.valueOf(option) + "' is not a valid menu option!");
                 throw new NumberFormatException(); // Taking advantage of above to catch out-of-range numbers
             }
 

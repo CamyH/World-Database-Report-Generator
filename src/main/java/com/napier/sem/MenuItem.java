@@ -57,11 +57,19 @@ public class MenuItem {
     }
 
     /* This method tells Menu if 'this' is an exit option or not. */
-    boolean isExitItem() { return isExitItem; }
+    // boolean isExitItem() { return isExitItem; }
+
+    // new menu test for is exit item
+    boolean isExitItem(Boolean bool, boolean valueIfNull) {
+        if (bool == null) {
+            return valueIfNull;
+        }
+        return bool.booleanValue() ? true : false;
+    }
 
     /* Menu uses this method to tell 'this' it will be an exit option */
     void setExitItem(boolean isExitItem) { this.isExitItem = isExitItem; }
 
     public String toString() { return getLabel(); }
 }
-
+//if (item != null) { item.invoke(); }
