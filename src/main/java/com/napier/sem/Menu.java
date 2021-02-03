@@ -61,7 +61,7 @@ public class Menu {
      * return from 'this' menu.
      */
     public void execute() {
-        MenuItem item = null;
+        MenuItem item; //removed = null
         do {
             this.print();
             item = this.getUserInput();
