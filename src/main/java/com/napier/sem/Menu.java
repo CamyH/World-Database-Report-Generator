@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 /*
  * Menu is responsible for creating and displaying a menu, offering a numbered selection
@@ -21,6 +22,9 @@ public class Menu {
     private MenuItem exitItem;
     private String title;
     private boolean isRootMenu;
+
+    //added for different read line approach
+    Scanner scanner = new Scanner(System.in);
 
     /*
      * The default constructor is used to create a new instance of Menu. If it is the first
@@ -82,10 +86,9 @@ public class Menu {
         String input = null;
 
         try {
-            input = "1";//Menu.in.readLine();
-            System.out.println("\nPrint input readline: '" + input + "' is not a valid menu option!");
-            int option = Integer.parseInt(input); // Throws NumberFormatException for non-numberic input
-            System.out.println("\nPrint option: '" + String.valueOf(option) + "' is not a valid menu option!");
+            //input = Menu.in.readLine();
+            input = scanner.nextLine();
+            int option = Integer.parseInt(input); // Throws NumberFormatException for non-numeric input
             if (option < 1 || option > this.getExitIndex())
             {
                 System.out.println("\nPrint option error: '" + String.valueOf(option) + "' is not a valid menu option!");
