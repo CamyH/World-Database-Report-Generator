@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="16cb63f8-95e2-4084-a58b-90444db72e40" name="Default Changelist" comment="First working menu upload for release">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEM-SET08103.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SEM-SET08103.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/napier/sem/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/napier/sem/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/napier/sem/MenuChoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/napier/sem/MenuChoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/seMethods-0.1.0.2-jar-with-dependencies.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/seMethods-0.1.0.2.jar" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,9 +41,9 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RunManager" selected="Docker.Dockerfile">
@@ -202,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612206633606</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Working menu tested in app &amp; docker">
+      <created>1612358933216</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1612358933216</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -234,6 +234,7 @@
     <MESSAGE value="First working menu upload for release" />
     <MESSAGE value="About to delete" />
     <MESSAGE value="First Upload after first release pull" />
-    <option name="LAST_COMMIT_MESSAGE" value="First Upload after first release pull" />
+    <MESSAGE value="Working menu tested in app &amp; docker" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working menu tested in app &amp; docker" />
   </component>
 </project>
