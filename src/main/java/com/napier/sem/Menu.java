@@ -69,8 +69,8 @@ public class Menu {
         do {
             this.print();
             item = this.getUserInput();
-            item.invoke();
-            //change item.invoke();
+
+            //change below from: item.invoke();
             if (item != null) { item.invoke(); }
 
         }

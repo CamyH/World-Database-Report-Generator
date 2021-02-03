@@ -231,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612368659851</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Adding if item != null to invoke item">
+      <created>1612377643153</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1612377643153</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -268,6 +275,7 @@
     <MESSAGE value="Made some changes to menu.java file" />
     <MESSAGE value="Tested input as 1 for get userinput function" />
     <MESSAGE value="Added scanner wait for line input in menu.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added scanner wait for line input in menu.java" />
+    <MESSAGE value="Adding if item != null to invoke item" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding if item != null to invoke item" />
   </component>
 </project>
