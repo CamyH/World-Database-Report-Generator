@@ -1,15 +1,10 @@
-# Initial Coursework Upload
+# SEM-SET08103 Group 16 Coursework
 
-## Master Build Status: Pending
-## Develop Build Status: Pending
+## Group members:
+* Luke
+* Cameron
+* Del
+* Colin
 
-
-
-**Authors**
-
-Colin
-
-
-**Updates**
-
-Testing feature menu push
+### Master Build Status: Pending
+### Develop Build Status: Pending
