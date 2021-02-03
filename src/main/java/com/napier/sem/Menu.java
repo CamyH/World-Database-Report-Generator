@@ -5,6 +5,7 @@ package com.napier.sem;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
+import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -91,7 +92,12 @@ public class Menu {
         try {
             //input = Menu.in.readLine();
             input = scanner.nextLine();
-            int option = Integer.parseInt(input); // Throws NumberFormatException for non-numeric input
+
+            if(input == null) {
+                throw new InvalidParameterException("Please enter Your Input ");
+            }
+
+                        int option = Integer.parseInt(input); // Throws NumberFormatException for non-numeric input
             if (option < 1 || option > this.getExitIndex())
             {
                 System.out.println("\nPrint option error: '" + String.valueOf(option) + "' is not a valid menu option!");
