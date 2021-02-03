@@ -82,13 +82,13 @@ public class Menu {
         String input = null;
 
         try {
-            input = Menu.in.readLine();
+            input = "1";//Menu.in.readLine();
             System.out.println("\nPrint input readline: '" + input + "' is not a valid menu option!");
             int option = Integer.parseInt(input); // Throws NumberFormatException for non-numberic input
-            System.out.println("\nPrint optione: '" + String.valueOf(option) + "' is not a valid menu option!");
+            System.out.println("\nPrint option: '" + String.valueOf(option) + "' is not a valid menu option!");
             if (option < 1 || option > this.getExitIndex())
             {
-                System.out.println("\nPrint optione error: '" + String.valueOf(option) + "' is not a valid menu option!");
+                System.out.println("\nPrint option error: '" + String.valueOf(option) + "' is not a valid menu option!");
                 throw new NumberFormatException(); // Taking advantage of above to catch out-of-range numbers
             }
 

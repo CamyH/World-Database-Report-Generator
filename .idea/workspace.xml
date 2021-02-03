@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="16cb63f8-95e2-4084-a58b-90444db72e40" name="Default Changelist" comment="First working menu upload for release">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/napier/sem/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/napier/sem/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612362134540</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Made some changes to menu.java file">
+      <created>1612366731195</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1612366731195</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -243,6 +251,7 @@
     <MESSAGE value="First Upload after first release pull" />
     <MESSAGE value="Working menu tested in app &amp; docker" />
     <MESSAGE value="Removed redundant null from execute -&gt; menuItem" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed redundant null from execute -&gt; menuItem" />
+    <MESSAGE value="Made some changes to menu.java file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made some changes to menu.java file" />
   </component>
 </project>
