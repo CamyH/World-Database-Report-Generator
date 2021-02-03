@@ -75,7 +75,7 @@ public class Menu {
             if (item != null) { item.invoke(); }
 
         }
-        while(!item.isExitItem(true, false));
+        while(!item.isExitItem(null, true));
     }
 
     /* Menu uses this to know how to index the exit option. */
