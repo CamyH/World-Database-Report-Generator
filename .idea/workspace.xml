@@ -224,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612367549914</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added scanner wait for line input in menu.java">
+      <created>1612368659851</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1612368659851</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -260,6 +267,7 @@
     <MESSAGE value="Removed redundant null from execute -&gt; menuItem" />
     <MESSAGE value="Made some changes to menu.java file" />
     <MESSAGE value="Tested input as 1 for get userinput function" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tested input as 1 for get userinput function" />
+    <MESSAGE value="Added scanner wait for line input in menu.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added scanner wait for line input in menu.java" />
   </component>
 </project>

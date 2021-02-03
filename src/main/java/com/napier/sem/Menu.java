@@ -70,6 +70,9 @@ public class Menu {
             this.print();
             item = this.getUserInput();
             item.invoke();
+            //change item.invoke();
+            if (item != null) { item.invoke(); }
+
         }
         while(!item.isExitItem());
     }
