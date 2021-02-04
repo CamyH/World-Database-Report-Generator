@@ -93,6 +93,8 @@ public class Menu {
             //input = Menu.in.readLine();
             input = scanner.nextLine();
 
+
+            //added in to test if null
             if(input == null) {
                 throw new InvalidParameterException("Please enter Your Input ");
             }
