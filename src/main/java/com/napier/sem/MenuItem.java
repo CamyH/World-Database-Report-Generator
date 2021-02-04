@@ -58,16 +58,8 @@ public class MenuItem {
 
     /* This method tells Menu if 'this' is an exit option or not. */
     // Previous working isExitItem() function that still gave travis null error
-    // boolean isExitItem() { return isExitItem; }
+    boolean isExitItem() { return isExitItem; }
 
-    // new menu test for is exit item
-    // http://www.java2s.com/Code/Java/Data-Type/ConvertsaBooleantoabooleanhandlingnull.htm
-    boolean isExitItem(Boolean bool, boolean valueIfNull) {
-        if (bool == null) {
-            return valueIfNull;
-        }
-        return bool.booleanValue() ? true : false;
-    }
 
     /* Menu uses this method to tell 'this' it will be an exit option */
     void setExitItem(boolean isExitItem) { this.isExitItem = isExitItem; }
