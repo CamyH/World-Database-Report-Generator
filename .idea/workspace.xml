@@ -4,248 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="16cb63f8-95e2-4084-a58b-90444db72e40" name="Default Changelist" comment="First working menu upload for release">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/napier/sem/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/napier/sem/Menu.java" afterDir="false" />
-    </list>
+    <list default="true" id="474e14f9-31d6-46f4-8cb8-fe7d8bc7f754" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Colin" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1nlDeUl9ZcOyeDf3b84pKarflPc" />
+  <component name="ProjectId" id="1oCda5z2vyKOGybmrwn8DqPz0Db" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_MARK_IGNORED_FILES_AS_EXCLUDED" value="true" />
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="SDKs" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
-  </component>
-  <component name="RunManager" selected="Docker.Dockerfile">
-    <configuration name="App" type="Application" factoryName="Application">
-      <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../../../Program Files/Java/jdk-12.0.2" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="com.napier.sem.App" />
-      <module name="SEM-SET08103" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="sem-set08103" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="sem-set08103" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Docker Image" type="docker-deploy" factoryName="docker-image" server-name="Docker">
-      <deployment type="docker-image">
-        <settings>
-          <option name="imageTag" value="docker:latest" />
-          <option name="command" value="" />
-          <option name="containerName" value="" />
-          <option name="entrypoint" value="" />
-          <option name="commandLineOptions" value="" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
-      <deployment type="dockerfile">
-        <settings>
-          <option name="imageTag" value="" />
-          <option name="buildCliOptions" value="" />
-          <option name="command" value="" />
-          <option name="containerName" value="" />
-          <option name="entrypoint" value="" />
-          <option name="commandLineOptions" value="" />
-          <option name="sourceFilePath" value="Dockerfile" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="Application.App" />
-      <item itemvalue="Docker.Docker Image" />
-      <item itemvalue="Docker.Dockerfile" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Docker.Dockerfile" />
-        <item itemvalue="Docker.Dockerfile" />
-        <item itemvalue="Docker.Dockerfile" />
-        <item itemvalue="Docker.Dockerfile" />
-        <item itemvalue="Docker.Dockerfile" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="16cb63f8-95e2-4084-a58b-90444db72e40" name="Default Changelist" comment="" />
-      <created>1611955880510</created>
+      <changelist id="474e14f9-31d6-46f4-8cb8-fe7d8bc7f754" name="Default Changelist" comment="" />
+      <created>1612794567705</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1611955880510</updated>
+      <updated>1612794567705</updated>
     </task>
-    <task id="LOCAL-00001" summary="Updated Pom maven source &amp; target">
-      <created>1611970670791</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1611970670791</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Updated Pom maven source &amp; target">
-      <created>1611971367031</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1611971367031</updated>
-    </task>
-    <task id="LOCAL-00003" summary="First working menu upload for release">
-      <created>1612187732383</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1612187732383</updated>
-    </task>
-    <task id="LOCAL-00004" summary="About to delete">
-      <created>1612199431182</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1612199431182</updated>
-    </task>
-    <task id="LOCAL-00005" summary="About to delete">
-      <created>1612199487441</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1612199487441</updated>
-    </task>
-    <task id="LOCAL-00006" summary="First Upload after first release pull">
-      <created>1612206633606</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1612206633606</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Working menu tested in app &amp; docker">
-      <created>1612358933216</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1612358933216</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Removed redundant null from execute -&gt; menuItem">
-      <created>1612362134540</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1612362134540</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Made some changes to menu.java file">
-      <created>1612366731195</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1612366731195</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Tested input as 1 for get userinput function">
-      <created>1612367549914</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1612367549914</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Added scanner wait for line input in menu.java">
-      <created>1612368659851</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1612368659851</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Adding if item != null to invoke item">
-      <created>1612377643153</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1612377643153</updated>
-    </task>
-    <task id="LOCAL-00013" summary="removed item.invoke() duplicate">
-      <created>1612379431955</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1612379431955</updated>
-    </task>
-    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -259,7 +51,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="Colin" />
+                        <option value="release" />
                       </list>
                     </value>
                   </entry>
@@ -270,20 +62,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updated Pom maven source &amp; target" />
-    <MESSAGE value="First working menu upload for release" />
-    <MESSAGE value="About to delete" />
-    <MESSAGE value="First Upload after first release pull" />
-    <MESSAGE value="Working menu tested in app &amp; docker" />
-    <MESSAGE value="Removed redundant null from execute -&gt; menuItem" />
-    <MESSAGE value="Made some changes to menu.java file" />
-    <MESSAGE value="Tested input as 1 for get userinput function" />
-    <MESSAGE value="Added scanner wait for line input in menu.java" />
-    <MESSAGE value="Adding if item != null to invoke item" />
-    <MESSAGE value="removed item.invoke() duplicate" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed item.invoke() duplicate" />
   </component>
 </project>

@@ -6,5 +6,5 @@
 * Del
 * Colin
 
-### Master Build Status: Pending
-### Develop Build Status: Pending
+### Main Build Status: [![Build Status](https://travis-ci.com/CamyH/SEM-SET08103.svg?branch=main)](https://travis-ci.com/CamyH/SEM-SET08103)
+### Develop Build Status: [![Build Status](https://travis-ci.com/CamyH/SEM-SET08103.svg?branch=develop)](https://travis-ci.com/CamyH/SEM-SET08103)
