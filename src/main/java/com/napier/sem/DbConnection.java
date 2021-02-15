@@ -1,28 +1,18 @@
 package com.napier.sem;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.sql.*;
 
-public class App
-{
-    public static void main(String[] args)
-    {
-        // Create new Application
-        App a = new App();
-
-        // Connect to database
-        a.connect();
-        // Get Employee
-
-
-        // Disconnect from database
-        a.disconnect();
-    }
+public class DbConnection {
 
 
     /**
      * Connection to MySQL database.
      */
     private Connection con = null;
+
 
     /**
      * Connect to the MySQL database.
@@ -55,7 +45,7 @@ public class App
             }
             catch (SQLException sqle)
             {
-                System.out.println("!Failed to connect to database attempt " + Integer.toString(i));
+                System.out.println("Failed to connect to database attempt " + Integer.toString(i));
                 System.out.println(sqle.getMessage());
             }
             catch (InterruptedException ie)
@@ -64,27 +54,4 @@ public class App
             }
         }
     }
-
-    /**
-     * Disconnect from the MySQL database.
-     */
-    public void disconnect()
-    {
-        if (con != null)
-        {
-            try
-            {
-                // Close connection
-                con.close();
-                System.out.println("Connection closed");
-            }
-            catch (Exception e)
-            {
-                System.out.println("Error closing connection to database");
-            }
-        }
-    }
-
-
-
 }
