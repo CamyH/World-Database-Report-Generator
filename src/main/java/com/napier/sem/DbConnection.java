@@ -5,6 +5,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.*;
 
+/* This class handles the connection and disconnection
+of the database.
+ */
 public class DbConnection {
 
 
@@ -51,6 +54,26 @@ public class DbConnection {
             catch (InterruptedException ie)
             {
                 System.out.println("Thread interrupted? Should not happen.");
+            }
+        }
+    }
+
+    /**
+     * Disconnect from the MySQL database.
+     */
+    public void disconnect()
+    {
+        if (con != null)
+        {
+            try
+            {
+                // Close connection
+                con.close();
+                System.out.println("Connection closed");
+            }
+            catch (Exception e)
+            {
+                System.out.println("Error closing connection to database");
             }
         }
     }
