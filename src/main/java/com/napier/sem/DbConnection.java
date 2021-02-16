@@ -77,4 +77,8 @@ public class DbConnection {
             }
         }
     }
+
+    public Connection getConnection() {
+        return this.con;
+    }
 }
