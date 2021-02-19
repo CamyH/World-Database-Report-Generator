@@ -8,7 +8,7 @@ import java.sql.SQLException;
 /**
  * Project Authors: Colin, Cameron, Luke, Del
  * Date last modified: 19/02/2021
- * Purpose of program: To connect and disconnect from the MySQL database
+ * Purpose of program: This class handles the connection and disconnection of the database.
  */
 
 public class DbConnection {

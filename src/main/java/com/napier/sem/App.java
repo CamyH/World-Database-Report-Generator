@@ -1,5 +1,7 @@
 package com.napier.sem;
 
+import java.sql.Connection;
+
 /**
  * Project Authors: Colin, Cameron, Luke, Del
  * Date last modified: 19/02/2021
@@ -16,6 +18,9 @@ public class App
 
         // Connect to database
         dbc.connect();
+
+        // Gets connection value
+        Connection con = dbc.getConnection();
 
         // Disconnect from database
         dbc.disconnect();
