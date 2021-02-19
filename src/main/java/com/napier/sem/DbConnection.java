@@ -3,7 +3,7 @@ package com.napier.sem;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.*;
+
 
 /**
  * Project Authors: Colin, Cameron, Luke, Del
@@ -79,5 +79,9 @@ public class DbConnection {
                 System.out.println("Error closing connection to database");
             }
         }
+    }
+
+    public Connection getConnection() {
+        return this.con;
     }
 }
