@@ -6,6 +6,7 @@ import java.sql.*;
  * Project Authors: Colin, Cameron, Luke, Del
  * Date last modified: 19/02/2021
  * Purpose of program: To run SQL queries to satisfy the given requirements
+ * Last modified by: Cameron
  */
 
 public class App
