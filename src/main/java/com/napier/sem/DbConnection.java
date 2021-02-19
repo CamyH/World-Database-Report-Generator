@@ -5,9 +5,12 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.*;
 
-/* This class handles the connection and disconnection
-of the database.
+/**
+ * Project Authors: Colin, Cameron, Luke, Del
+ * Date last modified: 19/02/2021
+ * Purpose of program: To connect and disconnect from the MySQL database
  */
+
 public class DbConnection {
 
 
