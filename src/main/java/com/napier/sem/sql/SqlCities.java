@@ -1,4 +1,7 @@
-package com.napier.sem;
+package com.napier.sem.sql;
+
+import com.napier.sem.world.City;
+import com.napier.sem.db.DbConnection;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -52,9 +55,8 @@ public class SqlCities {
     }
 
 
-    public ArrayList<City> getAllCitiesInContinent (String continent)
+    public ArrayList<City> getAllCitiesInContinent(String continent)
     {
-        continent = continent;
 
         try
         {
@@ -65,9 +67,8 @@ public class SqlCities {
             // Create an SQL statement
             Statement stmt = con.createStatement();
             // Create string for SQL statement
-            String strSelect ="SELECT city.name, country.name, city.district, city.population "
-                                + "FROM city JOIN country "
-                                + "ON CountryCode=code WHERE country.continent = "+continent+" ORDER BY city.population DESC;";
+            String strSelect ="SELECT city.name, country.name, city.district, city.population FROM city JOIN country ON CountryCode=code WHERE country.continent = "+continent+" ORDER BY city.population DESC;";
+            //This works with asia hard coded SELECT city.name, country.name, city.district, city.population FROM city JOIN country ON CountryCode=code WHERE country.continent = 'Asia' ORDER BY city.population DESC;
 
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
@@ -106,9 +107,7 @@ public class SqlCities {
             // Create an SQL statement
             Statement stmt = con.createStatement();
             // Create string for SQL statement
-            String strSelect ="SELECT city.name, country.name, city.district, city.population "
-                                + "FROM city JOIN country ON CountryCode=code "
-                                + "WHERE country.region = "+region+" ORDER BY city.population DESC;";
+            String strSelect ="SELECT city.name, country.name, city.district, city.population FROM city JOIN country ON CountryCode=code WHERE country.region = "+region+" ORDER BY city.population DESC;";
 
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);

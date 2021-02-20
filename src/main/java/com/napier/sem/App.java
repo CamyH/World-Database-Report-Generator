@@ -1,5 +1,9 @@
 package com.napier.sem;
 
+import com.napier.sem.report.Reports;
+import com.napier.sem.sql.SqlCities;
+import com.napier.sem.world.City;
+
 import java.util.ArrayList;
 
 /**
@@ -12,18 +16,18 @@ public class App
 {
     public static void main(String[] args)
     {
-        System.out.println("Double checking first query");
-        SqlCities query7 = new SqlCities();
-        ArrayList<City> cities7 = query7.getAllCitiesInWorld();
+        System.out.println("Second Query - Added protected with as");
+        //SqlCities query7 = new SqlCities();
+        //ArrayList<City> cities7 = query7.getAllCitiesInWorld();
 
-        Reports report7 = new Reports();
-        report7.printCities(cities7);
+        //Reports report7 = new Reports();
+        //report7.printCities(cities7);
 
-        //SqlCities query8 = new SqlCities();
-        //ArrayList<City> cities8 = query8.getAllCitiesInContinent("1");
+        SqlCities query8 = new SqlCities();
+        ArrayList<City> cities8 = query8.getAllCitiesInContinent("Asia");
 
-        //Reports report8 = new Reports();
-        //report8.printCities(cities8);
+        Reports report8 = new Reports();
+        report8.printCities(cities8);
 
         //SqlCities query9 = new SqlCities();
         //ArrayList<City> cities9 = query9.getAllCitiesInRegion("1");

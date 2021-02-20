@@ -1,4 +1,4 @@
-package com.napier.sem;
+package com.napier.sem.db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
