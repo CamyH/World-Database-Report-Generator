@@ -43,6 +43,12 @@ public class App
         Long regionPopulation = getPopulationOfRegion(con, region);
         System.out.println("Population of " + region + " is " + regionPopulation);
 
+        // Get the population of given country
+        // Set the country code
+        String code = "GBR";
+        Long countryPopulation = getCountryPopulation(con, code);
+        System.out.println("The population of " + countryName + " is " + countryPopulation);
+
         // Disconnect from database
         dbc.disconnect();
 
@@ -100,7 +106,7 @@ public class App
                 return null;
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            System.out.println("Failed to calculate the population of the continent.");
+            System.out.println("Failed to calculate the population of the continent " + continent);
             return null;
         }
     }
@@ -129,7 +135,7 @@ public class App
                 return null;
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            System.out.println("Failed to calculate the population of the region.");
+            System.out.println("Failed to calculate the population of the region " + region);
             return null;
         }
     }
@@ -159,7 +165,7 @@ public class App
                 return null;
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            System.out.println("Failed to calculate the population of the country.");
+            System.out.println("Failed to calculate the population of the country with the code " + code);
             return null;
         }
     }
