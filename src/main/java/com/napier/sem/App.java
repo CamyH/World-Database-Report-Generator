@@ -12,6 +12,8 @@ import java.sql.*;
 public class App
 {
 
+    private static String countryName;
+
     public static void main(String[] args)
     {
 
@@ -104,7 +106,7 @@ public class App
     }
 
     /**
-     * Method to calculate the population of a given region
+     * Method to calculate the population of a specified region
      * @param con Holds the connection to the SQL server
      * @param region Contains the region to get the population for
      * @return The population of the region or null if there is an error
@@ -128,6 +130,36 @@ public class App
         } catch (Exception e) {
             System.out.println(e.getMessage());
             System.out.println("Failed to calculate the population of the region.");
+            return null;
+        }
+    }
+
+    /**
+     * Method to get the population for a specified country
+     * @param con Holds the connection to the SQL server
+     * @param code Contains the unique country code used to retrieve the correct population
+     * @return Country name & population
+     */
+    private static Long getCountryPopulation(Connection con, String code) {
+        try {
+            // Create SQL statement
+            Statement countryPopulationStatement = con.createStatement();
+            // Create string for SQL statement
+            String countryPopulation = "SELECT name, population " +
+                    "FROM country " +
+                    "WHERE code = '" + code + "';";
+            // Execute SQL statement
+            ResultSet rset = countryPopulationStatement.executeQuery(countryPopulation);
+            // Return population of specified country + country name
+            // Check something is returned
+            if(rset.next()) {
+                countryName = rset.getString("name");
+                return rset.getLong("population");
+            } else
+                return null;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to calculate the population of the country.");
             return null;
         }
     }
