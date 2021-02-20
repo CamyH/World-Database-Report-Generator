@@ -21,6 +21,14 @@ public class DbConnection {
 
 
     /**
+     * Connection to MySQL database.
+     */
+    public DbConnection() {
+        this.connect();
+    }
+
+
+    /**
      * Connect to the MySQL database.
      */
     public void connect()
