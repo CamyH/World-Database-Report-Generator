@@ -12,15 +12,22 @@ public class App
         // Create new db object from class
         DbConnection dbc = new DbConnection();
         allCountries allC = new allCountries();
+
         // Connect to database
         dbc.connect();
+
         //Gets connection value
         Connection con= dbc.getConnection();
-        // Get Employee
-        ArrayList<Country> largestCountry = allC.getLargestPopulation(con);
-        // Display results
-        allC.printLargest(largestCountry);
 
+        // Get Employee
+        //ArrayList<Country> largestPopulation = allC.getLargestPopulation(con);
+
+        // Display results
+        //allC.printLargest(largestPopulation);
+
+        ArrayList<Country> largestByContinent = allC.getLargestByContinent(con, "Europe");
+
+        allC.printByContinent(largestByContinent);
         // Disconnect from database
         dbc.disconnect();
 
