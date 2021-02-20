@@ -30,15 +30,27 @@ public class App
 
         // Get population of given continent
         // Set continent to get population of
+        // 'Asia','Europe','North America','Africa','Oceania','Antarctica','South America'
         String continent = "Europe";
         Long continentPopulation = getPopulationOfContinent(con, continent);
         System.out.println("Population of " + continent + " is " + continentPopulation);
+
+        // Get population of given region
+        // Set region to get population of
+        String region = "Southern Europe";
+        Long regionPopulation = getPopulationOfRegion(con, region);
+        System.out.println("Population of " + region + " is " + regionPopulation);
 
         // Disconnect from database
         dbc.disconnect();
 
     }
 
+    /**
+     * Method to calculate the population of the world
+     * @param con Holds the connection to the SQL server
+     * @return The population of the world or null if there is an error
+     */
     private static Long getWorldPopulation(Connection con) {
         try {
             // Create SQL statement
@@ -62,6 +74,12 @@ public class App
         }
     }
 
+    /**
+     * Method to calculate the population of a given continent
+     * @param con Holds the connection to the SQL server
+     * @param continent Contains the continent to get the population for
+     * @return The population of the continent or null if there is an error
+     */
     private static Long getPopulationOfContinent(Connection con, String continent) {
         try {
             // Create SQL statement
@@ -81,6 +99,35 @@ public class App
         } catch (Exception e) {
             System.out.println(e.getMessage());
             System.out.println("Failed to calculate the population of the continent.");
+            return null;
+        }
+    }
+
+    /**
+     * Method to calculate the population of a given region
+     * @param con Holds the connection to the SQL server
+     * @param region Contains the region to get the population for
+     * @return The population of the region or null if there is an error
+     */
+    private static Long getPopulationOfRegion(Connection con, String region) {
+        try {
+            // Create SQL statement
+            Statement regionStatement = con.createStatement();
+            // Create string for SQL statement
+            String regionPopulation = "SELECT SUM(population) as regionPopulation " +
+                    "FROM country " +
+                    "WHERE region = '" + region + "';";
+            // Execute SQL statement
+            ResultSet rset = regionStatement.executeQuery(regionPopulation);
+            // Return population of continent if calculation is valid
+            // Check something is returned
+            if(rset.next()) {
+                return rset.getLong("regionPopulation");
+            } else
+                return null;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to calculate the population of the region.");
             return null;
         }
     }
