@@ -105,4 +105,54 @@ public class allCountries {
             System.out.println(country_string);
         }
     }
+
+    public ArrayList<Country> getLargestByRegion(Connection con, String region)
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    "SELECT name, population, region "
+                            + "FROM country "
+                            + "WHERE region = '" + region
+                            + "' ORDER BY population DESC ";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+            // Extract employee information
+            ArrayList<Country> countries = new ArrayList<Country>();
+            while (rset.next())
+            {
+                Country country = new Country();
+                country.name = rset.getString("name");
+                country.population = rset.getInt("population");
+                country.region = rset.getString("region");
+
+                countries.add(country);
+            }
+            return countries;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get country details");
+            return null;
+        }
+
+    }
+
+    public void printByRegion(ArrayList<Country> countries)
+    {
+        // Print header
+        System.out.println(String.format("%-10s %-15s %-10s", "Name", "Population", "Region"));
+        // Loop over all employees in the list
+        for (Country country : countries)
+        {
+            String country_string =
+                    String.format("%-10s %-15s %-10s",
+                            country.name, country.population, country.region);
+            System.out.println(country_string);
+        }
+    }
 }

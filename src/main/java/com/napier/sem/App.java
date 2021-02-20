@@ -25,9 +25,14 @@ public class App
         // Display results
         //allC.printLargest(largestPopulation);
 
-        ArrayList<Country> largestByContinent = allC.getLargestByContinent(con, "Europe");
+        //ArrayList<Country> largestByContinent = allC.getLargestByContinent(con, "Europe");
 
-        allC.printByContinent(largestByContinent);
+        //allC.printByContinent(largestByContinent);
+
+        ArrayList<Country> LargestByRegion = allC.getLargestByRegion(con, "Caribbean");
+
+        allC.printByRegion(LargestByRegion);
+
         // Disconnect from database
         dbc.disconnect();
 
