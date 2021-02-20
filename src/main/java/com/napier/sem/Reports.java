@@ -2,6 +2,13 @@ package com.napier.sem;
 
 import java.util.ArrayList;
 
+/**
+ * Project Authors: Colin, Cameron, Luke, Del
+ * Date last modified: 20/02/2021
+ * Purpose of class: This class handles the reports to the console.
+ */
+
+
 public class Reports {
 
     public void printCities(ArrayList<City> cities)

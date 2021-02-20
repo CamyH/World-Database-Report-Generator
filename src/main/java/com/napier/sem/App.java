@@ -16,6 +16,7 @@ public class App
         SqlCities query7 = new SqlCities();
 
         ArrayList<City> cities = query7.getAllCities();
+
         Reports report7 = new Reports();
         report7.printCities(cities);
 

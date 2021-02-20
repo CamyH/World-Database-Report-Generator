@@ -5,6 +5,11 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+/**
+ * Project Authors: Colin, Cameron, Luke, Del
+ * Date last modified: 20/02/2021
+ * Purpose of class: This class handles the SQL queries to the database.
+ */
 
 public class SqlCities {
 
