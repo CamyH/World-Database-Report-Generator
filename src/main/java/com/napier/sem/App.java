@@ -16,18 +16,18 @@ public class App
 {
     public static void main(String[] args)
     {
-        System.out.println("4th Query - Fixed query");
+        System.out.println("Testing prepared statement - stmt removed");
         //SqlCities query7 = new SqlCities();
         //ArrayList<City> cities7 = query7.getAllCitiesInWorld();
 
         //Reports report7 = new Reports();
         //report7.printCities(cities7);
 
-        //SqlCities query8 = new SqlCities();
-        //ArrayList<City> cities8 = query8.getAllCitiesInContinent("Asia");
+        Sql query8 = new Sql();
+        ArrayList<City> cities8 = query8.getAllCitiesInContinent("Asia");
 
-        //Reports report8 = new Reports();
-        //report8.printCities(cities8);
+        Reports report8 = new Reports();
+        report8.printCities(cities8);
 
         //SqlCities query9 = new SqlCities();
         //ArrayList<City> cities9 = query9.getAllCitiesInRegion("Caribbean");
@@ -42,11 +42,11 @@ public class App
         //Reports report10 = new Reports();
         //report10.printCities(cities10);
 
-        Sql query11 = new Sql();
-        ArrayList<City> cities11 = query11.getAllCitiesInDistrict("Scotland");
+        //Sql query11 = new Sql();
+        //ArrayList<City> cities11 = query11.getAllCitiesInDistrict("Scotland");
 
-        Reports report11 = new Reports();
-        report11.printCities(cities11);
+        //Reports report11 = new Reports();
+        //report11.printCities(cities11);
 
 
         // Create new db object from class

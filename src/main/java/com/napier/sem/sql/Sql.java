@@ -55,7 +55,6 @@ public class Sql {
         }
     }
 
-
     public ArrayList<City> getAllCitiesInContinent(String continent)
     {
 
@@ -66,15 +65,19 @@ public class Sql {
             Connection con = dbc.getConnection();
 
             // Create an SQL statement
-            Statement stmt = con.createStatement();
+            //Statement stmt = con.createStatement();
             // Create string for SQL statement
-            String strSelect ="SELECT city.name, country.name, city.district, city.population FROM city JOIN country ON CountryCode=code WHERE country.continent = '"+continent+"' ORDER BY city.population DESC;";
+            //String strSelect ="SELECT city.name, country.name, city.district, city.population FROM city JOIN country ON CountryCode=code WHERE country.continent = '"+continent+"' ORDER BY city.population DESC;";
+            String strSelect ="SELECT city.name, country.name, city.district, city.population FROM city JOIN country ON CountryCode=code WHERE country.continent = ? ORDER BY city.population DESC;";
 
-            //PreparedStatement preparedStatement = con.prepareStatement(strSelect);
-            //preparedStatement.setString(1, continent);
+            // Create prepared statement with SQL statement
+            PreparedStatement preparedStatement = con.prepareStatement(strSelect);
+            //set sql statement ? to continent parameter
+            preparedStatement.setString(1, continent);
 
-            // Execute SQL statement
-            ResultSet rset = stmt.executeQuery(strSelect);
+            // Execute SQL statement - swapped stmt variable out for preparedStatement
+            ResultSet rset = preparedStatement.executeQuery();
+
             // Extract city information
             ArrayList<City> cities = new ArrayList<City>();
             while (rset.next())
@@ -107,12 +110,20 @@ public class Sql {
             Connection con = dbc.getConnection();
 
             // Create an SQL statement
-            Statement stmt = con.createStatement();
+            //Statement stmt = con.createStatement();
             // Create string for SQL statement
-            String strSelect ="SELECT city.name, country.name, city.district, city.population FROM city JOIN country ON CountryCode=code WHERE country.region = '"+region+"' ORDER BY city.population DESC;";
+            String strSelect ="SELECT city.name, country.name, city.district, city.population FROM city JOIN country ON CountryCode=code WHERE country.region = ? ORDER BY city.population DESC;";
+
+            // Create prepared statement with SQL statement
+            PreparedStatement preparedStatement = con.prepareStatement(strSelect);
+            //set sql statement ? to continent parameter
+            preparedStatement.setString(1, region);
+
 
             // Execute SQL statement
-            ResultSet rset = stmt.executeQuery(strSelect);
+            //ResultSet rset = stmt.executeQuery(strSelect);
+            ResultSet rset = preparedStatement.executeQuery();
+
             // Extract city information
             ArrayList<City> cities = new ArrayList<City>();
             while (rset.next())
@@ -145,11 +156,20 @@ public class Sql {
             Connection con = dbc.getConnection();
 
             // Create an SQL statement
-            Statement stmt = con.createStatement();
+            //Statement stmt = con.createStatement();
             // Create string for SQL statement
-            String strSelect = "SELECT city.name, country.name, city.district, city.population FROM city JOIN country ON CountryCode=code WHERE country.name = '"+country+"' order by city.population DESC;";
+            String strSelect = "SELECT city.name, country.name, city.district, city.population FROM city JOIN country ON CountryCode=code WHERE country.name = ? order by city.population DESC;";
+
+
+            // Create prepared statement with SQL statement
+            PreparedStatement preparedStatement = con.prepareStatement(strSelect);
+            //set sql statement ? to continent parameter
+            preparedStatement.setString(1, country);
+
             // Execute SQL statement
-            ResultSet rset = stmt.executeQuery(strSelect);
+            //ResultSet rset = stmt.executeQuery(strSelect);
+            ResultSet rset = preparedStatement.executeQuery();
+
             // Extract city information
             ArrayList<City> cities = new ArrayList<City>();
             while (rset.next())
@@ -182,11 +202,19 @@ public class Sql {
             Connection con = dbc.getConnection();
 
             // Create an SQL statement
-            Statement stmt = con.createStatement();
+            //Statement stmt = con.createStatement();
             // Create string for SQL statement
-            String strSelect = "SELECT city.name, country.name, city.district, city.population FROM city JOIN country ON CountryCode=code WHERE district = '"+district+"' ORDER BY city.population DESC;";
+            String strSelect = "SELECT city.name, country.name, city.district, city.population FROM city JOIN country ON CountryCode=code WHERE district = ? ORDER BY city.population DESC;";
+
+            // Create prepared statement with SQL statement
+            PreparedStatement preparedStatement = con.prepareStatement(strSelect);
+            //set sql statement ? to continent parameter
+            preparedStatement.setString(1, district);
+
             // Execute SQL statement
-            ResultSet rset = stmt.executeQuery(strSelect);
+            //ResultSet rset = stmt.executeQuery(strSelect);
+            ResultSet rset = preparedStatement.executeQuery();
+
             // Extract city information
             ArrayList<City> cities = new ArrayList<City>();
             while (rset.next())
