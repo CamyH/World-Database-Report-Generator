@@ -99,7 +99,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613839156054</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added query display all the countries in a region organised by largest population to smallest">
+      <created>1613839902591</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1613839902591</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -134,6 +141,7 @@
     <MESSAGE value="Removed outside git connection" />
     <MESSAGE value="Added query to display all countries in the world organised by largest population to smallest." />
     <MESSAGE value="Added query display all the countries in a continent organised by largest population to smallest" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added query display all the countries in a continent organised by largest population to smallest" />
+    <MESSAGE value="Added query display all the countries in a region organised by largest population to smallest" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added query display all the countries in a region organised by largest population to smallest" />
   </component>
 </project>

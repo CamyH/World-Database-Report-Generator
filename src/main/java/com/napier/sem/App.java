@@ -22,16 +22,19 @@ public class App
         // Get Employee
         //ArrayList<Country> largestPopulation = allC.getLargestPopulation(con);
 
+        //
+        ArrayList<Country> largestPopulationN = allC.getLargestPopulationN(con, 10);
+
         // Display results
-        //allC.printLargest(largestPopulation);
+        allC.printLargest(largestPopulationN);
 
         //ArrayList<Country> largestByContinent = allC.getLargestByContinent(con, "Europe");
 
         //allC.printByContinent(largestByContinent);
 
-        ArrayList<Country> LargestByRegion = allC.getLargestByRegion(con, "Caribbean");
+        //ArrayList<Country> LargestByRegion = allC.getLargestByRegion(con, "Caribbean");
 
-        allC.printByRegion(LargestByRegion);
+        //allC.printByRegion(LargestByRegion);
 
         // Disconnect from database
         dbc.disconnect();
