@@ -21,7 +21,7 @@ public class DbConnection {
 
 
     /**
-     * Connection to MySQL database.
+     * Constructor with automatically connect()
      */
     public DbConnection() {
         this.connect();
