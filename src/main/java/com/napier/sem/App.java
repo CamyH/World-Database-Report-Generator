@@ -30,13 +30,15 @@ public class App
 
         //ArrayList<Country> largestByContinent = allC.getLargestByContinent(con, "Europe");
 
-        ArrayList<Country> largestByContinentN = allC.getLargestByContinentN(con, "Europe", 10);
+        //ArrayList<Country> largestByContinentN = allC.getLargestByContinentN(con, "Europe", 10);
 
-        allC.printByContinent(largestByContinentN);
+        //allC.printByContinent(largestByContinentN);
 
         //ArrayList<Country> LargestByRegion = allC.getLargestByRegion(con, "Caribbean");
 
-        //allC.printByRegion(LargestByRegion);
+        ArrayList<Country> LargestByRegionN = allC.getLargestByRegionN(con, "Caribbean", 10);
+
+        allC.printByRegion(LargestByRegionN);
 
         // Disconnect from database
         dbc.disconnect();

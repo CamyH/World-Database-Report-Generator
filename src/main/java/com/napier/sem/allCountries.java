@@ -214,6 +214,43 @@ public class allCountries {
 
     }
 
+    public ArrayList<Country> getLargestByRegionN(Connection con, String region, int limit)
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    "SELECT name, population, region "
+                            + "FROM country "
+                            + "WHERE region = '" + region
+                            + "' ORDER BY population DESC "
+                            + "Limit " + limit;
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+            // Extract employee information
+            ArrayList<Country> countries = new ArrayList<Country>();
+            while (rset.next())
+            {
+                Country country = new Country();
+                country.name = rset.getString("name");
+                country.population = rset.getInt("population");
+                country.region = rset.getString("region");
+
+                countries.add(country);
+            }
+            return countries;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get country details");
+            return null;
+        }
+
+    }
+
     public void printByRegion(ArrayList<Country> countries)
     {
         // Print header
