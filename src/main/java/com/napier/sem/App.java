@@ -29,7 +29,7 @@ public class App
         System.out.println("World Population: " + totalPopulation);
 
         // Report 2:
-        // Get population of given continent
+        // Get population of a continent
         // Set continent to get population of
         // 'Asia','Europe','North America','Africa','Oceania','Antarctica','South America'
         String continent = "Europe";
@@ -37,21 +37,21 @@ public class App
         System.out.println("Population of " + continent + " is " + continentPopulation);
 
         // Report 3:
-        // Get population of given region
+        // Get population of a region
         // Set region to get population of
         String region = "Southern Europe";
         Long regionPopulation = AdditionalReports.getPopulationOfRegion(con, region);
         System.out.println("Population of " + region + " is " + regionPopulation);
 
         // Report 4:
-        // Get the population of given country
+        // Get the population of a country
         // Set the country code
         String code = "GBR";
         Long countryPopulation = AdditionalReports.getCountryPopulation(con, code);
         System.out.println("The population of " + code + " is " + countryPopulation);
 
         // Report 5:
-        // Get the population of given district
+        // Get the population of a district
         // Set the district
         String district = "England";
         Long districtPopulation = AdditionalReports.getDistrictPopulation(con, district);
