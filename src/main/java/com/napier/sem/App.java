@@ -65,6 +65,47 @@ public class App
         Reports report11 = new Reports();
         report11.printCities(cities11);
 
+        // Return top N populated cities in the world to cities12 object
+        Sql query12 = new Sql();
+        ArrayList<City> cities12 = query12.getTopPopulatedCitiesInWorld(con, 10);
+
+        // Display report from cities12
+        Reports report12 = new Reports();
+        report12.printCities(cities12);
+
+        // Return top N populated cities in a continent to cities13 object
+        Sql query13 = new Sql();
+        ArrayList<City> cities13 = query13.getTopPopulatedCitiesInContinent(con, 10, "Asia");
+
+        // Display report from cities13
+        Reports report13 = new Reports();
+        report13.printCities(cities13);
+
+        // Return top N populated cities in a region to cities14 object
+        Sql query14 = new Sql();
+        ArrayList<City> cities14 = query14.getTopPopulatedCitiesInRegion(con, 10, "Caribbean");
+
+        // Display report from cities14
+        Reports report14 = new Reports();
+        report14.printCities(cities14);
+
+        // Return top N populated cities in the world to cities15 object
+        Sql query15 = new Sql();
+        ArrayList<City> cities15 = query15.getTopPopulatedCitiesInCountry(con, 10, "Brazil");
+
+        // Display report from cities15
+        Reports report15 = new Reports();
+        report15.printCities(cities15);
+
+        // Return top N populated cities in the world to cities16 object
+        Sql query16 = new Sql();
+        ArrayList<City> cities16 = query16.getTopPopulatedCitiesInDistrict(con, 10, "Scotland");
+
+        // Display report from cities16
+        Reports report16 = new Reports();
+        report16.printCities(cities16);
+
+
         // Disconnect from database
         dbc.disconnect();
 
