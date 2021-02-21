@@ -7,14 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="SEM-SET08103" />
-        <module name="sem-set08103" />
         <module name="GroupProj" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="GroupProj" target="1.8" />
       <module name="SEM-SET08103" target="1.8" />
-      <module name="sem-set08103" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>
