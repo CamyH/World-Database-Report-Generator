@@ -106,7 +106,14 @@
       <option name="project" value="LOCAL" />
       <updated>1613839902591</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added query to display top N populated countries in the world where N is provided by the user.">
+      <created>1613921442415</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1613921442415</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -142,6 +149,7 @@
     <MESSAGE value="Added query to display all countries in the world organised by largest population to smallest." />
     <MESSAGE value="Added query display all the countries in a continent organised by largest population to smallest" />
     <MESSAGE value="Added query display all the countries in a region organised by largest population to smallest" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added query display all the countries in a region organised by largest population to smallest" />
+    <MESSAGE value="Added query to display top N populated countries in the world where N is provided by the user." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added query to display top N populated countries in the world where N is provided by the user." />
   </component>
 </project>

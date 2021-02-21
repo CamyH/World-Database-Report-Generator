@@ -23,14 +23,16 @@ public class App
         //ArrayList<Country> largestPopulation = allC.getLargestPopulation(con);
 
         //
-        ArrayList<Country> largestPopulationN = allC.getLargestPopulationN(con, 10);
+        //ArrayList<Country> largestPopulationN = allC.getLargestPopulationN(con, 10);
 
         // Display results
-        allC.printLargest(largestPopulationN);
+        //allC.printLargest(largestPopulationN);
 
         //ArrayList<Country> largestByContinent = allC.getLargestByContinent(con, "Europe");
 
-        //allC.printByContinent(largestByContinent);
+        ArrayList<Country> largestByContinentN = allC.getLargestByContinentN(con, "Europe", 10);
+
+        allC.printByContinent(largestByContinentN);
 
         //ArrayList<Country> LargestByRegion = allC.getLargestByRegion(con, "Caribbean");
 

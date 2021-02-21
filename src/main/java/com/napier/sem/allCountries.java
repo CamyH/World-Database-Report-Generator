@@ -127,6 +127,43 @@ public class allCountries {
 
     }
 
+    public ArrayList<Country> getLargestByContinentN(Connection con, String continent, int limit)
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    "SELECT name, population, continent "
+                            + "FROM country "
+                            + "WHERE continent = '" + continent
+                            + "' ORDER BY population DESC "
+                            + "Limit " + limit;
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+            // Extract employee information
+            ArrayList<Country> countries = new ArrayList<Country>();
+            while (rset.next())
+            {
+                Country country = new Country();
+                country.name = rset.getString("name");
+                country.population = rset.getInt("population");
+                country.continent = rset.getString("continent");
+
+                countries.add(country);
+            }
+            return countries;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get country details");
+            return null;
+        }
+
+    }
+
     public void printByContinent(ArrayList<Country> countries)
     {
         // Print header
