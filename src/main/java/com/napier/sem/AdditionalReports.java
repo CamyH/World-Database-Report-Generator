@@ -259,6 +259,44 @@ public class AdditionalReports {
     }
 
     /**
+     * Method to return a list of population data for each country
+     * @param con Holds the connection to the SQL database
+     * @return The total population, population living in cities & population not living in cities of each country in an ArrayList,
+     * or null if there is an error.
+     */
+    public static ArrayList<PopulationData> getPopulationDataCountry(Connection con) {
+        try {
+            // Create SQL statement
+            Statement peopleInCitiesStatement = con.createStatement();
+            // Create string for SQL statement
+            String citiesPopulation = "SELECT country.code, country.name, SUM(city.population) as citiesPopulation " +
+                    "FROM city " +
+                    "JOIN country ON CountryCode=country.code " +
+                    "GROUP BY country.name, country.code; ";
+            // Execute SQL statement
+            ResultSet rset = peopleInCitiesStatement.executeQuery(citiesPopulation);
+            // ArrayList to store all population data required
+            ArrayList<PopulationData> allPopulationData = new ArrayList<>();
+            // Return population of regions
+            // Check something is returned
+            while(rset.next()) {
+                PopulationData popData = new PopulationData();
+                popData.code = rset.getString("country.code");
+                popData.identifier = rset.getString("country.name");
+                popData.population = getCountryPopulation(con, popData.code);
+                popData.populationInCities = rset.getLong("citiesPopulation");
+                popData.populationNotInCities = popData.population - popData.populationInCities;
+                allPopulationData.add(popData);
+            }
+            return allPopulationData;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get the requested population data.");
+            return null;
+        }
+    }
+
+    /**
      * Method to print all population data of each continent in the ArrayList
      * @param popData ArrayList of data
      */
@@ -280,6 +318,21 @@ public class AdditionalReports {
     public static void printPopulationDataRegion(ArrayList<PopulationData> popData) {
         // Print header
         System.out.println(String.format("%-30s %15s %15s %15s", "Region", "TotalPopulation", "PopulationInCities", "PopulationNotInCities"));
+        // Loop over all population data in the list
+        for (PopulationData populationData : popData) {
+            String dataString = String.format("%-30s %15s %15s %15s",
+                    populationData.identifier, populationData.population, populationData.populationInCities, populationData.populationNotInCities);
+            System.out.println(dataString);
+        }
+    }
+
+    /**
+     * Method to print all population data of each country in the ArrayList
+     * @param popData ArrayList of data
+     */
+    public static void printPopulationDataCountry(ArrayList<PopulationData> popData) {
+        // Print header
+        System.out.println(String.format("%-30s %15s %15s %15s", "Country", "TotalPopulation", "PopulationInCities", "PopulationNotInCities"));
         // Loop over all population data in the list
         for (PopulationData populationData : popData) {
             String dataString = String.format("%-30s %15s %15s %15s",

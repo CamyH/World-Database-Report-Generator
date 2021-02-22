@@ -3,6 +3,11 @@ package com.napier.sem;
 public class PopulationData {
 
     /**
+     * Country Code, only used for one of the reports
+     */
+    public String code;
+
+    /**
      * Continent/Region/Country
      */
     public String identifier;

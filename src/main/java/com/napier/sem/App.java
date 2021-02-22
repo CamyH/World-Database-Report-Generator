@@ -65,7 +65,7 @@ public class App
         //Long cityPopulation = AdditionalReports.getCityPopulation(con, cityName);
         //System.out.println("The population of " + cityName + " is " + cityPopulation);
 
-        // Population of people.. reports //
+        // Population of people... reports //
         // Report 1:
         // The population of people, people living in cities, and people not living in cities in each continent.
         // Antarctica is not shown as the population is set to 0 in the database //
@@ -74,8 +74,13 @@ public class App
 
         // Report 2:
         // The population of people, people living in cities, and people not living in cities in each region.
-        ArrayList<PopulationData> regionPopulationDataList = AdditionalReports.getPopulationDataRegion(con);
-        AdditionalReports.printPopulationDataRegion(regionPopulationDataList);
+        //ArrayList<PopulationData> regionPopulationDataList = AdditionalReports.getPopulationDataRegion(con);
+        //AdditionalReports.printPopulationDataRegion(regionPopulationDataList);
+
+        // Report 3:
+        // The population of people, people living in cities, and people not living in cities in each country.
+        //ArrayList<PopulationData> countryPopulationDataList = AdditionalReports.getPopulationDataCountry(con);
+        //AdditionalReports.printPopulationDataCountry(countryPopulationDataList);
 
 
         // Disconnect from database
