@@ -1,13 +1,16 @@
-package com.napier.sem;
+package com.napier.sem.db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.*;
 
-/* This class handles the connection and disconnection
-of the database.
+
+/**
+ * Project Authors: Colin, Cameron, Luke, Del
+ * Date last modified: 21/02/2021
+ * Purpose of class: This class handles the connection and disconnection of the database.
  */
+
 public class DbConnection {
 
 
@@ -15,6 +18,14 @@ public class DbConnection {
      * Connection to MySQL database.
      */
     private Connection con = null;
+
+
+    /**
+     * Constructor with automatically connect()
+     */
+    public DbConnection() {
+        this.connect();
+    }
 
 
     /**
