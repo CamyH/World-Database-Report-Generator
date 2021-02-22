@@ -203,7 +203,7 @@ public class AdditionalReports {
             ResultSet rset = peopleInCitiesStatement.executeQuery(citiesPopulation);
             // ArrayList to store all population data required
             ArrayList<PopulationData> allPopulationData = new ArrayList<>();
-            // Return population of continents
+            // Return population data of each continent
             // Check something is returned
             while(rset.next()) {
                 PopulationData popData = new PopulationData();
@@ -240,7 +240,7 @@ public class AdditionalReports {
             ResultSet rset = peopleInCitiesStatement.executeQuery(citiesPopulation);
             // ArrayList to store all population data required
             ArrayList<PopulationData> allPopulationData = new ArrayList<>();
-            // Return population of regions
+            // Return population data of each region
             // Check something is returned
             while(rset.next()) {
                 PopulationData popData = new PopulationData();
@@ -277,7 +277,7 @@ public class AdditionalReports {
             ResultSet rset = peopleInCitiesStatement.executeQuery(citiesPopulation);
             // ArrayList to store all population data required
             ArrayList<PopulationData> allPopulationData = new ArrayList<>();
-            // Return population of regions
+            // Return population data of each country
             // Check something is returned
             while(rset.next()) {
                 PopulationData popData = new PopulationData();
