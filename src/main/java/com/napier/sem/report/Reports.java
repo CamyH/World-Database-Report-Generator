@@ -82,7 +82,7 @@ public class Reports {
      * Method to print all countries and their population from largest to smallest
      * @param countries
      */
-    public void printCountriesInWorld(ArrayList<Country> countries)
+    public static void printCountriesInWorld(ArrayList<Country> countries)
     {
         // Print header
         System.out.println(String.format("%-10s %-15s", "Name", "Population"));
@@ -100,7 +100,7 @@ public class Reports {
      * Method to print countries and their population of a specified continent from smallest to largest
      * @param countries
      */
-    public void printCountriesInContinent(ArrayList<Country> countries)
+    public static void printCountriesInContinent(ArrayList<Country> countries)
     {
         // Print header
         System.out.println(String.format("%-10s %-15s %-10s", "Name", "Population", "Continent"));
@@ -118,7 +118,7 @@ public class Reports {
      * Method to print countries and their population of a specified region from smalled to largest
      * @param countries
      */
-    public void printCountriesInRegion(ArrayList<Country> countries)
+    public static void printCountriesInRegion(ArrayList<Country> countries)
     {
         // Print header
         System.out.println(String.format("%-10s %-15s %-10s", "Name", "Population", "Region"));
