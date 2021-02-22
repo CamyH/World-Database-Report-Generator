@@ -221,6 +221,12 @@ public class AdditionalReports {
         }
     }
 
+    /**
+     * Method to return a list of population data for each region
+     * @param con Holds the connection to the SQL database
+     * @return The total population, population living in cities & population not living in cities of each region in an ArrayList,
+     * or null if there is an error.
+     */
     public static ArrayList<PopulationData> getPopulationDataRegion(Connection con) {
         try {
             // Create SQL statement
@@ -239,7 +245,7 @@ public class AdditionalReports {
             while(rset.next()) {
                 PopulationData popData = new PopulationData();
                 popData.identifier = rset.getString("country.region");
-                popData.population = getPopulationOfContinent(con, popData.identifier);
+                popData.population = getPopulationOfRegion(con, popData.identifier);
                 popData.populationInCities = rset.getLong("citiesPopulation");
                 popData.populationNotInCities = popData.population - popData.populationInCities;
                 allPopulationData.add(popData);
@@ -254,7 +260,7 @@ public class AdditionalReports {
 
     /**
      * Method to print all population data of each continent in the ArrayList
-     * @param popData
+     * @param popData ArrayList of data
      */
     public static void printPopulationDataContinent(ArrayList<PopulationData> popData) {
         // Print header
@@ -267,6 +273,10 @@ public class AdditionalReports {
         }
     }
 
+    /**
+     * Method to print all population data of each region in the ArrayList
+     * @param popData ArrayList of data
+     */
     public static void printPopulationDataRegion(ArrayList<PopulationData> popData) {
         // Print header
         System.out.println(String.format("%-30s %15s %15s %15s", "Region", "TotalPopulation", "PopulationInCities", "PopulationNotInCities"));
