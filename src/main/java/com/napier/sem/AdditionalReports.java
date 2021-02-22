@@ -47,14 +47,17 @@ public class AdditionalReports {
      */
     public static Long getPopulationOfContinent(Connection con, String continent) {
         try {
-            // Create SQL statement
-            Statement continentStatement = con.createStatement();
             // Create string for SQL statement
             String continentPopulation = "SELECT SUM(population) as continentPopulation " +
                     "FROM country " +
-                    "WHERE continent = '" + continent + "';";
+                    "WHERE continent = ?;";
+
+            // Create prepared statement with SQL statement
+            PreparedStatement preparedStatement = con.prepareStatement(continentPopulation);
+            // Set SQL statement ? to continent parameter
+            preparedStatement.setString(1, continent);
             // Execute SQL statement
-            ResultSet rset = continentStatement.executeQuery(continentPopulation);
+            ResultSet rset = preparedStatement.executeQuery(continentPopulation);
             // Return population of continent if calculation is valid
             // Check something is returned
             if(rset.next()) {
@@ -302,7 +305,7 @@ public class AdditionalReports {
      */
     public static void printPopulationDataContinent(ArrayList<PopulationData> popData) {
         // Print header
-        System.out.println(String.format("%-30s %15s %15s %15s", "Continent", "TotalPopulation", "PopulationInCities", "PopulationNotInCities"));
+        System.out.println(String.format("%-30s %-15s %-15s %-15s", "Continent", "TotalPopulation", "PopulationInCities", "PopulationNotInCities"));
         // Loop over all population data in the list
         for (PopulationData populationData : popData) {
             String dataString = String.format("%-30s %15s %15s %15s",
@@ -317,7 +320,7 @@ public class AdditionalReports {
      */
     public static void printPopulationDataRegion(ArrayList<PopulationData> popData) {
         // Print header
-        System.out.println(String.format("%-30s %15s %15s %15s", "Region", "TotalPopulation", "PopulationInCities", "PopulationNotInCities"));
+        System.out.println(String.format("%-30s %-15s %-15s %-15s", "Region", "TotalPopulation", "PopulationInCities", "PopulationNotInCities"));
         // Loop over all population data in the list
         for (PopulationData populationData : popData) {
             String dataString = String.format("%-30s %15s %15s %15s",
@@ -332,7 +335,7 @@ public class AdditionalReports {
      */
     public static void printPopulationDataCountry(ArrayList<PopulationData> popData) {
         // Print header
-        System.out.println(String.format("%-30s %15s %15s %15s", "Country", "TotalPopulation", "PopulationInCities", "PopulationNotInCities"));
+        System.out.println(String.format("%-30s %-15s %-15s %-15s", "Country", "TotalPopulation", "PopulationInCities", "PopulationNotInCities"));
         // Loop over all population data in the list
         for (PopulationData populationData : popData) {
             String dataString = String.format("%-30s %15s %15s %15s",
