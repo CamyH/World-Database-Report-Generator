@@ -15,7 +15,11 @@ import java.util.ArrayList;
 
 public class Reports {
 
-    public void printCities(ArrayList<City> cities)
+    /**
+     * Method to print the cities report from the arraylist object
+     * @param cities object with data
+     */
+    public static void printCities(ArrayList<City> cities)
     {
         // Print header
         System.out.println(String.format("%-30s %-30s %-30s %-30s", "Name", "Country", "District", "Population"));
@@ -78,7 +82,7 @@ public class Reports {
      * Method to print all countries and their population from largest to smallest
      * @param countries
      */
-    public void printCountriesInWorld(ArrayList<Country> countries)
+    public static void printCountriesInWorld(ArrayList<Country> countries)
     {
         // Print header
         System.out.println(String.format("%-10s %-15s", "Name", "Population"));
@@ -96,7 +100,7 @@ public class Reports {
      * Method to print countries and their population of a specified continent from smallest to largest
      * @param countries
      */
-    public void printCountriesInContinent(ArrayList<Country> countries)
+    public static void printCountriesInContinent(ArrayList<Country> countries)
     {
         // Print header
         System.out.println(String.format("%-10s %-15s %-10s", "Name", "Population", "Continent"));
@@ -114,7 +118,7 @@ public class Reports {
      * Method to print countries and their population of a specified region from smalled to largest
      * @param countries
      */
-    public void printCountriesInRegion(ArrayList<Country> countries)
+    public static void printCountriesInRegion(ArrayList<Country> countries)
     {
         // Print header
         System.out.println(String.format("%-10s %-15s %-10s", "Name", "Population", "Region"));
