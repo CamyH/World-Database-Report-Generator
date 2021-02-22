@@ -28,13 +28,11 @@ public class App
         DbConnection dbc = new DbConnection();
         Connection con = dbc.getConnection();
 
-        // Return all cities in world to cities7 object
-        Sql query7 = new Sql();
-        ArrayList<City> cities7 = query7.getAllCitiesInWorld(con);
-
-        // Display report from cities7
-        Reports report7 = new Reports();
-        //report7.printCities(cities7);
+        // Return all cities in world to cities object
+        ArrayList<City> allCitiesInWorld = Sql.getAllCitiesInWorld(con);
+        // Display report from cities
+        assert allCitiesInWorld != null;
+        Reports.printCities(allCitiesInWorld);
 
         // Return all cities in a continent to cities8 object
         Sql query8 = new Sql();

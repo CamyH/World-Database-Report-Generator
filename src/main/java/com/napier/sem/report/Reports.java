@@ -14,7 +14,11 @@ import java.util.ArrayList;
 
 public class Reports {
 
-    public void printCities(ArrayList<City> cities)
+    /**
+     * Method to print the cities report from the arraylist object
+     * @param cities object with data
+     */
+    public static void printCities(ArrayList<City> cities)
     {
         // Print header
         System.out.println(String.format("%-30s %-30s %-30s %-30s", "Name", "Country", "District", "Population"));

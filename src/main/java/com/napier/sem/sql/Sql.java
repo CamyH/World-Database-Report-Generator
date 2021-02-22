@@ -19,7 +19,7 @@ public class Sql {
     /** Gets all the cities in the world from
      * the database and returns the cities object filled with data.
      * Report 7 */
-    public ArrayList<City> getAllCitiesInWorld(Connection con)
+    public static ArrayList<City> getAllCitiesInWorld(Connection con)
     {
         try
         {
