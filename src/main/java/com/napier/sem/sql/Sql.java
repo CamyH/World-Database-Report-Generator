@@ -1,6 +1,7 @@
 package com.napier.sem.sql;
 
 import com.napier.sem.world.City;
+import com.napier.sem.world.Country;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -15,6 +16,296 @@ import java.util.ArrayList;
  */
 
 public class Sql {
+
+    /**
+     * Gets all the countries in the world from
+     * the database and returns the countries object filled with data
+     * @param con
+     * @return
+     * Report 1 */
+    public ArrayList<Country> getAllCountriesInWorld(Connection con)
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    "SELECT name, population "
+                            + "FROM country "
+                            + "ORDER BY population DESC;";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+            // Extract country information
+            ArrayList<Country> countries = new ArrayList<Country>();
+            while (rset.next())
+            {
+                Country country = new Country();
+                country.name = rset.getString("name");
+                country.population = rset.getInt("population");
+
+                countries.add(country);
+            }
+            return countries;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get country details");
+            return null;
+        }
+
+    }
+
+    /**
+     * Gets all the countries in a continet from
+     * the database and returns the countries object filled with data
+     * @param con
+     * @param continent
+     * @return
+     * Report 2 */
+    public ArrayList<Country> getAllCountriesInContinent(Connection con, String continent)
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    "SELECT name, population, continent "
+                            + "FROM country "
+                            + "WHERE continent = ? "
+                            + "ORDER BY population DESC;";
+
+            // Create prepared statement with SQL statement
+            PreparedStatement preparedStatement = con.prepareStatement(strSelect);
+            //set sql statement ? to continent parameter
+            preparedStatement.setString(1, continent);
+
+            // Execute SQL statement
+            ResultSet rset = preparedStatement.executeQuery();
+            // Extract country information
+            ArrayList<Country> countries = new ArrayList<Country>();
+            while (rset.next())
+            {
+                Country country = new Country();
+                country.name = rset.getString("name");
+                country.population = rset.getInt("population");
+                country.continent = rset.getString("continent");
+
+                countries.add(country);
+            }
+            return countries;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get country details");
+            return null;
+        }
+
+    }
+
+    /**
+     * Gets all the countries in a continent from
+     * the databse and returns the countries object filled with data
+     * @param con
+     * @param region
+     * @return
+     * Report 3 */
+    public ArrayList<Country> getAllCountriesByRegion(Connection con, String region)
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    "SELECT name, population, region "
+                            + "FROM country "
+                            + "WHERE region = ? "
+                            + "ORDER BY population DESC;";
+
+            // Create prepared statement with SQL statement
+            PreparedStatement preparedStatement = con.prepareStatement(strSelect);
+            //set sql statement ? to continent parameter
+            preparedStatement.setString(1, region);
+
+            // Execute SQL statement
+            ResultSet rset = preparedStatement.executeQuery();
+            // Extract country information
+            ArrayList<Country> countries = new ArrayList<Country>();
+            while (rset.next())
+            {
+                Country country = new Country();
+                country.name = rset.getString("name");
+                country.population = rset.getInt("population");
+                country.region = rset.getString("region");
+
+                countries.add(country);
+            }
+            return countries;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get country details");
+            return null;
+        }
+
+    }
+
+    /**
+     * Gets top populated countries in the world from
+     * the database and returns the countries object filled with data
+     * @param con
+     * @param limit
+     * @return
+     * Report 4 */
+    public ArrayList<Country> getTopPopulatedCountriesInWorld(Connection con, int limit)
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    "SELECT name, population "
+                            + "FROM country "
+                            + "ORDER BY population DESC "
+                            + "Limit ?;";
+
+            // Create prepared statement with SQL statement
+            PreparedStatement preparedStatement = con.prepareStatement(strSelect);
+            //set sql statement ? to limit parameter
+            preparedStatement.setInt(1, limit);
+
+            // Execute SQL statement
+            ResultSet rset = preparedStatement.executeQuery();
+            // Extract country information
+            ArrayList<Country> countries = new ArrayList<Country>();
+            while (rset.next())
+            {
+                Country country = new Country();
+                country.name = rset.getString("name");
+                country.population = rset.getInt("population");
+
+                countries.add(country);
+            }
+            return countries;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get country details");
+            return null;
+        }
+
+    }
+
+    /**
+     * Gets top populated countries in a continent from
+     * the database and returns the countries object filled with data
+     * @param con
+     * @param continent
+     * @param limit
+     * @return
+     * Report 5 */
+    public ArrayList<Country> getTopPopulatedCountriesInContinent(Connection con, String continent, int limit)
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    "SELECT name, population, continent "
+                            + "FROM country "
+                            + "WHERE continent = ? "
+                            + "ORDER BY population DESC "
+                            + "Limit ?;";
+
+            // Create prepared statement with SQL statement
+            PreparedStatement preparedStatement = con.prepareStatement(strSelect);
+            //set sql statement ? to continent parameter
+            preparedStatement.setString(1, continent);
+            preparedStatement.setInt(2, limit);
+
+            // Execute SQL statement
+            ResultSet rset = preparedStatement.executeQuery();
+            // Extract country information
+            ArrayList<Country> countries = new ArrayList<Country>();
+            while (rset.next())
+            {
+                Country country = new Country();
+                country.name = rset.getString("name");
+                country.population = rset.getInt("population");
+                country.continent = rset.getString("continent");
+
+                countries.add(country);
+            }
+            return countries;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get country details");
+            return null;
+        }
+
+    }
+
+    /**
+     * Gets top populated countries in a region from
+     * the database and returns the countries object fulled with data
+     * @param con
+     * @param region
+     * @param limit
+     * @return
+     * report 6 */
+    public ArrayList<Country> getTopPopulatedCountriesInRegion(Connection con, String region, int limit)
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    "SELECT name, population, region "
+                            + "FROM country "
+                            + "WHERE region = ? "
+                            + "ORDER BY population DESC "
+                            + "Limit ?;";
+
+            // Create prepared statement with SQL statement
+            PreparedStatement preparedStatement = con.prepareStatement(strSelect);
+            //set sql statement ? to continent parameter
+            preparedStatement.setString(1, region);
+            preparedStatement.setInt(2, limit);
+
+            // Execute SQL statement
+            ResultSet rset = preparedStatement.executeQuery();
+            // Extract country information
+            ArrayList<Country> countries = new ArrayList<Country>();
+            while (rset.next())
+            {
+                Country country = new Country();
+                country.name = rset.getString("name");
+                country.population = rset.getInt("population");
+                country.region = rset.getString("region");
+
+                countries.add(country);
+            }
+            return countries;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get country details");
+            return null;
+        }
+
+    }
 
     /** Gets all the cities in the world from
      * the database and returns the cities object filled with data.

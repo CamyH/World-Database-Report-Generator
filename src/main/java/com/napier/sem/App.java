@@ -5,6 +5,7 @@ import com.napier.sem.report.Reports;
 import com.napier.sem.sql.AdditionalReports;
 import com.napier.sem.sql.Sql;
 import com.napier.sem.world.City;
+import com.napier.sem.world.Country;
 import com.napier.sem.world.PopulationData;
 
 import java.sql.Connection;
@@ -27,6 +28,38 @@ public class App
         // Database connection setup
         DbConnection dbc = new DbConnection();
         Connection con = dbc.getConnection();
+        Sql query = new Sql();
+        Reports report = new Reports();
+
+        // Return all countries in world to countries1 object
+        ArrayList<Country> countries1 = query.getAllCountriesInWorld(con);
+        // Display report from countries1
+        report.printCountriesInWorld(countries1);
+
+        // Return all countries in world to countries1 object
+        ArrayList<Country> countries2 = query.getAllCountriesInContinent(con, "Europe");
+        // Display report from countries1
+        report.printCountriesInContinent(countries2);
+
+        // Return all countries in world to countries1 object
+        ArrayList<Country> countries3 = query.getAllCountriesByRegion(con, "Caribbean");
+        // Display report from countries1
+        report.printCountriesInRegion(countries3);
+
+        // Return all countries in world to countries1 object
+        ArrayList<Country> countries4 = query.getTopPopulatedCountriesInWorld(con, 10);
+        // Display report from countries1
+        report.printCountriesInWorld(countries4);
+
+        // Return all countries in world to countries1 object
+        ArrayList<Country> countries5 = query.getTopPopulatedCountriesInContinent(con, "Europe", 10);
+        // Display report from countries1
+        report.printCountriesInContinent(countries5);
+
+        // Return all countries in world to countries1 object
+        ArrayList<Country> countries6 = query.getTopPopulatedCountriesInRegion(con, "Caribbean", 10);
+        // Display report from countries1
+        report.printCountriesInRegion(countries6);
 
         // Return all cities in world to cities7 object
         Sql query7 = new Sql();
