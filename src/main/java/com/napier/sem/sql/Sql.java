@@ -20,8 +20,8 @@ public class Sql {
     /**
      * Gets all the countries in the world from
      * the database and returns the countries object filled with data
-     * @param con
-     * @return
+     * @param con Holds the connection to the SQL database
+     * @return All countries and their populations in the world in order of largest to smallest in an ArrayList
      * Report 1 */
     public ArrayList<Country> getAllCountriesInWorld(Connection con)
     {
@@ -60,9 +60,9 @@ public class Sql {
     /**
      * Gets all the countries in a continet from
      * the database and returns the countries object filled with data
-     * @param con
-     * @param continent
-     * @return
+     * @param con Holds the connection to the SQL database
+     * @param continent Holds the string of a specified continent
+     * @return All countries and their populations in a continent in order of largest to smallest in an ArrayList
      * Report 2 */
     public ArrayList<Country> getAllCountriesInContinent(Connection con, String continent)
     {
@@ -109,9 +109,9 @@ public class Sql {
     /**
      * Gets all the countries in a continent from
      * the databse and returns the countries object filled with data
-     * @param con
-     * @param region
-     * @return
+     * @param con Holds the connection to the SQL database
+     * @param region Holds the of a specified region
+     * @return All countries and their populations in a region in order of largest to smallest in an ArrayList
      * Report 3 */
     public ArrayList<Country> getAllCountriesByRegion(Connection con, String region)
     {
@@ -158,9 +158,9 @@ public class Sql {
     /**
      * Gets top populated countries in the world from
      * the database and returns the countries object filled with data
-     * @param con
-     * @param limit
-     * @return
+     * @param con Holds the connection to the SQL database
+     * @param limit Holds the a number to limit the amount of results
+     * @return The top N countries and their populations in the world in order of largest to smallest in an ArrayList
      * Report 4 */
     public ArrayList<Country> getTopPopulatedCountriesInWorld(Connection con, int limit)
     {
@@ -206,10 +206,10 @@ public class Sql {
     /**
      * Gets top populated countries in a continent from
      * the database and returns the countries object filled with data
-     * @param con
+     * @param con Holds the connection to the SQL database
      * @param continent
-     * @param limit
-     * @return
+     * @param limit Holds the a number to limit the amount of results
+     * @return The top N countries and their populations in the continent in order of largest to smallest in an ArrayList
      * Report 5 */
     public ArrayList<Country> getTopPopulatedCountriesInContinent(Connection con, String continent, int limit)
     {
@@ -258,10 +258,10 @@ public class Sql {
     /**
      * Gets top populated countries in a region from
      * the database and returns the countries object fulled with data
-     * @param con
+     * @param con Holds the connection to the SQL database
      * @param region
-     * @param limit
-     * @return
+     * @param limit Holds the a number to limit the amount of results
+     * @return The top N countries and their populations in the region in order of largest to smallest in an ArrayList
      * report 6 */
     public ArrayList<Country> getTopPopulatedCountriesInRegion(Connection con, String region, int limit)
     {

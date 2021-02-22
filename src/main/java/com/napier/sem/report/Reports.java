@@ -82,7 +82,7 @@ public class Reports {
     {
         // Print header
         System.out.println(String.format("%-10s %-15s", "Name", "Population"));
-        // Loop over all employees in the list
+        // Loop over all countries in the list
         for (Country country : countries)
         {
             String country_string =
@@ -100,7 +100,7 @@ public class Reports {
     {
         // Print header
         System.out.println(String.format("%-10s %-15s %-10s", "Name", "Population", "Continent"));
-        // Loop over all employees in the list
+        // Loop over all countries in the list
         for (Country country : countries)
         {
             String country_string =
@@ -118,7 +118,7 @@ public class Reports {
     {
         // Print header
         System.out.println(String.format("%-10s %-15s %-10s", "Name", "Population", "Region"));
-        // Loop over all employees in the list
+        // Loop over all countries in the list
         for (Country country : countries)
         {
             String country_string =
