@@ -1,4 +1,4 @@
-package com.napier.sem.report;
+package com.napier.sem.sql;
 
 import com.napier.sem.world.PopulationData;
 
@@ -59,7 +59,7 @@ public class AdditionalReports {
             // Set SQL statement ? to continent parameter
             preparedStatement.setString(1, continent);
             // Execute SQL statement
-            ResultSet rset = preparedStatement.executeQuery(continentPopulation);
+            ResultSet rset = preparedStatement.executeQuery();
             // Return population of continent if calculation is valid
             // Check something is returned
             if(rset.next()) {
@@ -81,14 +81,16 @@ public class AdditionalReports {
      */
     public static Long getPopulationOfRegion(Connection con, String region) {
         try {
-            // Create SQL statement
-            Statement regionStatement = con.createStatement();
             // Create string for SQL statement
             String regionPopulation = "SELECT SUM(population) as regionPopulation " +
                     "FROM country " +
-                    "WHERE region = '" + region + "';";
+                    "WHERE region = ?;";
+            // Create prepared statement with SQL statement
+            PreparedStatement preparedStatement = con.prepareStatement(regionPopulation);
+            // Set SQL statement ? to continent parameter
+            preparedStatement.setString(1, region);
             // Execute SQL statement
-            ResultSet rset = regionStatement.executeQuery(regionPopulation);
+            ResultSet rset = preparedStatement.executeQuery();
             // Return population of continent if calculation is valid
             // Check something is returned
             if(rset.next()) {
@@ -110,14 +112,16 @@ public class AdditionalReports {
      */
     public static Long getCountryPopulation(Connection con, String code) {
         try {
-            // Create SQL statement
-            Statement countryPopulationStatement = con.createStatement();
             // Create string for SQL statement
             String countryPopulation = "SELECT name, population " +
                     "FROM country " +
-                    "WHERE code = '" + code + "';";
+                    "WHERE code = ?;";
+            // Create prepared statement with SQL statement
+            PreparedStatement preparedStatement = con.prepareStatement(countryPopulation);
+            // Set SQL statement ? to continent parameter
+            preparedStatement.setString(1, code);
             // Execute SQL statement
-            ResultSet rset = countryPopulationStatement.executeQuery(countryPopulation);
+            ResultSet rset = preparedStatement.executeQuery();
             // Return population of specified country + country name
             // Check something is returned
             if(rset.next()) {
@@ -139,14 +143,16 @@ public class AdditionalReports {
      */
     public static Long getDistrictPopulation(Connection con, String district) {
         try {
-            // Create SQL statement
-            Statement districtPopulationStatement = con.createStatement();
             // Create string for SQL statement
             String districtPopulation = "SELECT SUM(population) as districtPopulation " +
                     "FROM city " +
-                    "WHERE district = '" + district + "';";
+                    "WHERE district = ?;";
+            // Create prepared statement with SQL statement
+            PreparedStatement preparedStatement = con.prepareStatement(districtPopulation);
+            // Set SQL statement ? to continent parameter
+            preparedStatement.setString(1, district);
             // Execute SQL statement
-            ResultSet rset = districtPopulationStatement.executeQuery(districtPopulation);
+            ResultSet rset = preparedStatement.executeQuery();
             // Return population of specified district
             // Check something is returned
             if(rset.next()) {
@@ -168,14 +174,16 @@ public class AdditionalReports {
      */
     public static Long getCityPopulation(Connection con, String cityName) {
         try {
-            // Create SQL statement
-            Statement cityPopulationStatement = con.createStatement();
             // Create string for SQL statement
             String cityPopulation = "SELECT population " +
                     "FROM city " +
-                    "WHERE name = '" + cityName + "';";
+                    "WHERE name = ?;";
+            // Create prepared statement with SQL statement
+            PreparedStatement preparedStatement = con.prepareStatement(cityPopulation);
+            // Set SQL statement ? to cityName parameter
+            preparedStatement.setString(1, cityName);
             // Execute SQL statement
-            ResultSet rset = cityPopulationStatement.executeQuery(cityPopulation);
+            ResultSet rset = preparedStatement.executeQuery();
             // Return population of specified city
             // Check something is returned
             if(rset.next()) {
@@ -298,51 +306,6 @@ public class AdditionalReports {
             System.out.println(e.getMessage());
             System.out.println("Failed to get the requested population data.");
             return null;
-        }
-    }
-
-    /**
-     * Method to print all population data of each continent in the ArrayList
-     * @param popData ArrayList of data
-     */
-    public static void printPopulationDataContinent(ArrayList<PopulationData> popData) {
-        // Print header
-        System.out.println(String.format("%-30s %-15s %-15s %-15s", "Continent", "TotalPopulation", "PopulationInCities", "PopulationNotInCities"));
-        // Loop over all population data in the list
-        for (PopulationData populationData : popData) {
-            String dataString = String.format("%-30s %15s %15s %15s",
-                    populationData.identifier, populationData.population, populationData.populationInCities, populationData.populationNotInCities);
-            System.out.println(dataString);
-        }
-    }
-
-    /**
-     * Method to print all population data of each region in the ArrayList
-     * @param popData ArrayList of data
-     */
-    public static void printPopulationDataRegion(ArrayList<PopulationData> popData) {
-        // Print header
-        System.out.println(String.format("%-30s %-15s %-15s %-15s", "Region", "TotalPopulation", "PopulationInCities", "PopulationNotInCities"));
-        // Loop over all population data in the list
-        for (PopulationData populationData : popData) {
-            String dataString = String.format("%-30s %15s %15s %15s",
-                    populationData.identifier, populationData.population, populationData.populationInCities, populationData.populationNotInCities);
-            System.out.println(dataString);
-        }
-    }
-
-    /**
-     * Method to print all population data of each country in the ArrayList
-     * @param popData ArrayList of data
-     */
-    public static void printPopulationDataCountry(ArrayList<PopulationData> popData) {
-        // Print header
-        System.out.println(String.format("%-30s %-15s %-15s %-15s", "Country", "TotalPopulation", "PopulationInCities", "PopulationNotInCities"));
-        // Loop over all population data in the list
-        for (PopulationData populationData : popData) {
-            String dataString = String.format("%-30s %15s %15s %15s",
-                    populationData.identifier, populationData.population, populationData.populationInCities, populationData.populationNotInCities);
-            System.out.println(dataString);
         }
     }
 }
