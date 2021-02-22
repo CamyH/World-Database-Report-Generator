@@ -5,8 +5,8 @@ import java.util.ArrayList;
 
 /**
  * Author: Cameron
- * Date last modified: 21/02/2021
- * Purpose of class: Contains 6 methods to return populations of the world, a city, a district, a region, a continent & a country.
+ * Date last modified: 22/02/2021
+ * Purpose of class: Contains methods to return population data for specific requirements.
  */
 
 public class AdditionalReports {
