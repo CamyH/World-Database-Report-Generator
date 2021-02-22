@@ -1,4 +1,6 @@
-package com.napier.sem;
+package com.napier.sem.report;
+
+import com.napier.sem.world.PopulationData;
 
 import java.sql.*;
 import java.util.ArrayList;
