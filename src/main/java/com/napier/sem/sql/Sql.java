@@ -786,7 +786,7 @@ public class Sql {
     /**
      * Method to return all of the world's capital cities, sorted by descending population
      * @param con Holds the connection to the SQL database
-     * @return Name, country and population of every capital city in the world sorted by descending population, or null on error
+     * @return Name, country, district and population of every capital city in the world sorted by descending population, or null on error
      */
     public static ArrayList<City> getBiggestWorldCapitals(Connection con){
         try{
@@ -805,7 +805,8 @@ public class Sql {
             while (rset.next()){
                 City capital = new City();
                 capital.name = rset.getString("city.Name");
-                capital.country = rset.getString("country.Name:);");
+                capital.country = rset.getString("country.Name");
+                capital.district = rset.getString("country.District");
                 capital.population = rset.getString("city.Population");
                 biggestCapitals.add(capital);
             }
@@ -822,7 +823,7 @@ public class Sql {
      * Method to return all the capital cities in a user-defined continent sorted by descending population
      * @param con Holds the connection to the SQL database
      * @param cont The continent the user wants data for
-     * @return Name, country and population of all the capital cities in the continent sorted by population in descending order, or null on error
+     * @return Name, country, district and population of all the capital cities in the continent sorted by population in descending order, or null on error
      */
     public static ArrayList<City> getBiggestContinentCapitals(Connection con, String cont){
         try {
@@ -842,7 +843,8 @@ public class Sql {
             while (rset.next()) {
                 City capital = new City();
                 capital.name = rset.getString("city.Name");
-                capital.country = rset.getString("country.Name:);");
+                capital.country = rset.getString("country.Name");
+                capital.district = rset.getString("country.District");
                 capital.population = rset.getString("city.Population");
                 biggestContCapitals.add(capital);
             }
@@ -859,7 +861,7 @@ public class Sql {
      * Method to return all the capital cities in a user-defined region sorted by descending population
      * @param con Holds the connection to the SQL database
      * @param region The region the user wants data on
-     * @return Name, country and population of all capital cities in the specified region in descending order of population
+     * @return Name, country, district and population of all capital cities in the specified region in descending order of population
      */
     public static ArrayList<City> getBiggestRegionCapitals(Connection con, String region){
         try {
@@ -879,7 +881,8 @@ public class Sql {
             while (rset.next()) {
                 City capital = new City();
                 capital.name = rset.getString("city.Name");
-                capital.country = rset.getString("country.Name:);");
+                capital.country = rset.getString("country.Name");
+                capital.district = rset.getString("country.District");
                 capital.population = rset.getString("city.Population");
                 biggestRegionCapitals.add(capital);
             }
@@ -896,7 +899,7 @@ public class Sql {
      * Method to return the most populous n capital cities in the world, sorted by descending population
      * @param con Holds the connection to the SQL database
      * @param n The amount of cities the user wants returned
-     * @return The name, country and population of the n most populous capitals in the planet sorted by descending population or null on error
+     * @return The name, country, district and population of the n most populous capitals in the planet sorted by descending population or null on error
      */
     public static ArrayList<City> getNBiggestWorldCapitals(Connection con, int n){
         try{
@@ -916,7 +919,8 @@ public class Sql {
             while (rset.next()){
                 City capital = new City();
                 capital.name = rset.getString("city.Name");
-                capital.country = rset.getString("country.Name:);");
+                capital.country = rset.getString("country.Name");
+                capital.district = rset.getString("country.District");
                 capital.population = rset.getString("city.Population");
                 biggestNCapitals.add(capital);
             }
@@ -956,7 +960,8 @@ public class Sql {
             while (rset.next()) {
                 City capital = new City();
                 capital.name = rset.getString("city.Name");
-                capital.country = rset.getString("country.Name:);");
+                capital.country = rset.getString("country.Name");
+                capital.district = rset.getString("country.District");
                 capital.population = rset.getString("city.Population");
                 biggestNContCapitals.add(capital);
             }
@@ -996,7 +1001,8 @@ public class Sql {
             while (rset.next()) {
                 City capital = new City();
                 capital.name = rset.getString("city.Name");
-                capital.country = rset.getString("country.Name:);");
+                capital.country = rset.getString("country.Name");
+                capital.district = rset.getString("country.District");
                 capital.population = rset.getString("city.Population");
                 biggestNRegionCapitals.add(capital);
             }

@@ -114,7 +114,17 @@ public class App
         Reports.printCities(topPopulatedCitiesInDistrict);
 
         /************** CAPITAL CITIES FUNCTIONS ***************** Author Del */
+        //Report 3.1 - Return all the world's capitals by descending population
 
+        //Report 3.2 - Return all of Europe's capitals by descending population
+
+        //Report 3.3 - Return all of Southeast Asia's capitals by descending population
+
+        //Report 3.4 - Return the top 3 most populous capitals across the world by descending population
+
+        //Report 3.5 - Return the top 3 largest capitals in Europe by descending population
+
+        //Report 3.6 - Return the top 3 largest capitals in Southeast Asia by descending population
 
         /************** POPULATION FUNCTIONS ***************** Author Cameron */
         // Report 1:
