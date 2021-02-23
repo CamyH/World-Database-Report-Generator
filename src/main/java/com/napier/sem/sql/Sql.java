@@ -833,7 +833,7 @@ public class Sql {
                     "FROM city " +
                     "JOIN country ON city.CountryCode=country.Code " +
                     "WHERE city.ID = country.Capital " +
-                    "ORDER BY city.Population DESC ");
+                    "ORDER BY city.Population DESC; ");
             //Create prepared statement
             PreparedStatement preparedStatement = con.prepareStatement(biggestNCapitalsStatement);
             preparedStatement.setInt(1, n);
@@ -857,6 +857,36 @@ public class Sql {
         }
     }
 
+    public static ArrayList<City> getBiggestContinentCapitals(Connection con, String cont){
+        try {
+            //Create string for statement
+            String biggestNContCapitalsStatement = ("SELECT Name " +
+                    "FROM city " +
+                    "JOIN country ON city.CountryCode=country.Code " +
+                    "WHERE city.ID = country.Capital AND country.Continent = ? " +
+                    "ORDER BY city.Population DESC;");
+            //Create prepared statement
+            PreparedStatement preparedStatement = con.prepareStatement(biggestNContCapitalsStatement);
+            preparedStatement.setString(1, cont);
+            //Execute
+            ResultSet rset = preparedStatement.executeQuery();
+            //Extract information from ResultSet
+            ArrayList<City> biggestContCapitals = new ArrayList<>();
+            while (rset.next()) {
+                City capital = new City();
+                capital.name = rset.getString("city.Name");
+                capital.country = rset.getString("country.Name:);");
+                capital.population = rset.getString("city.Population");
+                biggestContCapitals.add(capital);
+            }
+            return biggestContCapitals;
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get continent's largest capital city details.");
+            return null;
+        }
+    }
     /**
      * Method to return the most populous capital cities from a single, user-defined continent
      * @param con Holds the connection to the SQL database
@@ -864,7 +894,7 @@ public class Sql {
      * @param cont The specific continent the user wants the largest capitals of
      * @return The name, country and population of the n most populous capitals in continent cont sorted by descending population, or null on error
      */
-    public static ArrayList<City> getBiggestContinentCapitals(Connection con, int n, String cont){
+    public static ArrayList<City> getNBiggestContinentCapitals(Connection con, int n, String cont){
         try {
             //Create string for statement
             String biggestNContCapitalsStatement = ("SELECT Name " +
