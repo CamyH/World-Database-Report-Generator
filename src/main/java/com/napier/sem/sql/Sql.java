@@ -795,7 +795,7 @@ public class Sql {
             String biggestNCapitalsStatement = ("SELECT Name " +
                     "FROM city " +
                     "JOIN country ON city.CountryCode=country.Code " +
-                    "WHERE city.id=country.Capital " +
+                    "WHERE city.ID = country.Capital " +
                     "ORDER BY city.Population DESC " +
                     "LIMIT ?;");
             //Create prepared statement
@@ -834,7 +834,7 @@ public class Sql {
             String biggestNContCapitalsStatement = ("SELECT Name " +
                     "FROM city " +
                     "JOIN country ON city.CountryCode=country.Code " +
-                    "WHERE city.id=country.Capital AND country.Continent = ? " +
+                    "WHERE city.ID = country.Capital AND country.Continent = ? " +
                     "ORDER BY city.Population DESC " +
                     "LIMIT ?;");
             //Create prepared statement
@@ -867,7 +867,7 @@ public class Sql {
             String biggestNContCapitalsStatement = ( "SELECT Name " +
                     "FROM city " +
                     "JOIN country ON city.CountryCode = country.Code " +
-                    "WHERE city.id = country.Capital AND ? = country.Region " +
+                    "WHERE city.ID = country.Capital AND ? = country.Region " +
                     "ORDER BY city.Population DESC" +
                     "LIMIT ?;");
             //Create prepared statement
