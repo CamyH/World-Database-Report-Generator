@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 public class Sql {
 
-    /************** COUNTRIES QUERIES ***************** Author Luke */
+    //************** COUNTRIES QUERIES ***************** Author Luke */
 
     /**
      * Gets all the countries in the world from
@@ -77,8 +77,6 @@ public class Sql {
     {
         try
         {
-            // Create an SQL statement
-            Statement stmt = con.createStatement();
             // Create string for SQL statement
             String strSelect =
                     "SELECT code, name, continent, region, population, capital "
@@ -129,8 +127,6 @@ public class Sql {
     {
         try
         {
-            // Create an SQL statement
-            Statement stmt = con.createStatement();
             // Create string for SQL statement
             String strSelect =
                     "SELECT code, name, continent, region, population, capital "
@@ -181,8 +177,6 @@ public class Sql {
     {
         try
         {
-            // Create an SQL statement
-            Statement stmt = con.createStatement();
             // Create string for SQL statement
             String strSelect =
                     "SELECT code, name, continent, region, population, capital "
@@ -234,8 +228,7 @@ public class Sql {
     {
         try
         {
-            // Create an SQL statement
-            Statement stmt = con.createStatement();
+
             // Create string for SQL statement
             String strSelect =
                     "SELECT code, name, continent, region, population, capital "
@@ -289,8 +282,6 @@ public class Sql {
     {
         try
         {
-            // Create an SQL statement
-            Statement stmt = con.createStatement();
             // Create string for SQL statement
             String strSelect =
                     "SELECT code, name, continent, region, population, capital "
@@ -332,7 +323,7 @@ public class Sql {
 
     }
 
-    /************** CITIES QUERIES ***************** Author Colin */
+    //************** CITIES QUERIES ***************** Author Colin */
 
     /**
      * Gets all the cities in the world from
@@ -790,7 +781,7 @@ public class Sql {
         }
     }
 
-    /************** CAPITAL CITIES QUERIES ***************** Author Del */
+    //************** CAPITAL CITIES QUERIES ***************** Author Del */
 
     /**
      * Method to return the most populous N capital cities in the world, N is specified by the user
@@ -870,7 +861,7 @@ public class Sql {
         }
     }
 
-    /************** POPULATION QUERIES ***************** Author Cameron */
+    //************** POPULATION QUERIES ***************** Author Cameron */
 
     /**
      * Method to return a list of population data for each continent
@@ -985,7 +976,7 @@ public class Sql {
     }
 
 
-    /************** ADDITIONAL QUERIES ***************** Author Cameron */
+    //************** ADDITIONAL QUERIES ***************** Author Cameron */
 
     /**
      * Method to return the population of the world
