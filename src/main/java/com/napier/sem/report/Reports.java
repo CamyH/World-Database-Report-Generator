@@ -23,12 +23,26 @@ public class Reports {
     {
         // Print header
         System.out.println(String.format("%-30s %-30s %-30s %-30s", "Name", "Country", "District", "Population"));
-        // Loop over all employees in the list
+        // Loop over all cities in the list
         for (City city : cities)
         {
             String city_string =
                     String.format("%-30s %-30s %-30s %-30s",
                             city.name, city.country, city.district, city.population);
+            System.out.println(city_string);
+        }
+    }
+
+    public static void printCapitals(ArrayList<City> capitals)
+    {
+        // Print header
+        System.out.println(String.format("%-30s %-30s %-30s", "Name", "Country", "Population"));
+        // Loop over all capitals in the list
+        for (City city : capitals)
+        {
+            String city_string =
+                    String.format("%-30s %-30s %-30s",
+                            city.name, city.country, city.population);
             System.out.println(city_string);
         }
     }
