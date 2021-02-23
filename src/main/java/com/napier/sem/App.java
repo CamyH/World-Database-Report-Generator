@@ -56,12 +56,12 @@ public class App
         ArrayList<Country> topPopulatedCountriesInContinent = Sql.getTopPopulatedCountriesInContinent(con, "Europe", 10);
         // Display report from topPopulatedCountriesInContinent
         Reports.printCountries(topPopulatedCountriesInContinent);
-*/
+
         // Report 6 - Return the top N countries in a region to topPopulatedCountriesInRegion object
         ArrayList<Country> topPopulatedCountriesInRegion = Sql.getTopPopulatedCountriesInRegion(con, "Caribbean", 10);
         // Display report from topPopulatedCountriesInRegion
         Reports.printCountries(topPopulatedCountriesInRegion);
-
+*/
         /************** CITIES FUNCTIONS ***************** Author Colin */
 /*
         // Report 7 - Return all cities in world to allCitiesInWorld object
@@ -109,14 +109,15 @@ public class App
         ArrayList<City> topPopulatedCitiesInCountry = Sql.getTopPopulatedCitiesInCountry(con, 10, "Brazil");
         // Display report from topPopulatedCitiesInCountry
         Reports.printCities(topPopulatedCitiesInCountry);
-*/
+
         // Report 16 - Return top N populated cities in the world to topPopulatedCitiesInDistrict object
         ArrayList<City> topPopulatedCitiesInDistrict = Sql.getTopPopulatedCitiesInDistrict(con, 10, "Scotland");
         //Display report from topPopulatedCitiesInDistrict
         Reports.printCities(topPopulatedCitiesInDistrict);
-
+*/
         /************** CAPITAL CITIES FUNCTIONS ***************** Author Del */
-/*
+
+        //Reusing PrintCities report function as the columns match
         //Report 3.1 - Return all the world's capitals by descending population
         ArrayList<City> biggestCapitals = Sql.getBiggestWorldCapitals(con);
         Reports.printCities(biggestCapitals);
@@ -135,14 +136,14 @@ public class App
         //Report 3.6 - Return the top 3 largest capitals in Southeast Asia by descending population
         ArrayList<City> biggest3SEAsiaCapitals = Sql.getNBiggestRegionCapitals(con, 3, "Southeast Asia");
         Reports.printCities(biggest3SEAsiaCapitals);
-*/
+
 
         /************** POPULATION FUNCTIONS ***************** Author Cameron */
         // Report 1:
         // The population of people, people living in cities, and people not living in cities in each continent.
         // Antarctica is not shown as the population is set to 0 in the database //
-        ArrayList<PopulationData> continentPopulationDataList = Sql.getPopulationDataContinent(con);
-        Reports.printPopulationDataContinent(continentPopulationDataList);
+        //ArrayList<PopulationData> continentPopulationDataList = Sql.getPopulationDataContinent(con);
+        //Reports.printPopulationDataContinent(continentPopulationDataList);
 
         // Report 2:
         // The population of people, people living in cities, and people not living in cities in each region.
