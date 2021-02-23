@@ -787,15 +787,15 @@ public class Sql {
      * Method to return all of the world's capital cities, sorted by descending population
      * @param con Holds the connection to the SQL database
      * @return Name, country, district and population of every capital city in the world sorted by descending population, or null on error
-     */
+     * Report 3.1 */
     public static ArrayList<City> getBiggestWorldCapitals(Connection con){
         try{
             //Create string for statement
-            String biggestNCapitalsStatement = ("SELECT Name " +
+            String biggestNCapitalsStatement = ("SELECT city.Name, country.name, city.District, city.Population " +
                     "FROM city " +
-                    "JOIN country ON city.CountryCode=country.Code " +
+                    "JOIN country ON city.CountryCode = country.Code " +
                     "WHERE city.ID = country.Capital " +
-                    "ORDER BY city.Population DESC ");
+                    "ORDER BY city.Population DESC;");
             //Create prepared statement
             PreparedStatement preparedStatement = con.prepareStatement(biggestNCapitalsStatement);
             //Execute
@@ -806,7 +806,7 @@ public class Sql {
                 City capital = new City();
                 capital.name = rset.getString("city.Name");
                 capital.country = rset.getString("country.Name");
-                capital.district = rset.getString("country.District");
+                capital.district = rset.getString("city.District");
                 capital.population = rset.getString("city.Population");
                 biggestCapitals.add(capital);
             }
@@ -824,11 +824,11 @@ public class Sql {
      * @param con Holds the connection to the SQL database
      * @param cont The continent the user wants data for
      * @return Name, country, district and population of all the capital cities in the continent sorted by population in descending order, or null on error
-     */
+     * Report 3.2 */
     public static ArrayList<City> getBiggestContinentCapitals(Connection con, String cont){
         try {
             //Create string for statement
-            String biggestContCapitalsStatement = ("SELECT Name " +
+            String biggestContCapitalsStatement = ("SELECT city.Name, country.name, city.District, city.Population " +
                     "FROM city " +
                     "JOIN country ON city.CountryCode=country.Code " +
                     "WHERE city.ID = country.Capital AND country.Continent = ? " +
@@ -844,7 +844,7 @@ public class Sql {
                 City capital = new City();
                 capital.name = rset.getString("city.Name");
                 capital.country = rset.getString("country.Name");
-                capital.district = rset.getString("country.District");
+                capital.district = rset.getString("city.District");
                 capital.population = rset.getString("city.Population");
                 biggestContCapitals.add(capital);
             }
@@ -862,11 +862,11 @@ public class Sql {
      * @param con Holds the connection to the SQL database
      * @param region The region the user wants data on
      * @return Name, country, district and population of all capital cities in the specified region in descending order of population
-     */
+     * Report 3.3 */
     public static ArrayList<City> getBiggestRegionCapitals(Connection con, String region){
         try {
             //Create string for statement
-            String biggestRegionCapitalsStatement = ( "SELECT Name " +
+            String biggestRegionCapitalsStatement = ( "SELECT city.Name, country.name, city.District, city.Population " +
                     "FROM city " +
                     "JOIN country ON city.CountryCode = country.Code " +
                     "WHERE city.ID = country.Capital AND country.Region = ?" +
@@ -882,7 +882,7 @@ public class Sql {
                 City capital = new City();
                 capital.name = rset.getString("city.Name");
                 capital.country = rset.getString("country.Name");
-                capital.district = rset.getString("country.District");
+                capital.district = rset.getString("city.District");
                 capital.population = rset.getString("city.Population");
                 biggestRegionCapitals.add(capital);
             }
@@ -900,15 +900,16 @@ public class Sql {
      * @param con Holds the connection to the SQL database
      * @param n The amount of cities the user wants returned
      * @return The name, country, district and population of the n most populous capitals in the planet sorted by descending population or null on error
-     */
+     * Report 3.4 */
     public static ArrayList<City> getNBiggestWorldCapitals(Connection con, int n){
         try{
             //Create string for statement
-            String biggestNCapitalsStatement = ("SELECT Name " +
+            String biggestNCapitalsStatement = ("SELECT city.Name, country.name, city.District, city.Population " +
                     "FROM city " +
                     "JOIN country ON city.CountryCode=country.Code " +
                     "WHERE city.ID = country.Capital " +
-                    "ORDER BY city.Population DESC; ");
+                    "ORDER BY city.Population DESC " +
+                    "LIMIT ?; ");
             //Create prepared statement
             PreparedStatement preparedStatement = con.prepareStatement(biggestNCapitalsStatement);
             preparedStatement.setInt(1, n);
@@ -920,7 +921,7 @@ public class Sql {
                 City capital = new City();
                 capital.name = rset.getString("city.Name");
                 capital.country = rset.getString("country.Name");
-                capital.district = rset.getString("country.District");
+                capital.district = rset.getString("city.District");
                 capital.population = rset.getString("city.Population");
                 biggestNCapitals.add(capital);
             }
@@ -938,14 +939,14 @@ public class Sql {
      * @param con Holds the connection to the SQL database
      * @param n The amount of cities the user wants returned
      * @param cont The specific continent the user wants the largest capitals of
-     * @return The name, country and population of the n most populous capitals in continent cont sorted by descending population, or null on error
-     */
+     * @return The name, country, district and population of the n most populous capitals in continent cont sorted by descending population, or null on error
+     * Report 3.5 */
     public static ArrayList<City> getNBiggestContinentCapitals(Connection con, int n, String cont){
         try {
             //Create string for statement
-            String biggestNContCapitalsStatement = ("SELECT Name " +
+            String biggestNContCapitalsStatement = ("SELECT city.Name, country.name, city.District, city.Population " +
                     "FROM city " +
-                    "JOIN country ON city.CountryCode=country.Code " +
+                    "JOIN country ON city.CountryCode = country.Code " +
                     "WHERE city.ID = country.Capital AND country.Continent = ? " +
                     "ORDER BY city.Population DESC " +
                     "LIMIT ?;");
@@ -961,7 +962,7 @@ public class Sql {
                 City capital = new City();
                 capital.name = rset.getString("city.Name");
                 capital.country = rset.getString("country.Name");
-                capital.district = rset.getString("country.District");
+                capital.district = rset.getString("city.District");
                 capital.population = rset.getString("city.Population");
                 biggestNContCapitals.add(capital);
             }
@@ -980,15 +981,15 @@ public class Sql {
      * @param n Amount of cities user wants data for
      * @param region Region that user wants to narrow search down to
      * @return n most populous capitals in the region sorted by descending population, or null on error
-     */
+     * Report 3.6 */
     public static ArrayList<City> getNBiggestRegionCapitals(Connection con, int n, String region){
         try {
             //Create string for statement
-            String biggestNRegionCapitalsStatement = ( "SELECT Name " +
+            String biggestNRegionCapitalsStatement = ( "SELECT city.Name, country.name, city.District, city.Population " +
                     "FROM city " +
                     "JOIN country ON city.CountryCode = country.Code " +
                     "WHERE city.ID = country.Capital AND country.Region = ? " +
-                    "ORDER BY city.Population DESC" +
+                    "ORDER BY city.Population DESC " +
                     "LIMIT ?;");
             //Create prepared statement
             PreparedStatement preparedStatement = con.prepareStatement(biggestNRegionCapitalsStatement);
@@ -1002,7 +1003,7 @@ public class Sql {
                 City capital = new City();
                 capital.name = rset.getString("city.Name");
                 capital.country = rset.getString("country.Name");
-                capital.district = rset.getString("country.District");
+                capital.district = rset.getString("city.District");
                 capital.population = rset.getString("city.Population");
                 biggestNRegionCapitals.add(capital);
             }
