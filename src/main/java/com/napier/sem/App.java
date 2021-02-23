@@ -7,7 +7,9 @@ import com.napier.sem.world.City;
 import com.napier.sem.world.Country;
 import com.napier.sem.world.PopulationData;
 
+import java.sql.Array;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 
 /**
@@ -54,12 +56,12 @@ public class App
         ArrayList<Country> topPopulatedCountriesInContinent = Sql.getTopPopulatedCountriesInContinent(con, "Europe", 10);
         // Display report from topPopulatedCountriesInContinent
         Reports.printCountries(topPopulatedCountriesInContinent);
-*/
+
         // Report 6 - Return the top N countries in a region to topPopulatedCountriesInRegion object
         ArrayList<Country> topPopulatedCountriesInRegion = Sql.getTopPopulatedCountriesInRegion(con, "Caribbean", 10);
         // Display report from topPopulatedCountriesInRegion
         Reports.printCountries(topPopulatedCountriesInRegion);
-
+*/
         /************** CITIES FUNCTIONS ***************** Author Colin */
 /*
         // Report 7 - Return all cities in world to allCitiesInWorld object
@@ -109,19 +111,38 @@ public class App
         Reports.printCities(topPopulatedCitiesInCountry);
 
         // Report 16 - Return top N populated cities in the world to topPopulatedCitiesInDistrict object
-        ArrayList<City> topPopulatedCitiesInDistrict = Sql.getTopPopulatedCitiesInDistrict(con, 3, "Scotland");
+        ArrayList<City> topPopulatedCitiesInDistrict = Sql.getTopPopulatedCitiesInDistrict(con, 10, "Scotland");
         //Display report from topPopulatedCitiesInDistrict
         Reports.printCities(topPopulatedCitiesInDistrict);
 */
         /************** CAPITAL CITIES FUNCTIONS ***************** Author Del */
-
+/*
+        //Reusing PrintCities report function as the columns match
+        //Report 3.1 - Return all the world's capitals by descending population
+        ArrayList<City> biggestCapitals = Sql.getBiggestWorldCapitals(con);
+        Reports.printCapitals(biggestCapitals);
+        //Report 3.2 - Return all of Europe's capitals by descending population
+        ArrayList<City> biggestEuropeCapitals = Sql.getBiggestContinentCapitals(con, "Europe");
+        Reports.printCapitals(biggestEuropeCapitals);
+        //Report 3.3 - Return all of Southeast Asia's capitals by descending population
+        ArrayList<City> biggestSEAsiaCapitals = Sql.getBiggestRegionCapitals(con, "Southeast Asia");
+        Reports.printCapitals(biggestSEAsiaCapitals);
+        //Report 3.4 - Return the top 3 most populous capitals across the world by descending population
+        ArrayList<City> biggest3Capitals = Sql.getNBiggestWorldCapitals(con, 3);
+        Reports.printCapitals(biggest3Capitals);
+        //Report 3.5 - Return the top 3 largest capitals in Europe by descending population
+        ArrayList<City> biggest3EuropeCapitals = Sql.getNBiggestContinentCapitals(con, 3, "Europe");
+        Reports.printCapitals(biggest3EuropeCapitals);
+        //Report 3.6 - Return the top 3 largest capitals in Southeast Asia by descending population
+        ArrayList<City> biggest3SEAsiaCapitals = Sql.getNBiggestRegionCapitals(con, 3, "Southeast Asia");
+        Reports.printCapitals(biggest3SEAsiaCapitals);
+*/
 
         /************** POPULATION FUNCTIONS ***************** Author Cameron */
         // Report 1:
         // The population of people, people living in cities, and people not living in cities in each continent.
         // Antarctica is not shown as the population is set to 0 in the database //
-        // ERROR - Causing in travis:   "mbind: Operation not permitted"
-        ArrayList<PopulationData> continentPopulationDataList = Sql.getPopulationDataContinent(con);
+        //ArrayList<PopulationData> continentPopulationDataList = Sql.getPopulationDataContinent(con);
         //Reports.printPopulationDataContinent(continentPopulationDataList);
 
         // Report 2:
@@ -137,7 +158,7 @@ public class App
         /************** ADDITIONAL FUNCTIONS ***************** Author Cameron */
         // Report 1:
         // Get population of the world
-        //Long totalPopulation = Sql.getWorldPopulation(con);
+        // Long totalPopulation = Sql.getWorldPopulation(con);
         // System.out.println("World Population: " + totalPopulation);
 
         // Report 2:

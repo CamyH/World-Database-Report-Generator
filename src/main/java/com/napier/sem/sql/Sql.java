@@ -4,6 +4,7 @@ import com.napier.sem.world.City;
 import com.napier.sem.world.Country;
 import com.napier.sem.world.PopulationData;
 
+import javax.xml.transform.Result;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,7 +20,7 @@ import java.util.ArrayList;
 
 public class Sql {
 
-    /************** COUNTRIES QUERIES ***************** Author Luke */
+    //************** COUNTRIES QUERIES ***************** Author Luke */
 
     /**
      * Gets all the countries in the world from
@@ -41,7 +42,7 @@ public class Sql {
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
             // Extract country information
-            ArrayList<Country> countries = new ArrayList<Country>();
+            ArrayList<Country> countries = new ArrayList<>();
             while (rset.next())
             {
                 Country country = new Country();
@@ -76,8 +77,6 @@ public class Sql {
     {
         try
         {
-            // Create an SQL statement
-            Statement stmt = con.createStatement();
             // Create string for SQL statement
             String strSelect =
                     "SELECT code, name, continent, region, population, capital "
@@ -93,7 +92,7 @@ public class Sql {
             // Execute SQL statement
             ResultSet rset = preparedStatement.executeQuery();
             // Extract country information
-            ArrayList<Country> countries = new ArrayList<Country>();
+            ArrayList<Country> countries = new ArrayList<>();
             while (rset.next())
             {
                 Country country = new Country();
@@ -128,8 +127,6 @@ public class Sql {
     {
         try
         {
-            // Create an SQL statement
-            Statement stmt = con.createStatement();
             // Create string for SQL statement
             String strSelect =
                     "SELECT code, name, continent, region, population, capital "
@@ -145,7 +142,7 @@ public class Sql {
             // Execute SQL statement
             ResultSet rset = preparedStatement.executeQuery();
             // Extract country information
-            ArrayList<Country> countries = new ArrayList<Country>();
+            ArrayList<Country> countries = new ArrayList<>();
             while (rset.next())
             {
                 Country country = new Country();
@@ -180,8 +177,6 @@ public class Sql {
     {
         try
         {
-            // Create an SQL statement
-            Statement stmt = con.createStatement();
             // Create string for SQL statement
             String strSelect =
                     "SELECT code, name, continent, region, population, capital "
@@ -197,7 +192,7 @@ public class Sql {
             // Execute SQL statement
             ResultSet rset = preparedStatement.executeQuery();
             // Extract country information
-            ArrayList<Country> countries = new ArrayList<Country>();
+            ArrayList<Country> countries = new ArrayList<>();
             while (rset.next())
             {
                 Country country = new Country();
@@ -233,8 +228,7 @@ public class Sql {
     {
         try
         {
-            // Create an SQL statement
-            Statement stmt = con.createStatement();
+
             // Create string for SQL statement
             String strSelect =
                     "SELECT code, name, continent, region, population, capital "
@@ -252,7 +246,7 @@ public class Sql {
             // Execute SQL statement
             ResultSet rset = preparedStatement.executeQuery();
             // Extract country information
-            ArrayList<Country> countries = new ArrayList<Country>();
+            ArrayList<Country> countries = new ArrayList<>();
             while (rset.next())
             {
                 Country country = new Country();
@@ -288,8 +282,6 @@ public class Sql {
     {
         try
         {
-            // Create an SQL statement
-            Statement stmt = con.createStatement();
             // Create string for SQL statement
             String strSelect =
                     "SELECT code, name, continent, region, population, capital "
@@ -307,7 +299,7 @@ public class Sql {
             // Execute SQL statement
             ResultSet rset = preparedStatement.executeQuery();
             // Extract country information
-            ArrayList<Country> countries = new ArrayList<Country>();
+            ArrayList<Country> countries = new ArrayList<>();
             while (rset.next())
             {
                 Country country = new Country();
@@ -331,7 +323,7 @@ public class Sql {
 
     }
 
-    /************** CITIES QUERIES ***************** Author Colin */
+    //************** CITIES QUERIES ***************** Author Colin */
 
     /**
      * Gets all the cities in the world from
@@ -352,7 +344,7 @@ public class Sql {
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
             // Extract city information
-            ArrayList<City> cities = new ArrayList<City>();
+            ArrayList<City> cities = new ArrayList<>();
             while (rset.next())
             {
                 City city = new City();
@@ -397,7 +389,7 @@ public class Sql {
             ResultSet rset = preparedStatement.executeQuery();
 
             // Extract city information
-            ArrayList<City> cities = new ArrayList<City>();
+            ArrayList<City> cities = new ArrayList<>();
             while (rset.next())
             {
                 City city = new City();
@@ -441,7 +433,7 @@ public class Sql {
             ResultSet rset = preparedStatement.executeQuery();
 
             // Extract city information
-            ArrayList<City> cities = new ArrayList<City>();
+            ArrayList<City> cities = new ArrayList<>();
             while (rset.next())
             {
                 City city = new City();
@@ -486,7 +478,7 @@ public class Sql {
             ResultSet rset = preparedStatement.executeQuery();
 
             // Extract city information
-            ArrayList<City> cities = new ArrayList<City>();
+            ArrayList<City> cities = new ArrayList<>();
             while (rset.next())
             {
                 City city = new City();
@@ -531,7 +523,7 @@ public class Sql {
             ResultSet rset = preparedStatement.executeQuery();
 
             // Extract city information
-            ArrayList<City> cities = new ArrayList<City>();
+            ArrayList<City> cities = new ArrayList<>();
             while (rset.next())
             {
                 City city = new City();
@@ -577,7 +569,7 @@ public class Sql {
             ResultSet rset = preparedStatement.executeQuery();
 
             // Extract city information
-            ArrayList<City> cities = new ArrayList<City>();
+            ArrayList<City> cities = new ArrayList<>();
             while (rset.next())
             {
                 City city = new City();
@@ -625,7 +617,7 @@ public class Sql {
             ResultSet rset = preparedStatement.executeQuery();
 
             // Extract city information
-            ArrayList<City> cities = new ArrayList<City>();
+            ArrayList<City> cities = new ArrayList<>();
             while (rset.next())
             {
                 City city = new City();
@@ -672,7 +664,7 @@ public class Sql {
             ResultSet rset = preparedStatement.executeQuery();
 
             // Extract city information
-            ArrayList<City> cities = new ArrayList<City>();
+            ArrayList<City> cities = new ArrayList<>();
             while (rset.next())
             {
                 City city = new City();
@@ -721,7 +713,7 @@ public class Sql {
             ResultSet rset = preparedStatement.executeQuery();
 
             // Extract city information
-            ArrayList<City> cities = new ArrayList<City>();
+            ArrayList<City> cities = new ArrayList<>();
             while (rset.next())
             {
                 City city = new City();
@@ -768,7 +760,7 @@ public class Sql {
             ResultSet rset = preparedStatement.executeQuery();
 
             // Extract city information
-            ArrayList<City> cities = new ArrayList<City>();
+            ArrayList<City> cities = new ArrayList<>();
             while (rset.next())
             {
                 City city = new City();
@@ -789,12 +781,236 @@ public class Sql {
         }
     }
 
-    /************** CAPITAL CITIES QUERIES ***************** Author Del */
+    //************** CAPITAL CITIES QUERIES ***************** Author Del */
 
+    /**
+     * Method to return all of the world's capital cities, sorted by descending population
+     * @param con Holds the connection to the SQL database
+     * @return Name, country, district and population of every capital city in the world sorted by descending population, or null on error
+     * Report 3.1 */
+    public static ArrayList<City> getBiggestWorldCapitals(Connection con){
+        try{
+            //Create string for statement
+            String biggestNCapitalsStatement = ("SELECT city.Name, country.name, city.Population " +
+                    "FROM city " +
+                    "JOIN country ON city.CountryCode = country.Code " +
+                    "WHERE city.ID = country.Capital " +
+                    "ORDER BY city.Population DESC;");
+            //Create prepared statement
+            PreparedStatement preparedStatement = con.prepareStatement(biggestNCapitalsStatement);
+            //Execute
+            ResultSet rset = preparedStatement.executeQuery();
+            //Extract information from ResultSet
+            ArrayList<City> biggestCapitals = new ArrayList<>();
+            while (rset.next()){
+                City capital = new City();
+                capital.name = rset.getString("city.Name");
+                capital.country = rset.getString("country.Name");
+                capital.population = rset.getString("city.Population");
+                biggestCapitals.add(capital);
+            }
+            return biggestCapitals;
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get world's largest capital city details.");
+            return null;
+        }
+    }
 
+    /**
+     * Method to return all the capital cities in a user-defined continent sorted by descending population
+     * @param con Holds the connection to the SQL database
+     * @param cont The continent the user wants data for
+     * @return Name, country, district and population of all the capital cities in the continent sorted by population in descending order, or null on error
+     * Report 3.2 */
+    public static ArrayList<City> getBiggestContinentCapitals(Connection con, String cont){
+        try {
+            //Create string for statement
+            String biggestContCapitalsStatement = ("SELECT city.Name, country.name, city.Population " +
+                    "FROM city " +
+                    "JOIN country ON city.CountryCode=country.Code " +
+                    "WHERE city.ID = country.Capital AND country.Continent = ? " +
+                    "ORDER BY city.Population DESC;");
+            //Create prepared statement
+            PreparedStatement preparedStatement = con.prepareStatement(biggestContCapitalsStatement);
+            preparedStatement.setString(1, cont);
+            //Execute
+            ResultSet rset = preparedStatement.executeQuery();
+            //Extract information from ResultSet
+            ArrayList<City> biggestContCapitals = new ArrayList<>();
+            while (rset.next()) {
+                City capital = new City();
+                capital.name = rset.getString("city.Name");
+                capital.country = rset.getString("country.Name");
+                capital.population = rset.getString("city.Population");
+                biggestContCapitals.add(capital);
+            }
+            return biggestContCapitals;
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get continent's largest capital city details.");
+            return null;
+        }
+    }
 
+    /**
+     * Method to return all the capital cities in a user-defined region sorted by descending population
+     * @param con Holds the connection to the SQL database
+     * @param region The region the user wants data on
+     * @return Name, country, district and population of all capital cities in the specified region in descending order of population
+     * Report 3.3 */
+    public static ArrayList<City> getBiggestRegionCapitals(Connection con, String region){
+        try {
+            //Create string for statement
+            String biggestRegionCapitalsStatement = ( "SELECT city.Name, country.name, city.Population " +
+                    "FROM city " +
+                    "JOIN country ON city.CountryCode = country.Code " +
+                    "WHERE city.ID = country.Capital AND country.Region = ?" +
+                    "ORDER BY city.Population DESC;");
+            //Create prepared statement
+            PreparedStatement preparedStatement = con.prepareStatement(biggestRegionCapitalsStatement);
+            preparedStatement.setString(1, region);
+            //Execute
+            ResultSet rset = preparedStatement.executeQuery();
+            //Extract information from ResultSet
+            ArrayList<City> biggestRegionCapitals = new ArrayList<>();
+            while (rset.next()) {
+                City capital = new City();
+                capital.name = rset.getString("city.Name");
+                capital.country = rset.getString("country.Name");
+                capital.population = rset.getString("city.Population");
+                biggestRegionCapitals.add(capital);
+            }
+            return biggestRegionCapitals;
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get region's largest capital city details.");
+            return null;
+        }
+    }
 
-    /************** POPULATION QUERIES ***************** Author Cameron */
+    /**
+     * Method to return the most populous n capital cities in the world, sorted by descending population
+     * @param con Holds the connection to the SQL database
+     * @param n The amount of cities the user wants returned
+     * @return The name, country, district and population of the n most populous capitals in the planet sorted by descending population or null on error
+     * Report 3.4 */
+    public static ArrayList<City> getNBiggestWorldCapitals(Connection con, int n){
+        try{
+            //Create string for statement
+            String biggestNCapitalsStatement = ("SELECT city.Name, country.name, city.Population " +
+                    "FROM city " +
+                    "JOIN country ON city.CountryCode=country.Code " +
+                    "WHERE city.ID = country.Capital " +
+                    "ORDER BY city.Population DESC " +
+                    "LIMIT ?; ");
+            //Create prepared statement
+            PreparedStatement preparedStatement = con.prepareStatement(biggestNCapitalsStatement);
+            preparedStatement.setInt(1, n);
+            //Execute
+            ResultSet rset = preparedStatement.executeQuery();
+            //Extract information from ResultSet
+            ArrayList<City> biggestNCapitals = new ArrayList<>();
+            while (rset.next()){
+                City capital = new City();
+                capital.name = rset.getString("city.Name");
+                capital.country = rset.getString("country.Name");
+                capital.population = rset.getString("city.Population");
+                biggestNCapitals.add(capital);
+            }
+            return biggestNCapitals;
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get world's largest capital city details.");
+            return null;
+        }
+    }
+
+    /**
+     * Method to return the n most populous capital cities from a single, user-defined continent
+     * @param con Holds the connection to the SQL database
+     * @param n The amount of cities the user wants returned
+     * @param cont The specific continent the user wants the largest capitals of
+     * @return The name, country, district and population of the n most populous capitals in continent cont sorted by descending population, or null on error
+     * Report 3.5 */
+    public static ArrayList<City> getNBiggestContinentCapitals(Connection con, int n, String cont){
+        try {
+            //Create string for statement
+            String biggestNContCapitalsStatement = ("SELECT city.Name, country.name, city.Population " +
+                    "FROM city " +
+                    "JOIN country ON city.CountryCode = country.Code " +
+                    "WHERE city.ID = country.Capital AND country.Continent = ? " +
+                    "ORDER BY city.Population DESC " +
+                    "LIMIT ?;");
+            //Create prepared statement
+            PreparedStatement preparedStatement = con.prepareStatement(biggestNContCapitalsStatement);
+            preparedStatement.setString(1, cont);
+            preparedStatement.setInt(2, n);
+            //Execute
+            ResultSet rset = preparedStatement.executeQuery();
+            //Extract information from ResultSet
+            ArrayList<City> biggestNContCapitals = new ArrayList<>();
+            while (rset.next()) {
+                City capital = new City();
+                capital.name = rset.getString("city.Name");
+                capital.country = rset.getString("country.Name");
+                capital.population = rset.getString("city.Population");
+                biggestNContCapitals.add(capital);
+            }
+            return biggestNContCapitals;
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get continent's largest capital city details.");
+            return null;
+        }
+    }
+
+    /**
+     * Method to return the n most populous capitals in a user-defined region, sorted by descending population
+     * @param con Holds the connection to the SQL database
+     * @param n Amount of cities user wants data for
+     * @param region Region that user wants to narrow search down to
+     * @return n most populous capitals in the region sorted by descending population, or null on error
+     * Report 3.6 */
+    public static ArrayList<City> getNBiggestRegionCapitals(Connection con, int n, String region){
+        try {
+            //Create string for statement
+            String biggestNRegionCapitalsStatement = ( "SELECT city.Name, country.name, city.Population " +
+                    "FROM city " +
+                    "JOIN country ON city.CountryCode = country.Code " +
+                    "WHERE city.ID = country.Capital AND country.Region = ? " +
+                    "ORDER BY city.Population DESC " +
+                    "LIMIT ?;");
+            //Create prepared statement
+            PreparedStatement preparedStatement = con.prepareStatement(biggestNRegionCapitalsStatement);
+            preparedStatement.setString(1, region);
+            preparedStatement.setInt(2, n);
+            //Execute
+            ResultSet rset = preparedStatement.executeQuery();
+            //Extract information from ResultSet
+            ArrayList<City> biggestNRegionCapitals = new ArrayList<>();
+            while (rset.next()) {
+                City capital = new City();
+                capital.name = rset.getString("city.Name");
+                capital.country = rset.getString("country.Name");
+                capital.population = rset.getString("city.Population");
+                biggestNRegionCapitals.add(capital);
+            }
+            return biggestNRegionCapitals;
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get region's largest capital city details.");
+            return null;
+        }
+    }
+
+    //************** POPULATION QUERIES ***************** Author Cameron */
 
     /**
      * Method to return a list of population data for each continent
@@ -909,7 +1125,7 @@ public class Sql {
     }
 
 
-    /************** ADDITIONAL QUERIES ***************** Author Cameron */
+    //************** ADDITIONAL QUERIES ***************** Author Cameron */
 
     /**
      * Method to return the population of the world
