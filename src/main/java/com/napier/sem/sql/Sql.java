@@ -787,9 +787,9 @@ public class Sql {
      * Method to return the most populous N capital cities in the world, N is specified by the user
      * @param con Holds the connection to the SQL database
      * @param n The amount of cities the user wants returned
-     * @return The name, country and population of the n most populous capitals in the planet, or null on error
+     * @return The name, country and population of the n most populous capitals in the planet sorted by descending population or null on error
      */
-    public static ArrayList<City> getBiggestWorldCapitals(Connection con, int n){
+    public static ArrayList<City> getNBiggestWorldCapitals(Connection con, int n){
         try{
             //Create string for statement
             String biggestNCapitalsStatement = ("SELECT Name " +
@@ -826,7 +826,7 @@ public class Sql {
      * @param con Holds the connection to the SQL database
      * @param n The amount of cities the user wants returned
      * @param cont The specific continent the user wants the largest capitals of
-     * @return The name, country and population of the n most populous capitals in continent cont, or null on error
+     * @return The name, country and population of the n most populous capitals in continent cont sorted by descending population, or null on error
      */
     public static ArrayList<City> getBiggestContinentCapitals(Connection con, int n, String cont){
         try {
@@ -861,6 +861,13 @@ public class Sql {
         }
     }
 
+    /**
+     * Method to return n most populous capitals in a user-defined region, sorted by descending population
+     * @param con Holds the connection to the SQL database
+     * @param n Amount of cities user wants data for
+     * @param region Region that user wants to narrow search down to
+     * @return n most populous capitals in the region sorted by descending population, or null on error
+     */
     public static ArrayList<City> getBiggestRegionCapitals(Connection con, int n, String region){
         try {
             //Create string for statement
