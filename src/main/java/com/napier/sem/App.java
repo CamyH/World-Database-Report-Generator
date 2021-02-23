@@ -33,41 +33,41 @@ public class App
         // Report 1 - Return all countries in the world to allCountriesInWorld object
         ArrayList<Country> allCountriesInWorld = Sql.getAllCountriesInWorld(con);
         // Display report from allCountriesInWorld
-        Reports.printCountriesInWorld(allCountriesInWorld);
+        Reports.printCountries(allCountriesInWorld);
 
         // Report 2 - Return all countries in a continent to allCountriesInContinent object
         ArrayList<Country> allCountriesInContinent = Sql.getAllCountriesInContinent(con, "Europe");
         // Display report from allCountriesInContinent
-        Reports.printCountriesInContinent(allCountriesInContinent);
+        Reports.printCountries(allCountriesInContinent);
 
         // Report 3 - Return all countries in a region to allCountriesByRegion object
         ArrayList<Country> allCountriesByRegion = Sql.getAllCountriesByRegion(con, "Caribbean");
         // Display report from allCountriesByRegion
-        Reports.printCountriesInRegion(allCountriesByRegion);
+        Reports.printCountries(allCountriesByRegion);
 
         // Report 4 - Return the top N countries in the world to topPopulatedCountriesInWorld object
         ArrayList<Country> topPopulatedCountriesInWorld = Sql.getTopPopulatedCountriesInWorld(con, 10);
         // Display report from topPopulatedCountriesInWorld
-        Reports.printCountriesInWorld(topPopulatedCountriesInWorld);
+        Reports.printCountries(topPopulatedCountriesInWorld);
 
         // Report 5 - Return the top N countries in a continent to topPopulatedCountriesInContinent object
         ArrayList<Country> topPopulatedCountriesInContinent = Sql.getTopPopulatedCountriesInContinent(con, "Europe", 10);
         // Display report from topPopulatedCountriesInContinent
-        Reports.printCountriesInContinent(topPopulatedCountriesInContinent);
-
+        Reports.printCountries(topPopulatedCountriesInContinent);
+*/
         // Report 6 - Return the top N countries in a region to topPopulatedCountriesInRegion object
         ArrayList<Country> topPopulatedCountriesInRegion = Sql.getTopPopulatedCountriesInRegion(con, "Caribbean", 10);
         // Display report from topPopulatedCountriesInRegion
-        Reports.printCountriesInRegion(topPopulatedCountriesInRegion);
-*/
-        /************** CITIES FUNCTIONS ***************** Author Colin */
+        Reports.printCountries(topPopulatedCountriesInRegion);
 
+        /************** CITIES FUNCTIONS ***************** Author Colin */
+/*
         // Report 7 - Return all cities in world to allCitiesInWorld object
         ArrayList<City> allCitiesInWorld = Sql.getAllCitiesInWorld(con);
         // Display report from allCitiesInWorld
         assert allCitiesInWorld != null;
         Reports.printCities(allCitiesInWorld);
-/*
+
         // Report 8 - Return all cities in a continent to allCitiesInContinent object
         ArrayList<City> allCitiesInContinent = Sql.getAllCitiesInContinent(con, "Asia");
         // Display report from allCitiesInContinent
@@ -107,12 +107,12 @@ public class App
         ArrayList<City> topPopulatedCitiesInCountry = Sql.getTopPopulatedCitiesInCountry(con, 10, "Brazil");
         // Display report from topPopulatedCitiesInCountry
         Reports.printCities(topPopulatedCitiesInCountry);
-
+*/
         // Report 16 - Return top N populated cities in the world to topPopulatedCitiesInDistrict object
         ArrayList<City> topPopulatedCitiesInDistrict = Sql.getTopPopulatedCitiesInDistrict(con, 10, "Scotland");
         //Display report from topPopulatedCitiesInDistrict
         Reports.printCities(topPopulatedCitiesInDistrict);
-*/
+
         /************** CAPITAL CITIES FUNCTIONS ***************** Author Del */
 
 

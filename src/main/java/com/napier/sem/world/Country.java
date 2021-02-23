@@ -3,6 +3,11 @@ package com.napier.sem.world;
 public class Country {
 
     /**
+     * Code to Identify country
+     */
+    public String code;
+
+    /**
      * Name of the country
      */
     public String name;
@@ -21,4 +26,9 @@ public class Country {
      * Population of a country
      */
     public int population;
+
+    /**
+     * ID for the city which is the capital
+     */
+    public int capital;
 }

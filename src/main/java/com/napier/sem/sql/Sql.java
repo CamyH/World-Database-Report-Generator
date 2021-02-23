@@ -35,7 +35,7 @@ public class Sql {
             Statement stmt = con.createStatement();
             // Create string for SQL statement
             String strSelect =
-                    "SELECT name, population "
+                    "SELECT code, name, continent, region, population, capital "
                             + "FROM country "
                             + "ORDER BY population DESC;";
             // Execute SQL statement
@@ -45,8 +45,12 @@ public class Sql {
             while (rset.next())
             {
                 Country country = new Country();
+                country.code = rset.getString("code");
                 country.name = rset.getString("name");
+                country.continent = rset.getString("continent");
+                country.region = rset.getString("region");
                 country.population = rset.getInt("population");
+                country.capital = rset.getInt("capital");
 
                 countries.add(country);
             }
@@ -76,7 +80,7 @@ public class Sql {
             Statement stmt = con.createStatement();
             // Create string for SQL statement
             String strSelect =
-                    "SELECT name, population, continent "
+                    "SELECT code, name, continent, region, population, capital "
                             + "FROM country "
                             + "WHERE continent = ? "
                             + "ORDER BY population DESC;";
@@ -93,9 +97,12 @@ public class Sql {
             while (rset.next())
             {
                 Country country = new Country();
+                country.code = rset.getString("code");
                 country.name = rset.getString("name");
-                country.population = rset.getInt("population");
                 country.continent = rset.getString("continent");
+                country.region = rset.getString("region");
+                country.population = rset.getInt("population");
+                country.capital = rset.getInt("capital");
 
                 countries.add(country);
             }
@@ -125,7 +132,7 @@ public class Sql {
             Statement stmt = con.createStatement();
             // Create string for SQL statement
             String strSelect =
-                    "SELECT name, population, region "
+                    "SELECT code, name, continent, region, population, capital "
                             + "FROM country "
                             + "WHERE region = ? "
                             + "ORDER BY population DESC;";
@@ -142,9 +149,12 @@ public class Sql {
             while (rset.next())
             {
                 Country country = new Country();
+                country.code = rset.getString("code");
                 country.name = rset.getString("name");
-                country.population = rset.getInt("population");
+                country.continent = rset.getString("continent");
                 country.region = rset.getString("region");
+                country.population = rset.getInt("population");
+                country.capital = rset.getInt("capital");
 
                 countries.add(country);
             }
@@ -174,7 +184,7 @@ public class Sql {
             Statement stmt = con.createStatement();
             // Create string for SQL statement
             String strSelect =
-                    "SELECT name, population "
+                    "SELECT code, name, continent, region, population, capital "
                             + "FROM country "
                             + "ORDER BY population DESC "
                             + "Limit ?;";
@@ -191,8 +201,12 @@ public class Sql {
             while (rset.next())
             {
                 Country country = new Country();
+                country.code = rset.getString("code");
                 country.name = rset.getString("name");
+                country.continent = rset.getString("continent");
+                country.region = rset.getString("region");
                 country.population = rset.getInt("population");
+                country.capital = rset.getInt("capital");
 
                 countries.add(country);
             }
@@ -223,7 +237,7 @@ public class Sql {
             Statement stmt = con.createStatement();
             // Create string for SQL statement
             String strSelect =
-                    "SELECT name, population, continent "
+                    "SELECT code, name, continent, region, population, capital "
                             + "FROM country "
                             + "WHERE continent = ? "
                             + "ORDER BY population DESC "
@@ -242,9 +256,12 @@ public class Sql {
             while (rset.next())
             {
                 Country country = new Country();
+                country.code = rset.getString("code");
                 country.name = rset.getString("name");
-                country.population = rset.getInt("population");
                 country.continent = rset.getString("continent");
+                country.region = rset.getString("region");
+                country.population = rset.getInt("population");
+                country.capital = rset.getInt("capital");
 
                 countries.add(country);
             }
@@ -275,7 +292,7 @@ public class Sql {
             Statement stmt = con.createStatement();
             // Create string for SQL statement
             String strSelect =
-                    "SELECT name, population, region "
+                    "SELECT code, name, continent, region, population, capital "
                             + "FROM country "
                             + "WHERE region = ? "
                             + "ORDER BY population DESC "
@@ -294,9 +311,12 @@ public class Sql {
             while (rset.next())
             {
                 Country country = new Country();
+                country.code = rset.getString("code");
                 country.name = rset.getString("name");
-                country.population = rset.getInt("population");
+                country.continent = rset.getString("continent");
                 country.region = rset.getString("region");
+                country.population = rset.getInt("population");
+                country.capital = rset.getInt("capital");
 
                 countries.add(country);
             }

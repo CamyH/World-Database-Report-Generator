@@ -82,52 +82,16 @@ public class Reports {
      * Method to print all countries and their population from largest to smallest
      * @param countries
      */
-    public static void printCountriesInWorld(ArrayList<Country> countries)
+    public static void printCountries(ArrayList<Country> countries)
     {
         // Print header
-        System.out.println(String.format("%-10s %-15s", "Name", "Population"));
+        System.out.println(String.format("%-10s %-15s %-10s %-15s %-10s %-15s", "Code", "Name", "Continent", "Region", "Population", "Capital"));
         // Loop over all countries in the list
         for (Country country : countries)
         {
             String country_string =
-                    String.format("%-10s %-15s",
-                            country.name, country.population);
-            System.out.println(country_string);
-        }
-    }
-
-    /**
-     * Method to print countries and their population of a specified continent from smallest to largest
-     * @param countries
-     */
-    public static void printCountriesInContinent(ArrayList<Country> countries)
-    {
-        // Print header
-        System.out.println(String.format("%-10s %-15s %-10s", "Name", "Population", "Continent"));
-        // Loop over all countries in the list
-        for (Country country : countries)
-        {
-            String country_string =
-                    String.format("%-10s %-15s %-10s",
-                            country.name, country.population, country.continent);
-            System.out.println(country_string);
-        }
-    }
-
-    /**
-     * Method to print countries and their population of a specified region from smalled to largest
-     * @param countries
-     */
-    public static void printCountriesInRegion(ArrayList<Country> countries)
-    {
-        // Print header
-        System.out.println(String.format("%-10s %-15s %-10s", "Name", "Population", "Region"));
-        // Loop over all countries in the list
-        for (Country country : countries)
-        {
-            String country_string =
-                    String.format("%-10s %-15s %-10s",
-                            country.name, country.population, country.region);
+                    String.format("%-10s %-15s %-10s %-15s %-10s %-15s",
+                            country.code, country.name, country.continent, country.region, country.population, country.capital);
             System.out.println(country_string);
         }
     }
