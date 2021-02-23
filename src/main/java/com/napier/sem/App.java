@@ -109,7 +109,7 @@ public class App
         Reports.printCities(topPopulatedCitiesInCountry);
 */
         // Report 16 - Return top N populated cities in the world to topPopulatedCitiesInDistrict object
-        ArrayList<City> topPopulatedCitiesInDistrict = Sql.getTopPopulatedCitiesInDistrict(con, 10, "Scotland");
+        ArrayList<City> topPopulatedCitiesInDistrict = Sql.getTopPopulatedCitiesInDistrict(con, 3, "Scotland");
         //Display report from topPopulatedCitiesInDistrict
         Reports.printCities(topPopulatedCitiesInDistrict);
 
