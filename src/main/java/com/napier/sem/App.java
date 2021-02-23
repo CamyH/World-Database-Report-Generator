@@ -116,7 +116,7 @@ public class App
         Reports.printCities(topPopulatedCitiesInDistrict);
 */
         /************** CAPITAL CITIES FUNCTIONS ***************** Author Del */
-
+/*
         //Reusing PrintCities report function as the columns match
         //Report 3.1 - Return all the world's capitals by descending population
         ArrayList<City> biggestCapitals = Sql.getBiggestWorldCapitals(con);
@@ -136,7 +136,7 @@ public class App
         //Report 3.6 - Return the top 3 largest capitals in Southeast Asia by descending population
         ArrayList<City> biggest3SEAsiaCapitals = Sql.getNBiggestRegionCapitals(con, 3, "Southeast Asia");
         Reports.printCapitals(biggest3SEAsiaCapitals);
-
+*/
 
         /************** POPULATION FUNCTIONS ***************** Author Cameron */
         // Report 1:
