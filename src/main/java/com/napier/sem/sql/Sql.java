@@ -861,6 +861,39 @@ public class Sql {
         }
     }
 
+    public static ArrayList<City> getBiggestRegionCapitals(Connection con, int n, String region){
+        try {
+            //Create string for statement
+            String biggestNContCapitalsStatement = ( "SELECT Name " +
+                    "FROM city " +
+                    "JOIN country ON city.CountryCode = country.Code " +
+                    "WHERE city.id = country.Capital AND ? = country.Region " +
+                    "ORDER BY city.Population DESC" +
+                    "LIMIT ?;");
+            //Create prepared statement
+            PreparedStatement preparedStatement = con.prepareStatement(biggestNContCapitalsStatement);
+            preparedStatement.setString(1, region);
+            preparedStatement.setInt(2, n);
+            //Execute
+            ResultSet rset = preparedStatement.executeQuery();
+            //Extract information from ResultSet
+            ArrayList<City> biggestNRegionCapitals = new ArrayList<City>();
+            while (rset.next()) {
+                City capital = new City();
+                capital.name = rset.getString("city.Name");
+                capital.country = rset.getString("country.Name:);");
+                capital.population = rset.getString("city.Population");
+                biggestNRegionCapitals.add(capital);
+            }
+            return biggestNRegionCapitals;
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get region's largest capital city details.");
+            return null;
+        }
+    }
+
     //************** POPULATION QUERIES ***************** Author Cameron */
 
     /**
