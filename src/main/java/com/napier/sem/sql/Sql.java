@@ -818,6 +818,8 @@ public class Sql {
         }
     }
 
+
+
     /**
      * Method to return the most populous N capital cities in the world, N is specified by the user
      * @param con Holds the connection to the SQL database
@@ -831,8 +833,7 @@ public class Sql {
                     "FROM city " +
                     "JOIN country ON city.CountryCode=country.Code " +
                     "WHERE city.ID = country.Capital " +
-                    "ORDER BY city.Population DESC " +
-                    "LIMIT ?;");
+                    "ORDER BY city.Population DESC ");
             //Create prepared statement
             PreparedStatement preparedStatement = con.prepareStatement(biggestNCapitalsStatement);
             preparedStatement.setInt(1, n);
