@@ -42,7 +42,7 @@ public class Sql {
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
             // Extract country information
-            ArrayList<Country> countries = new ArrayList<Country>();
+            ArrayList<Country> countries = new ArrayList<>();
             while (rset.next())
             {
                 Country country = new Country();
@@ -92,7 +92,7 @@ public class Sql {
             // Execute SQL statement
             ResultSet rset = preparedStatement.executeQuery();
             // Extract country information
-            ArrayList<Country> countries = new ArrayList<Country>();
+            ArrayList<Country> countries = new ArrayList<>();
             while (rset.next())
             {
                 Country country = new Country();
@@ -142,7 +142,7 @@ public class Sql {
             // Execute SQL statement
             ResultSet rset = preparedStatement.executeQuery();
             // Extract country information
-            ArrayList<Country> countries = new ArrayList<Country>();
+            ArrayList<Country> countries = new ArrayList<>();
             while (rset.next())
             {
                 Country country = new Country();
@@ -192,7 +192,7 @@ public class Sql {
             // Execute SQL statement
             ResultSet rset = preparedStatement.executeQuery();
             // Extract country information
-            ArrayList<Country> countries = new ArrayList<Country>();
+            ArrayList<Country> countries = new ArrayList<>();
             while (rset.next())
             {
                 Country country = new Country();
@@ -246,7 +246,7 @@ public class Sql {
             // Execute SQL statement
             ResultSet rset = preparedStatement.executeQuery();
             // Extract country information
-            ArrayList<Country> countries = new ArrayList<Country>();
+            ArrayList<Country> countries = new ArrayList<>();
             while (rset.next())
             {
                 Country country = new Country();
@@ -299,7 +299,7 @@ public class Sql {
             // Execute SQL statement
             ResultSet rset = preparedStatement.executeQuery();
             // Extract country information
-            ArrayList<Country> countries = new ArrayList<Country>();
+            ArrayList<Country> countries = new ArrayList<>();
             while (rset.next())
             {
                 Country country = new Country();
@@ -344,7 +344,7 @@ public class Sql {
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
             // Extract city information
-            ArrayList<City> cities = new ArrayList<City>();
+            ArrayList<City> cities = new ArrayList<>();
             while (rset.next())
             {
                 City city = new City();
@@ -389,7 +389,7 @@ public class Sql {
             ResultSet rset = preparedStatement.executeQuery();
 
             // Extract city information
-            ArrayList<City> cities = new ArrayList<City>();
+            ArrayList<City> cities = new ArrayList<>();
             while (rset.next())
             {
                 City city = new City();
@@ -433,7 +433,7 @@ public class Sql {
             ResultSet rset = preparedStatement.executeQuery();
 
             // Extract city information
-            ArrayList<City> cities = new ArrayList<City>();
+            ArrayList<City> cities = new ArrayList<>();
             while (rset.next())
             {
                 City city = new City();
@@ -478,7 +478,7 @@ public class Sql {
             ResultSet rset = preparedStatement.executeQuery();
 
             // Extract city information
-            ArrayList<City> cities = new ArrayList<City>();
+            ArrayList<City> cities = new ArrayList<>();
             while (rset.next())
             {
                 City city = new City();
@@ -523,7 +523,7 @@ public class Sql {
             ResultSet rset = preparedStatement.executeQuery();
 
             // Extract city information
-            ArrayList<City> cities = new ArrayList<City>();
+            ArrayList<City> cities = new ArrayList<>();
             while (rset.next())
             {
                 City city = new City();
@@ -569,7 +569,7 @@ public class Sql {
             ResultSet rset = preparedStatement.executeQuery();
 
             // Extract city information
-            ArrayList<City> cities = new ArrayList<City>();
+            ArrayList<City> cities = new ArrayList<>();
             while (rset.next())
             {
                 City city = new City();
@@ -617,7 +617,7 @@ public class Sql {
             ResultSet rset = preparedStatement.executeQuery();
 
             // Extract city information
-            ArrayList<City> cities = new ArrayList<City>();
+            ArrayList<City> cities = new ArrayList<>();
             while (rset.next())
             {
                 City city = new City();
@@ -664,7 +664,7 @@ public class Sql {
             ResultSet rset = preparedStatement.executeQuery();
 
             // Extract city information
-            ArrayList<City> cities = new ArrayList<City>();
+            ArrayList<City> cities = new ArrayList<>();
             while (rset.next())
             {
                 City city = new City();
@@ -713,7 +713,7 @@ public class Sql {
             ResultSet rset = preparedStatement.executeQuery();
 
             // Extract city information
-            ArrayList<City> cities = new ArrayList<City>();
+            ArrayList<City> cities = new ArrayList<>();
             while (rset.next())
             {
                 City city = new City();
@@ -760,7 +760,7 @@ public class Sql {
             ResultSet rset = preparedStatement.executeQuery();
 
             // Extract city information
-            ArrayList<City> cities = new ArrayList<City>();
+            ArrayList<City> cities = new ArrayList<>();
             while (rset.next())
             {
                 City city = new City();
@@ -801,15 +801,15 @@ public class Sql {
             //Execute
             ResultSet rset = preparedStatement.executeQuery();
             //Extract information from ResultSet
-            ArrayList<City> biggestNCapitals = new ArrayList<City>();
+            ArrayList<City> biggestCapitals = new ArrayList<>();
             while (rset.next()){
                 City capital = new City();
                 capital.name = rset.getString("city.Name");
                 capital.country = rset.getString("country.Name:);");
                 capital.population = rset.getString("city.Population");
-                biggestNCapitals.add(capital);
+                biggestCapitals.add(capital);
             }
-            return biggestNCapitals;
+            return biggestCapitals;
         }
         catch(Exception e){
             System.out.println(e.getMessage());
@@ -839,7 +839,7 @@ public class Sql {
             //Execute
             ResultSet rset = preparedStatement.executeQuery();
             //Extract information from ResultSet
-            ArrayList<City> biggestNCapitals = new ArrayList<City>();
+            ArrayList<City> biggestNCapitals = new ArrayList<>();
             while (rset.next()){
                 City capital = new City();
                 capital.name = rset.getString("city.Name");
@@ -879,7 +879,7 @@ public class Sql {
             //Execute
             ResultSet rset = preparedStatement.executeQuery();
             //Extract information from ResultSet
-            ArrayList<City> biggestNContCapitals = new ArrayList<City>();
+            ArrayList<City> biggestNContCapitals = new ArrayList<>();
             while (rset.next()) {
                 City capital = new City();
                 capital.name = rset.getString("city.Name");
@@ -919,7 +919,7 @@ public class Sql {
             //Execute
             ResultSet rset = preparedStatement.executeQuery();
             //Extract information from ResultSet
-            ArrayList<City> biggestNRegionCapitals = new ArrayList<City>();
+            ArrayList<City> biggestNRegionCapitals = new ArrayList<>();
             while (rset.next()) {
                 City capital = new City();
                 capital.name = rset.getString("city.Name");
