@@ -36,7 +36,7 @@ public class Reports {
     public static void printCapitals(ArrayList<City> capitals)
     {
         // Print header
-        System.out.println(String.format("%-30s %-30s %-30s %-30s", "Name", "Country", "District", "Population"));
+        System.out.println(String.format("%-30s %-30s %-30s", "Name", "Country", "Population"));
         // Loop over all capitals in the list
         for (City city : capitals)
         {
