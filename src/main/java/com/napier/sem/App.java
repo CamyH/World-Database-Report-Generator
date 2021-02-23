@@ -120,8 +120,8 @@ public class App
         // Report 1:
         // The population of people, people living in cities, and people not living in cities in each continent.
         // Antarctica is not shown as the population is set to 0 in the database //
-        ArrayList<PopulationData> continentPopulationDataList = Sql.getPopulationDataContinent(con);
-        Reports.printPopulationDataContinent(continentPopulationDataList);
+        //ArrayList<PopulationData> continentPopulationDataList = Sql.getPopulationDataContinent(con);
+        //Reports.printPopulationDataContinent(continentPopulationDataList);
 
         // Report 2:
         // The population of people, people living in cities, and people not living in cities in each region.
