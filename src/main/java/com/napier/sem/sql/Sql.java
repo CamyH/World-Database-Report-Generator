@@ -818,16 +818,22 @@ public class Sql {
         }
     }
 
+    /**
+     * Method to return all the capital cities in a user-defined continent sorted by descending population
+     * @param con Holds the connection to the SQL database
+     * @param cont The continent the user wants data for
+     * @return Name, country and population of all the capital cities in the continent sorted by population in descending order, or null on error
+     */
     public static ArrayList<City> getBiggestContinentCapitals(Connection con, String cont){
         try {
             //Create string for statement
-            String biggestNContCapitalsStatement = ("SELECT Name " +
+            String biggestContCapitalsStatement = ("SELECT Name " +
                     "FROM city " +
                     "JOIN country ON city.CountryCode=country.Code " +
                     "WHERE city.ID = country.Capital AND country.Continent = ? " +
                     "ORDER BY city.Population DESC;");
             //Create prepared statement
-            PreparedStatement preparedStatement = con.prepareStatement(biggestNContCapitalsStatement);
+            PreparedStatement preparedStatement = con.prepareStatement(biggestContCapitalsStatement);
             preparedStatement.setString(1, cont);
             //Execute
             ResultSet rset = preparedStatement.executeQuery();
@@ -849,16 +855,22 @@ public class Sql {
         }
     }
 
+    /**
+     * Method to return all the capital cities in a user-defined region sorted by descending population
+     * @param con Holds the connection to the SQL database
+     * @param region The region the user wants data on
+     * @return Name, country and population of all capital cities in the specified region in descending order of population
+     */
     public static ArrayList<City> getBiggestRegionCapitals(Connection con, String region){
         try {
             //Create string for statement
-            String biggestNContCapitalsStatement = ( "SELECT Name " +
+            String biggestRegionCapitalsStatement = ( "SELECT Name " +
                     "FROM city " +
                     "JOIN country ON city.CountryCode = country.Code " +
                     "WHERE city.ID = country.Capital AND country.Region = ?" +
                     "ORDER BY city.Population DESC;");
             //Create prepared statement
-            PreparedStatement preparedStatement = con.prepareStatement(biggestNContCapitalsStatement);
+            PreparedStatement preparedStatement = con.prepareStatement(biggestRegionCapitalsStatement);
             preparedStatement.setString(1, region);
             //Execute
             ResultSet rset = preparedStatement.executeQuery();
@@ -967,14 +979,14 @@ public class Sql {
     public static ArrayList<City> getNBiggestRegionCapitals(Connection con, int n, String region){
         try {
             //Create string for statement
-            String biggestNContCapitalsStatement = ( "SELECT Name " +
+            String biggestNRegionCapitalsStatement = ( "SELECT Name " +
                     "FROM city " +
                     "JOIN country ON city.CountryCode = country.Code " +
                     "WHERE city.ID = country.Capital AND country.Region = ? " +
                     "ORDER BY city.Population DESC" +
                     "LIMIT ?;");
             //Create prepared statement
-            PreparedStatement preparedStatement = con.prepareStatement(biggestNContCapitalsStatement);
+            PreparedStatement preparedStatement = con.prepareStatement(biggestNRegionCapitalsStatement);
             preparedStatement.setString(1, region);
             preparedStatement.setInt(2, n);
             //Execute
