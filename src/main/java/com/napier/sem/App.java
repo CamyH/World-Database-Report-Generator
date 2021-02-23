@@ -120,22 +120,22 @@ public class App
         //Reusing PrintCities report function as the columns match
         //Report 3.1 - Return all the world's capitals by descending population
         ArrayList<City> biggestCapitals = Sql.getBiggestWorldCapitals(con);
-        Reports.printCities(biggestCapitals);
+        Reports.printCapitals(biggestCapitals);
         //Report 3.2 - Return all of Europe's capitals by descending population
         ArrayList<City> biggestEuropeCapitals = Sql.getBiggestContinentCapitals(con, "Europe");
-        Reports.printCities(biggestEuropeCapitals);
+        Reports.printCapitals(biggestEuropeCapitals);
         //Report 3.3 - Return all of Southeast Asia's capitals by descending population
         ArrayList<City> biggestSEAsiaCapitals = Sql.getBiggestRegionCapitals(con, "Southeast Asia");
-        Reports.printCities(biggestSEAsiaCapitals);
+        Reports.printCapitals(biggestSEAsiaCapitals);
         //Report 3.4 - Return the top 3 most populous capitals across the world by descending population
         ArrayList<City> biggest3Capitals = Sql.getNBiggestWorldCapitals(con, 3);
-        Reports.printCities(biggest3Capitals);
+        Reports.printCapitals(biggest3Capitals);
         //Report 3.5 - Return the top 3 largest capitals in Europe by descending population
         ArrayList<City> biggest3EuropeCapitals = Sql.getNBiggestContinentCapitals(con, 3, "Europe");
-        Reports.printCities(biggest3EuropeCapitals);
+        Reports.printCapitals(biggest3EuropeCapitals);
         //Report 3.6 - Return the top 3 largest capitals in Southeast Asia by descending population
         ArrayList<City> biggest3SEAsiaCapitals = Sql.getNBiggestRegionCapitals(con, 3, "Southeast Asia");
-        Reports.printCities(biggest3SEAsiaCapitals);
+        Reports.printCapitals(biggest3SEAsiaCapitals);
 
 
         /************** POPULATION FUNCTIONS ***************** Author Cameron */

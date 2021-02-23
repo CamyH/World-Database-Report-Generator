@@ -791,7 +791,7 @@ public class Sql {
     public static ArrayList<City> getBiggestWorldCapitals(Connection con){
         try{
             //Create string for statement
-            String biggestNCapitalsStatement = ("SELECT city.Name, country.name, city.District, city.Population " +
+            String biggestNCapitalsStatement = ("SELECT city.Name, country.name, city.Population " +
                     "FROM city " +
                     "JOIN country ON city.CountryCode = country.Code " +
                     "WHERE city.ID = country.Capital " +
@@ -806,7 +806,6 @@ public class Sql {
                 City capital = new City();
                 capital.name = rset.getString("city.Name");
                 capital.country = rset.getString("country.Name");
-                capital.district = rset.getString("city.District");
                 capital.population = rset.getString("city.Population");
                 biggestCapitals.add(capital);
             }
@@ -828,7 +827,7 @@ public class Sql {
     public static ArrayList<City> getBiggestContinentCapitals(Connection con, String cont){
         try {
             //Create string for statement
-            String biggestContCapitalsStatement = ("SELECT city.Name, country.name, city.District, city.Population " +
+            String biggestContCapitalsStatement = ("SELECT city.Name, country.name, city.Population " +
                     "FROM city " +
                     "JOIN country ON city.CountryCode=country.Code " +
                     "WHERE city.ID = country.Capital AND country.Continent = ? " +
@@ -844,7 +843,6 @@ public class Sql {
                 City capital = new City();
                 capital.name = rset.getString("city.Name");
                 capital.country = rset.getString("country.Name");
-                capital.district = rset.getString("city.District");
                 capital.population = rset.getString("city.Population");
                 biggestContCapitals.add(capital);
             }
@@ -866,7 +864,7 @@ public class Sql {
     public static ArrayList<City> getBiggestRegionCapitals(Connection con, String region){
         try {
             //Create string for statement
-            String biggestRegionCapitalsStatement = ( "SELECT city.Name, country.name, city.District, city.Population " +
+            String biggestRegionCapitalsStatement = ( "SELECT city.Name, country.name, city.Population " +
                     "FROM city " +
                     "JOIN country ON city.CountryCode = country.Code " +
                     "WHERE city.ID = country.Capital AND country.Region = ?" +
@@ -882,7 +880,6 @@ public class Sql {
                 City capital = new City();
                 capital.name = rset.getString("city.Name");
                 capital.country = rset.getString("country.Name");
-                capital.district = rset.getString("city.District");
                 capital.population = rset.getString("city.Population");
                 biggestRegionCapitals.add(capital);
             }
@@ -904,7 +901,7 @@ public class Sql {
     public static ArrayList<City> getNBiggestWorldCapitals(Connection con, int n){
         try{
             //Create string for statement
-            String biggestNCapitalsStatement = ("SELECT city.Name, country.name, city.District, city.Population " +
+            String biggestNCapitalsStatement = ("SELECT city.Name, country.name, city.Population " +
                     "FROM city " +
                     "JOIN country ON city.CountryCode=country.Code " +
                     "WHERE city.ID = country.Capital " +
@@ -921,7 +918,6 @@ public class Sql {
                 City capital = new City();
                 capital.name = rset.getString("city.Name");
                 capital.country = rset.getString("country.Name");
-                capital.district = rset.getString("city.District");
                 capital.population = rset.getString("city.Population");
                 biggestNCapitals.add(capital);
             }
@@ -944,7 +940,7 @@ public class Sql {
     public static ArrayList<City> getNBiggestContinentCapitals(Connection con, int n, String cont){
         try {
             //Create string for statement
-            String biggestNContCapitalsStatement = ("SELECT city.Name, country.name, city.District, city.Population " +
+            String biggestNContCapitalsStatement = ("SELECT city.Name, country.name, city.Population " +
                     "FROM city " +
                     "JOIN country ON city.CountryCode = country.Code " +
                     "WHERE city.ID = country.Capital AND country.Continent = ? " +
@@ -962,7 +958,6 @@ public class Sql {
                 City capital = new City();
                 capital.name = rset.getString("city.Name");
                 capital.country = rset.getString("country.Name");
-                capital.district = rset.getString("city.District");
                 capital.population = rset.getString("city.Population");
                 biggestNContCapitals.add(capital);
             }
@@ -985,7 +980,7 @@ public class Sql {
     public static ArrayList<City> getNBiggestRegionCapitals(Connection con, int n, String region){
         try {
             //Create string for statement
-            String biggestNRegionCapitalsStatement = ( "SELECT city.Name, country.name, city.District, city.Population " +
+            String biggestNRegionCapitalsStatement = ( "SELECT city.Name, country.name, city.Population " +
                     "FROM city " +
                     "JOIN country ON city.CountryCode = country.Code " +
                     "WHERE city.ID = country.Capital AND country.Region = ? " +
@@ -1003,7 +998,6 @@ public class Sql {
                 City capital = new City();
                 capital.name = rset.getString("city.Name");
                 capital.country = rset.getString("country.Name");
-                capital.district = rset.getString("city.District");
                 capital.population = rset.getString("city.Population");
                 biggestNRegionCapitals.add(capital);
             }
