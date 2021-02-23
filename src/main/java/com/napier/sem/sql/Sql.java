@@ -4,6 +4,7 @@ import com.napier.sem.world.City;
 import com.napier.sem.world.Country;
 import com.napier.sem.world.PopulationData;
 
+import javax.xml.transform.Result;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -791,8 +792,53 @@ public class Sql {
 
     /************** CAPITAL CITIES QUERIES ***************** Author Del */
 
+    /**
+     * Method to return the most populous N capital cities in the world, N is specified by the user
+     * @param con Holds the connection to the SQL database
+     * @param n The amount of cities the user wants returned
+     * @return The name, country and population of the n most populous capitals in the planet
+     */
+    public static ArrayList<City> getBiggestWorldCapitals(Connection con, int n){
+        try{
+            //Create string for statement
+            String biggestNCapitalsStatement = ("SELECT Name " +
+                    "FROM city " +
+                    "JOIN country ON city.CountryCode=country.code " +
+                    "WHERE city.id=country.Capital " +
+                    "ORDER BY city.population DESC " +
+                    "LIMIT ?;");
+            //Create prepared statement
+            PreparedStatement preparedStatement = con.prepareStatement(biggestNCapitalsStatement);
+            preparedStatement.setInt(1, n);
+            //Execute
+            ResultSet rset = preparedStatement.executeQuery();
+            //Extract information from ResultSet
+            ArrayList<City> biggestNCapitals = new ArrayList<City>();
+            while (rset.next()){
+                City capital = new City();
+                capital.name = rset.getString("city.Name");
+                capital.country = rset.getString("country.Name:);");
+                capital.population = rset.getString("city.population");
+            }
+            return biggestNCapitals;
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get largest capital city details.");
+            return null;
+        }
+    }
 
-
+    public static ArrayList<City> getBiggestContinentCapitals(Connection con, int n, String cont){
+        //Create string for statement
+        String biggestNContCapitalsStatement = ("SELECT Name " +
+                "FROM city " +
+                "JOIN country ON city.CountryCode=country.code " +
+                "WHERE city.id=country.Capital AND country.continent = ? " +
+                "ORDER BY city.population DESC " +
+                "LIMIT ?;");
+        return null;
+    }
 
     /************** POPULATION QUERIES ***************** Author Cameron */
 
