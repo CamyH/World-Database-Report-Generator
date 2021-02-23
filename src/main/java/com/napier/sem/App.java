@@ -107,12 +107,12 @@ public class App
         ArrayList<City> topPopulatedCitiesInCountry = Sql.getTopPopulatedCitiesInCountry(con, 10, "Brazil");
         // Display report from topPopulatedCitiesInCountry
         Reports.printCities(topPopulatedCitiesInCountry);
-*/
+
         // Report 16 - Return top N populated cities in the world to topPopulatedCitiesInDistrict object
         ArrayList<City> topPopulatedCitiesInDistrict = Sql.getTopPopulatedCitiesInDistrict(con, 3, "Scotland");
         //Display report from topPopulatedCitiesInDistrict
         Reports.printCities(topPopulatedCitiesInDistrict);
-
+*/
         /************** CAPITAL CITIES FUNCTIONS ***************** Author Del */
 
 
