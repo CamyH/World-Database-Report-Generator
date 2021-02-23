@@ -784,6 +784,41 @@ public class Sql {
     //************** CAPITAL CITIES QUERIES ***************** Author Del */
 
     /**
+     * Method to return all of the world's capital cities, sorted by largest population
+     * @param con Holds the connection to the SQL database
+     * @return Name, country and population of every capital city in the world sorted by descending population, or null on error
+     */
+    public static ArrayList<City> getBiggestWorldCapitals(Connection con){
+        try{
+            //Create string for statement
+            String biggestNCapitalsStatement = ("SELECT Name " +
+                    "FROM city " +
+                    "JOIN country ON city.CountryCode=country.Code " +
+                    "WHERE city.ID = country.Capital " +
+                    "ORDER BY city.Population DESC ");
+            //Create prepared statement
+            PreparedStatement preparedStatement = con.prepareStatement(biggestNCapitalsStatement);
+            //Execute
+            ResultSet rset = preparedStatement.executeQuery();
+            //Extract information from ResultSet
+            ArrayList<City> biggestNCapitals = new ArrayList<City>();
+            while (rset.next()){
+                City capital = new City();
+                capital.name = rset.getString("city.Name");
+                capital.country = rset.getString("country.Name:);");
+                capital.population = rset.getString("city.Population");
+                biggestNCapitals.add(capital);
+            }
+            return biggestNCapitals;
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get world's largest capital city details.");
+            return null;
+        }
+    }
+
+    /**
      * Method to return the most populous N capital cities in the world, N is specified by the user
      * @param con Holds the connection to the SQL database
      * @param n The amount of cities the user wants returned
