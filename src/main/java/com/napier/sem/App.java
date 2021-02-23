@@ -110,18 +110,33 @@ public class App
 
         // Report 16 - Return top N populated cities in the world to topPopulatedCitiesInDistrict object
         ArrayList<City> topPopulatedCitiesInDistrict = Sql.getTopPopulatedCitiesInDistrict(con, 10, "Scotland");
-        // Display report from topPopulatedCitiesInDistrict
+        //Display report from topPopulatedCitiesInDistrict
         Reports.printCities(topPopulatedCitiesInDistrict);
 */
         /************** CAPITAL CITIES FUNCTIONS ***************** Author Del */
 
 
+        /************** POPULATION FUNCTIONS ***************** Author Cameron */
+        // Report 1:
+        // The population of people, people living in cities, and people not living in cities in each continent.
+        // Antarctica is not shown as the population is set to 0 in the database //
+        ArrayList<PopulationData> continentPopulationDataList = Sql.getPopulationDataContinent(con);
+        Reports.printPopulationDataContinent(continentPopulationDataList);
 
+        // Report 2:
+        // The population of people, people living in cities, and people not living in cities in each region.
+        //ArrayList<PopulationData> regionPopulationDataList = Sql.getPopulationDataRegion(con);
+        //Reports.printPopulationDataRegion(regionPopulationDataList);
+
+        // Report 3:
+        // The population of people, people living in cities, and people not living in cities in each country.
+        //ArrayList<PopulationData> countryPopulationDataList = Sql.getPopulationDataCountry(con);
+        //Reports.printPopulationDataCountry(countryPopulationDataList);
 
         /************** ADDITIONAL FUNCTIONS ***************** Author Cameron */
         // Report 1:
         // Get population of the world
-        // Long totalPopulation = AdditionalReports.getWorldPopulation(con);
+        // Long totalPopulation = Sql.getWorldPopulation(con);
         // System.out.println("World Population: " + totalPopulation);
 
         // Report 2:
@@ -160,22 +175,7 @@ public class App
         //Long cityPopulation = Sql.getCityPopulation(con, cityName);
         //System.out.println("The population of " + cityName + " is " + cityPopulation);
 
-        /************** POPULATION FUNCTIONS ***************** Author Cameron */
-        // Report 1:
-        // The population of people, people living in cities, and people not living in cities in each continent.
-        // Antarctica is not shown as the population is set to 0 in the database //
-        //ArrayList<PopulationData> continentPopulationDataList = Sql.getPopulationDataContinent(con);
-        //Reports.printPopulationDataContinent(continentPopulationDataList);
 
-        // Report 2:
-        // The population of people, people living in cities, and people not living in cities in each region.
-        //ArrayList<PopulationData> regionPopulationDataList = Sql.getPopulationDataRegion(con);
-        //Reports.printPopulationDataRegion(regionPopulationDataList);
-
-        // Report 3:
-        // The population of people, people living in cities, and people not living in cities in each country.
-        //ArrayList<PopulationData> countryPopulationDataList = Sql.getPopulationDataCountry(con);
-        //Reports.printPopulationDataCountry(countryPopulationDataList);
 
         // Disconnect from database
         dbc.disconnect();
