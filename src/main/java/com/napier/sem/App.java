@@ -70,47 +70,47 @@ public class App
 /*
         // Report 8 - Return all cities in a continent to allCitiesInContinent object
         ArrayList<City> allCitiesInContinent = Sql.getAllCitiesInContinent(con, "Asia");
-        Display report from allCitiesInContinent
+        // Display report from allCitiesInContinent
         Reports.printCities(allCitiesInContinent);
 
         // Report 9 - Return all cities in a region to allCitiesInRegion object
         ArrayList<City> allCitiesInRegion = Sql.getAllCitiesInRegion(con, "Caribbean");
-        Display report from allCitiesInRegion
+        // Display report from allCitiesInRegion
         Reports.printCities(allCitiesInRegion);
 
         // Report 10 - Return all cities in a region to allCitiesInCountry object
         ArrayList<City> allCitiesInCountry = Sql.getAllCitiesInCountry(con, "Brazil");
-        Display report from allCitiesInCountry
+        // Display report from allCitiesInCountry
         Reports.printCities(allCitiesInCountry);
 
         // Report 11 - Return all cities in a district to allCitiesInDistrict object
         ArrayList<City> allCitiesInDistrict = Sql.getAllCitiesInDistrict(con, "Scotland");
-        Display report from allCitiesInDistrict
+        // Display report from allCitiesInDistrict
         Reports.printCities(allCitiesInDistrict);
 
         // Report 12 - Return top N populated cities in the world to topPopulatedCitiesInWorld object
         ArrayList<City> topPopulatedCitiesInWorld = Sql.getTopPopulatedCitiesInWorld(con, 10);
-        Display report from topPopulatedCitiesInWorld
+        // Display report from topPopulatedCitiesInWorld
         Reports.printCities(topPopulatedCitiesInWorld);
 
         // Report 13 - Return top N populated cities in a continent to topPopulatedCitiesInContinent object
         ArrayList<City> topPopulatedCitiesInContinent = Sql.getTopPopulatedCitiesInContinent(con, 10, "Asia");
-        Display report from topPopulatedCitiesInContinent
+        // Display report from topPopulatedCitiesInContinent
         Reports.printCities(topPopulatedCitiesInContinent);
 
         // Report 14 - Return top N populated cities in a region to topPopulatedCitiesInRegion object
         ArrayList<City> topPopulatedCitiesInRegion = Sql.getTopPopulatedCitiesInRegion(con, 10, "Caribbean");
-        Display report from topPopulatedCitiesInRegion
+        // Display report from topPopulatedCitiesInRegion
         Reports.printCities(topPopulatedCitiesInRegion);
 
         // Report 15 - Return top N populated cities in the world to topPopulatedCitiesInCountry object
         ArrayList<City> topPopulatedCitiesInCountry = Sql.getTopPopulatedCitiesInCountry(con, 10, "Brazil");
-        Display report from topPopulatedCitiesInCountry
+        // Display report from topPopulatedCitiesInCountry
         Reports.printCities(topPopulatedCitiesInCountry);
 
         // Report 16 - Return top N populated cities in the world to topPopulatedCitiesInDistrict object
         ArrayList<City> topPopulatedCitiesInDistrict = Sql.getTopPopulatedCitiesInDistrict(con, 10, "Scotland");
-        Display report from topPopulatedCitiesInDistrict
+        //Display report from topPopulatedCitiesInDistrict
         Reports.printCities(topPopulatedCitiesInDistrict);
 */
         /************** CAPITAL CITIES FUNCTIONS ***************** Author Del */
