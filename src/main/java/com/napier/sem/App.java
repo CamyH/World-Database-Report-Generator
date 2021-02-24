@@ -141,14 +141,14 @@ public class App
         ArrayList<City> biggest3SEAsiaCapitals = Sql.getNBiggestRegionCapitals(con, 3, "Southeast Asia");
         Reports.printCapitals(biggest3SEAsiaCapitals);
 */
-/*
+
         /************** POPULATION FUNCTIONS ***************** Author Cameron */
 
         // Report 4.1 - The population of people, people living in cities, and people not living in cities in each continent.
         // Antarctica is not shown as the population is set to 0 in the database //
         ArrayList<PopulationData> continentPopulationDataList = Sql.getPopulationDataContinent(con);
         Reports.printPopulationDataContinent(continentPopulationDataList);
-
+/*
         // Report 4.2 - The population of people, people living in cities, and people not living in cities in each region.
         ArrayList<PopulationData> regionPopulationDataList = Sql.getPopulationDataRegion(con);
         Reports.printPopulationDataRegion(regionPopulationDataList);
@@ -157,7 +157,7 @@ public class App
         // Report 4.3 - The population of people, people living in cities, and people not living in cities in each country.
         ArrayList<PopulationData> countryPopulationDataList = Sql.getPopulationDataCountry(con);
         Reports.printPopulationDataCountry(countryPopulationDataList);
-
+*/
         /************** ADDITIONAL FUNCTIONS ***************** Author Cameron */
         // Report 1:
         // Get population of the world
