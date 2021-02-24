@@ -3,10 +3,6 @@ services:
   # Application Dockerfile is in same folder which is .
   app:
     build: .
-  mysql:
-    image: mysql:8.0.15
-    cap_add:
-      - SYS_NICE  # CAP_SYS_NICE
 
   # db is is db folder
   db:
