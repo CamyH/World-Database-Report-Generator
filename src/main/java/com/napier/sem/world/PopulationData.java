@@ -23,7 +23,17 @@ public class PopulationData {
     public Long populationInCities;
 
     /**
+     * Population living in cities %
+     */
+    public Double populationPercentInCities;
+
+    /**
      * Population not living in cities
      */
     public Long populationNotInCities;
+
+    /**
+     * Population not living in cities %
+     */
+    public Double populationPercentNotInCities;
 }

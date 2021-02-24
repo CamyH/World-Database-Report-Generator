@@ -152,8 +152,8 @@ public class App
 
         // Report 3:
         // The population of people, people living in cities, and people not living in cities in each country.
-        //ArrayList<PopulationData> countryPopulationDataList = Sql.getPopulationDataCountry(con);
-        //Reports.printPopulationDataCountry(countryPopulationDataList);
+        // ArrayList<PopulationData> countryPopulationDataList = Sql.getPopulationDataCountry(con);
+        // Reports.printPopulationDataCountry(countryPopulationDataList);
 
         /************** ADDITIONAL FUNCTIONS ***************** Author Cameron */
         // Report 1:
@@ -172,30 +172,30 @@ public class App
         // Report 3:
         // Get population of a region
         // Set region to get population of
-        //String region = "Southern Europe";
-        //Long regionPopulation = Sql.getPopulationOfRegion(con, region);
-        //System.out.println("Population of " + region + " is " + regionPopulation);
+        // String region = "Southern Europe";
+        // Long regionPopulation = Sql.getPopulationOfRegion(con, region);
+        // System.out.println("Population of " + region + " is " + regionPopulation);
 
         // Report 4:
         // Get the population of a country
         // Set the country code
-        //String code = "GBR";
-        //Long countryPopulation = Sql.getCountryPopulation(con, code);
-        //System.out.println("The population of " + code + " is " + countryPopulation);
+        // String code = "GBR";
+        // Long countryPopulation = Sql.getCountryPopulation(con, code);
+        // System.out.println("The population of " + code + " is " + countryPopulation);
 
         // Report 5:
         // Get the population of a district
         // Set the district
-        //String district = "England";
-        //Long districtPopulation = Sql.getDistrictPopulation(con, district);
-        //System.out.println("The population of " + district + " is " + districtPopulation);
+        // String district = "England";
+        // Long districtPopulation = Sql.getDistrictPopulation(con, district);
+        // System.out.println("The population of " + district + " is " + districtPopulation);
 
         // Report 6:
         // Get the population of a city
         // Set the city name
-        //String cityName = "London";
-        //Long cityPopulation = Sql.getCityPopulation(con, cityName);
-        //System.out.println("The population of " + cityName + " is " + cityPopulation);
+        // String cityName = "London";
+        // Long cityPopulation = Sql.getCityPopulation(con, cityName);
+        // System.out.println("The population of " + cityName + " is " + cityPopulation);
 
 
 
