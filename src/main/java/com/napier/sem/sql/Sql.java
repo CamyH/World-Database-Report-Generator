@@ -1038,7 +1038,9 @@ public class Sql {
                 popData.identifier = rset.getString("country.continent");
                 popData.population = getPopulationOfContinent(con, popData.identifier);
                 popData.populationInCities = rset.getLong("citiesPopulation");
+                popData.populationPercentInCities = ((double)popData.populationInCities / popData.population) * 100;
                 popData.populationNotInCities = popData.population - popData.populationInCities;
+                popData.populationPercentNotInCities = ((double)popData.populationNotInCities / popData.population) * 100;
                 allPopulationData.add(popData);
             }
             return allPopulationData;
@@ -1075,7 +1077,9 @@ public class Sql {
                 popData.identifier = rset.getString("country.region");
                 popData.population = getPopulationOfRegion(con, popData.identifier);
                 popData.populationInCities = rset.getLong("citiesPopulation");
+                popData.populationPercentInCities = ((double)popData.populationInCities / popData.population) * 100;
                 popData.populationNotInCities = popData.population - popData.populationInCities;
+                popData.populationPercentNotInCities = ((double)popData.populationNotInCities / popData.population) * 100;
                 allPopulationData.add(popData);
             }
             return allPopulationData;
@@ -1113,7 +1117,9 @@ public class Sql {
                 popData.identifier = rset.getString("country.name");
                 popData.population = getCountryPopulation(con, popData.code);
                 popData.populationInCities = rset.getLong("citiesPopulation");
+                popData.populationPercentInCities = ((double)popData.populationInCities / popData.population) * 100;
                 popData.populationNotInCities = popData.population - popData.populationInCities;
+                popData.populationPercentNotInCities = ((double)popData.populationNotInCities / popData.population) * 100;
                 allPopulationData.add(popData);
             }
             return allPopulationData;
