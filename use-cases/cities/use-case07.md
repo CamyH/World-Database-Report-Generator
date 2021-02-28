@@ -4,7 +4,7 @@
 
 ### Goal in Context
 
-As CEO of a company in the area of demographics, I want *to produce a report on all the cities in the world oganised by largest population to smallest* so that *I can support the strategic aims and direction of the business.*
+As CEO of a company in the area of demographics, I want *to produce a report on all the cities in the world organised by largest population to smallest* so that *I can support the strategic aims and direction of the business.*
 
 ### Scope
 
