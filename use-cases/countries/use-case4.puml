@@ -1,0 +1,17 @@
+@startuml
+
+actor CEO as "CEO"
+
+rectangle Database
+
+rectangle "Global Reporting System" {
+    usecase UC4 as "Get top N populated countries in the world largest population first"
+
+    usecase UCa as "Print report"
+
+    CEO - UC4
+    UC4 ..> UCa : include
+    UC4 - Database
+}
+
+@enduml
