@@ -7,12 +7,12 @@ rectangle Database
 rectangle "Global Reporting System" {
 
     usecase Choice as "Choose a function"
-    usecase UC1 as "Get all countries in the world largest population first"
-    usecase UC2 as "Get all countries in the world largest population first"
-    usecase UC3 as "Get all countries in the world largest population first"
-    usecase UC4 as "Get all countries in the world largest population first"
-    usecase UC5 as "Get all countries in the world largest population first"
-    usecase UC6 as "Get all countries in the world largest population first"
+    usecase UC1 as "All countries in the world largest population first"
+    usecase UC2 as "All countries in a continent largest population first"
+    usecase UC3 as "All countries in a region largest population first"
+    usecase UC4 as "Top N populated countries in the world largest population first"
+    usecase UC5 as "Top N populated countries in a continent largest population first"
+    usecase UC6 as "Top N populated countries in a region largest population first"
 
 
     usecase UCa as "Print report"
