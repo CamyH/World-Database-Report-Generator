@@ -9,8 +9,23 @@ package com.napier.sem.world;
 
 public class City {
 
+    /**
+     * name variable for city object
+     */
     public String name;
+
+    /**
+     * country variable for city object
+     */
     public String country;
+
+    /**
+     * district variable for city object
+     */
     public String district;
+
+    /**
+     * population variable for city object
+     */
     public String population;
 }
