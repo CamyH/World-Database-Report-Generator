@@ -1,0 +1,31 @@
+@startuml
+
+actor Researcher as "RESEARCHER"
+
+rectangle Database
+
+rectangle "Languages Reporting System" {
+
+    usecase Choice as "Choose a function"
+    usecase UC1 as "Provide the number of people who speak Chinese from greatest number to smallest, including the percentage of the world population."
+    usecase UC2 as "Provide the number of people who speak English from greatest number to smallest, including the percentage of the world population."
+    usecase UC3 as "Provide the number of people who speak Hindi from greatest number to smallest, including the percentage of the world population."
+    usecase UC4 as "Provide the number of people who speak Spanish from greatest number to smallest, including the percentage of the world population."
+    usecase UC5 as "Provide the number of people who speak Arabic from greatest number to smallest, including the percentage of the world population."
+    usecase UCa as "Print report"
+
+    Researcher - Choice
+    Choice ..> UC1
+    UC1 .. UC2
+    UC2 .. UC3
+    UC3 .. UC4
+    UC4 .. UC5
+    UC5 ..> UCa : include
+
+    UC1 - Database
+    UC2 - Database
+    UC3 - Database
+    UC4 - Database
+    UC5 - Database
+}
+@enduml

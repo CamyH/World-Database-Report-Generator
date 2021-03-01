@@ -1,10 +1,10 @@
-# USE CASE: 7 Produce a Report showing all the cities in the world organised by largest population to smallest.
+# USE CASE: 3 Produce a Report showing all the countries within a region  organised by largest population to smallest.
 
 ## CHARACTERISTIC INFORMATION
 
 ### Goal in Context
 
-As CEO of a company in the area of demographics, I want *to produce a report on all the cities in the world organised by largest population to smallest* so that *I can support the strategic aims and direction of the business.*
+As CEO of a company in the area of demographics, I want *to produce a report on all the countries within a region organised by largest population to smallest* so that *I can support the strategic aims and direction of the business.*
 
 ### Scope
 
@@ -32,11 +32,11 @@ CEO
 
 ### Trigger
 
-A request for world city population report.
+A request for world country population report.
 
 ## MAIN SUCCESS SCENARIO
 
-1. Information about cities is captured from database.
+1. Information about countries is captured from database.
 2. Report is created from database query.
 3. Report is printed out as requested.
 

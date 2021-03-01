@@ -1,0 +1,35 @@
+@startuml
+
+actor CEO as "CEO"
+
+rectangle Database
+
+rectangle "Capitals Reporting System" {
+
+    usecase Choice as "Choose a function"
+    usecase UC1 as "All capitals in the world largest population first"
+    usecase UC2 as "All capitals in a continent largest population first"
+    usecase UC3 as "All capitals in a region largest population first"
+    usecase UC4 as "Top N populated capitals in the world"
+    usecase UC5 as "Top N populated capitals in a continent"
+    usecase UC6 as "Top N populated citiecapitals in a region"
+    usecase UCa as "Print report"
+
+    CEO - Choice
+    Choice ..> UC1
+    UC1 .. UC2
+    UC2 .. UC3
+    UC3 .. UC4
+    UC4 .. UC5
+    UC5 .. UC6
+    UC6 ..> UCa : include
+
+    UC1 - Database
+    UC2 - Database
+    UC3 - Database
+    UC4 - Database
+    UC5 - Database
+    UC6 - Database
+}
+
+@enduml
