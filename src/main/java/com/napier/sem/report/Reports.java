@@ -8,8 +8,9 @@ import java.util.ArrayList;
 
 /**
  * Project Authors: Colin, Cameron, Luke, Del
- * Date last modified: 22/02/2021
+ * Date last modified: 27/02/2021
  * Purpose of class: This class handles the reports to the console.
+ * Last modified by: Colin
  */
 
 
@@ -105,12 +106,12 @@ public class Reports {
     public static void printCountries(ArrayList<Country> countries)
     {
         // Print header
-        System.out.println(String.format("%-10s %-15s %-10s %-15s %-10s %-15s", "Code", "Name", "Continent", "Region", "Population", "Capital"));
+        System.out.println(String.format("%-30s %-30s %-30s %-30s %-30s %-30s", "Code", "Name", "Continent", "Region", "Population", "Capital"));
         // Loop over all countries in the list
         for (Country country : countries)
         {
             String country_string =
-                    String.format("%-10s %-15s %-10s %-15s %-10s %-15s",
+                    String.format("%-30s %-30s %-30s %-30s %-30s %-30s",
                             country.code, country.name, country.continent, country.region, country.population, country.capital);
             System.out.println(country_string);
         }
