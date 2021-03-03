@@ -1,6 +1,6 @@
 @startuml
 
-actor Researcher as "RESEARCHER"
+actor CEO as "CEO"
 
 rectangle Database
 
@@ -14,7 +14,7 @@ rectangle "Languages Reporting System" {
     usecase UC5 as "Provide the number of people who speak Arabic from greatest number to smallest, including the percentage of the world population."
     usecase UCa as "Print report"
 
-    Researcher - Choice
+    CEO - Choice
     Choice ..> UC1
     UC1 .. UC2
     UC2 .. UC3

@@ -4,7 +4,7 @@
 
 ### Goal in Context
 
-As a languages' researcher of a company, I want *to produce a report the number of people in the world who speak English from greatest to smallest including a percentage of the world population* so that *I can support the strategic aims and direction of the business.*
+As CEO of a company, I want *to produce a report the number of people in the world who speak English from greatest to smallest including a percentage of the world population* so that *I can support the strategic aims and direction of the business.*
 
 ### Scope
 
@@ -28,7 +28,7 @@ No report is produced.
 
 ### Primary Actor
 
-Researcher
+CEO
 
 ### Trigger
 
