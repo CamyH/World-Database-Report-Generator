@@ -4,7 +4,7 @@
 
 ### Goal in Context
 
-As a demographics' researcher of a company, I want *to produce a report on the population of the world* so that *I can support the strategic aims and direction of the business.*
+As CEO of a company, I want *to produce a report on the population of the world* so that *I can support the strategic aims and direction of the business.*
 
 ### Scope
 
@@ -28,7 +28,7 @@ No report is produced.
 
 ### Primary Actor
 
-Researcher
+CEO
 
 ### Trigger
 
