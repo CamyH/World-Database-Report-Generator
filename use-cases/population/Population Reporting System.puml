@@ -1,6 +1,6 @@
 @startuml
 
-actor Researcher as "RESEARCHER"
+actor CEO as "CEO"
 
 rectangle Database
 
@@ -18,7 +18,7 @@ rectangle "Population Reporting System" {
     usecase UC9 as "The population of a city"
     usecase UCa as "Print report"
 
-    Researcher - Choice
+    CEO - Choice
     Choice ..> UC1
     UC1 .. UC2
     UC2 .. UC3
