@@ -47,6 +47,7 @@ public class App
         Reports.printCountries(allCountriesByRegion);
 */
         // Report 1.4 - Return the top N countries in the world to topPopulatedCountriesInWorld object
+        System.out.println("Printing report 1.4");
         ArrayList<Country> topPopulatedCountriesInWorld = Sql.getTopPopulatedCountriesInWorld(con, 10);
         // Display report from topPopulatedCountriesInWorld
         if(topPopulatedCountriesInWorld != null) {
@@ -94,6 +95,7 @@ public class App
         Reports.printCities(allCitiesInDistrict);
 */
         // Report 2.6 - Return top N populated cities in the world to topPopulatedCitiesInWorld object
+        System.out.println("Printing report 2.6");
         ArrayList<City> topPopulatedCitiesInWorld = Sql.getTopPopulatedCitiesInWorld(con, 10);
         // Display report from topPopulatedCitiesInWorld
         if(topPopulatedCitiesInWorld != null) {
@@ -137,9 +139,10 @@ public class App
         Reports.printCapitals(biggestSEAsiaCapitals);
  */
         // Report 3.4 - Return the top 3 most populous capitals across the world by descending population
-        ArrayList<City> biggest3Capitals = Sql.getNBiggestWorldCapitals(con, 3);
-        if(biggest3Capitals != null) {
-            Reports.printCapitals(biggest3Capitals);
+        System.out.println("Printing report 3.4");
+        ArrayList<City> biggestNCapitals = Sql.getNBiggestWorldCapitals(con, 10);
+        if(biggestNCapitals != null) {
+            Reports.printCapitals(biggestNCapitals);
         }else{
             System.out.println("Error getting biggest 3 capitals.");
         }
@@ -157,6 +160,7 @@ public class App
 
         // Report 4.1 - The population of people, people living in cities, and people not living in cities in each continent.
         // Antarctica is not shown as the population is set to 0 in the database //
+        System.out.println("Printing report 4.1");
         ArrayList<PopulationData> continentPopulationDataList = Sql.getPopulationDataContinent(con);
         if(continentPopulationDataList != null) {
             Reports.printPopulationDataContinent(continentPopulationDataList);
