@@ -5,35 +5,91 @@ public class PopulationData {
     /**
      * Country Code, only used for one of the reports
      */
-    public String code;
+    private String code;
 
     /**
      * Continent/Region/Country
      */
-    public String identifier;
+    private String identifier;
 
     /**
      * Total Population
      */
-    public Long population;
+    private Long population;
 
     /**
      * Population living in cities
      */
-    public Long populationInCities;
+    private Long populationInCities;
 
     /**
      * Population living in cities %
      */
-    public Double populationPercentInCities;
+    private Double populationPercentInCities;
 
     /**
      * Population not living in cities
      */
-    public Long populationNotInCities;
+    private Long populationNotInCities;
 
     /**
      * Population not living in cities %
      */
-    public Double populationPercentNotInCities;
+    private Double populationPercentNotInCities;
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getIdentifier() {
+        return identifier;
+    }
+
+    public void setIdentifier(String identifier) {
+        this.identifier = identifier;
+    }
+
+    public Long getPopulation() {
+        return population;
+    }
+
+    public void setPopulation(Long population) {
+        this.population = population;
+    }
+
+    public Long getPopulationInCities() {
+        return populationInCities;
+    }
+
+    public void setPopulationInCities(Long populationInCities) {
+        this.populationInCities = populationInCities;
+    }
+
+    public Double getPopulationPercentInCities() {
+        return populationPercentInCities;
+    }
+
+    public void setPopulationPercentInCities(Double populationPercentInCities) {
+        this.populationPercentInCities = populationPercentInCities;
+    }
+
+    public Long getPopulationNotInCities() {
+        return populationNotInCities;
+    }
+
+    public void setPopulationNotInCities(Long populationNotInCities) {
+        this.populationNotInCities = populationNotInCities;
+    }
+
+    public Double getPopulationPercentNotInCities() {
+        return populationPercentNotInCities;
+    }
+
+    public void setPopulationPercentNotInCities(Double populationPercentNotInCities) {
+        this.populationPercentNotInCities = populationPercentNotInCities;
+    }
 }

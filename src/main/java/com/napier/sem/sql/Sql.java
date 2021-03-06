@@ -4,7 +4,6 @@ import com.napier.sem.world.City;
 import com.napier.sem.world.Country;
 import com.napier.sem.world.PopulationData;
 
-import javax.xml.transform.Result;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -46,12 +45,12 @@ public class Sql {
             while (rset.next())
             {
                 Country country = new Country();
-                country.code = rset.getString("code");
-                country.name = rset.getString("name");
-                country.continent = rset.getString("continent");
-                country.region = rset.getString("region");
-                country.population = rset.getInt("population");
-                country.capital = rset.getInt("capital");
+                country.setCode(rset.getString("code"));
+                country.setName(rset.getString("name"));
+                country.setContinent(rset.getString("continent"));
+                country.setRegion(rset.getString("region"));
+                country.setPopulation(rset.getInt("population"));
+                country.setCapital(rset.getInt("capital"));
 
                 countries.add(country);
             }
@@ -96,12 +95,12 @@ public class Sql {
             while (rset.next())
             {
                 Country country = new Country();
-                country.code = rset.getString("code");
-                country.name = rset.getString("name");
-                country.continent = rset.getString("continent");
-                country.region = rset.getString("region");
-                country.population = rset.getInt("population");
-                country.capital = rset.getInt("capital");
+                country.setCode(rset.getString("code"));
+                country.setName(rset.getString("name"));
+                country.setContinent(rset.getString("continent"));
+                country.setRegion(rset.getString("region"));
+                country.setPopulation(rset.getInt("population"));
+                country.setCapital(rset.getInt("capital"));
 
                 countries.add(country);
             }
@@ -118,7 +117,7 @@ public class Sql {
 
     /**
      * Gets all the countries in a continent from
-     * the databse and returns the countries object filled with data
+     * the database and returns the countries object filled with data
      * @param con Holds the connection to the SQL database
      * @param region Holds the string of a specified region
      * @return All countries and their populations in a region in order of largest to smallest in an ArrayList
@@ -146,12 +145,12 @@ public class Sql {
             while (rset.next())
             {
                 Country country = new Country();
-                country.code = rset.getString("code");
-                country.name = rset.getString("name");
-                country.continent = rset.getString("continent");
-                country.region = rset.getString("region");
-                country.population = rset.getInt("population");
-                country.capital = rset.getInt("capital");
+                country.setCode(rset.getString("code"));
+                country.setName(rset.getString("name"));
+                country.setContinent(rset.getString("continent"));
+                country.setRegion(rset.getString("region"));
+                country.setPopulation(rset.getInt("population"));
+                country.setCapital(rset.getInt("capital"));
 
                 countries.add(country);
             }
@@ -196,12 +195,12 @@ public class Sql {
             while (rset.next())
             {
                 Country country = new Country();
-                country.code = rset.getString("code");
-                country.name = rset.getString("name");
-                country.continent = rset.getString("continent");
-                country.region = rset.getString("region");
-                country.population = rset.getInt("population");
-                country.capital = rset.getInt("capital");
+                country.setCode(rset.getString("code"));
+                country.setName(rset.getString("name"));
+                country.setContinent(rset.getString("continent"));
+                country.setRegion(rset.getString("region"));
+                country.setPopulation(rset.getInt("population"));
+                country.setCapital(rset.getInt("capital"));
 
                 countries.add(country);
             }
@@ -250,12 +249,12 @@ public class Sql {
             while (rset.next())
             {
                 Country country = new Country();
-                country.code = rset.getString("code");
-                country.name = rset.getString("name");
-                country.continent = rset.getString("continent");
-                country.region = rset.getString("region");
-                country.population = rset.getInt("population");
-                country.capital = rset.getInt("capital");
+                country.setCode(rset.getString("code"));
+                country.setName(rset.getString("name"));
+                country.setContinent(rset.getString("continent"));
+                country.setRegion(rset.getString("region"));
+                country.setPopulation(rset.getInt("population"));
+                country.setCapital(rset.getInt("capital"));
 
                 countries.add(country);
             }
@@ -303,12 +302,12 @@ public class Sql {
             while (rset.next())
             {
                 Country country = new Country();
-                country.code = rset.getString("code");
-                country.name = rset.getString("name");
-                country.continent = rset.getString("continent");
-                country.region = rset.getString("region");
-                country.population = rset.getInt("population");
-                country.capital = rset.getInt("capital");
+                country.setCode(rset.getString("code"));
+                country.setName(rset.getString("name"));
+                country.setContinent(rset.getString("continent"));
+                country.setRegion(rset.getString("region"));
+                country.setPopulation(rset.getInt("population"));
+                country.setCapital(rset.getInt("capital"));
 
                 countries.add(country);
             }
@@ -348,10 +347,10 @@ public class Sql {
             while (rset.next())
             {
                 City city = new City();
-                city.name = rset.getString("city.name");
-                city.country = rset.getString("country.name");
-                city.district = rset.getString("city.district");
-                city.population = rset.getString("city.population");
+                city.setName(rset.getString("city.name"));
+                city.setCountry(rset.getString("country.name"));
+                city.setDistrict(rset.getString("city.district"));
+                city.setPopulation(rset.getString("city.population"));
                 cities.add(city);
             }
             System.out.println("Query Complete, object return next");
@@ -393,10 +392,10 @@ public class Sql {
             while (rset.next())
             {
                 City city = new City();
-                city.name = rset.getString("city.name");
-                city.country = rset.getString("country.name");
-                city.district = rset.getString("city.district");
-                city.population = rset.getString("city.population");
+                city.setName(rset.getString("city.name"));
+                city.setCountry(rset.getString("country.name"));
+                city.setDistrict(rset.getString("city.district"));
+                city.setPopulation(rset.getString("city.population"));
                 cities.add(city);
             }
             System.out.println("Query Complete, object return next");
@@ -437,10 +436,10 @@ public class Sql {
             while (rset.next())
             {
                 City city = new City();
-                city.name = rset.getString("city.name");
-                city.country = rset.getString("country.name");
-                city.district = rset.getString("city.district");
-                city.population = rset.getString("city.population");
+                city.setName(rset.getString("city.name"));
+                city.setCountry(rset.getString("country.name"));
+                city.setDistrict(rset.getString("city.district"));
+                city.setPopulation(rset.getString("city.population"));
                 cities.add(city);
             }
             System.out.println("Query Complete, object return next");
@@ -482,10 +481,10 @@ public class Sql {
             while (rset.next())
             {
                 City city = new City();
-                city.name = rset.getString("city.name");
-                city.country = rset.getString("country.name");
-                city.district = rset.getString("city.district");
-                city.population = rset.getString("city.population");
+                city.setName(rset.getString("city.name"));
+                city.setCountry(rset.getString("country.name"));
+                city.setDistrict(rset.getString("city.district"));
+                city.setPopulation(rset.getString("city.population"));
                 cities.add(city);
             }
             System.out.println("Query Complete, object return next");
@@ -527,10 +526,10 @@ public class Sql {
             while (rset.next())
             {
                 City city = new City();
-                city.name = rset.getString("city.name");
-                city.country = rset.getString("country.name");
-                city.district = rset.getString("city.district");
-                city.population = rset.getString("city.population");
+                city.setName(rset.getString("city.name"));
+                city.setCountry(rset.getString("country.name"));
+                city.setDistrict(rset.getString("city.district"));
+                city.setPopulation(rset.getString("city.population"));
                 cities.add(city);
             }
             System.out.println("Query Complete, object return next");
@@ -573,10 +572,10 @@ public class Sql {
             while (rset.next())
             {
                 City city = new City();
-                city.name = rset.getString("city.name");
-                city.country = rset.getString("country.name");
-                city.district = rset.getString("city.district");
-                city.population = rset.getString("city.population");
+                city.setName(rset.getString("city.name"));
+                city.setCountry(rset.getString("country.name"));
+                city.setDistrict(rset.getString("city.district"));
+                city.setPopulation(rset.getString("city.population"));
                 cities.add(city);
             }
             System.out.println("Query Complete, object return next");
@@ -621,10 +620,10 @@ public class Sql {
             while (rset.next())
             {
                 City city = new City();
-                city.name = rset.getString("city.name");
-                city.country = rset.getString("country.name");
-                city.district = rset.getString("city.district");
-                city.population = rset.getString("city.population");
+                city.setName(rset.getString("city.name"));
+                city.setCountry(rset.getString("country.name"));
+                city.setDistrict(rset.getString("city.district"));
+                city.setPopulation(rset.getString("city.population"));
                 cities.add(city);
             }
             System.out.println("Query Complete, object return next");
@@ -668,10 +667,10 @@ public class Sql {
             while (rset.next())
             {
                 City city = new City();
-                city.name = rset.getString("city.name");
-                city.country = rset.getString("country.name");
-                city.district = rset.getString("city.district");
-                city.population = rset.getString("city.population");
+                city.setName(rset.getString("city.name"));
+                city.setCountry(rset.getString("country.name"));
+                city.setDistrict(rset.getString("city.district"));
+                city.setPopulation(rset.getString("city.population"));
                 cities.add(city);
             }
             System.out.println("Query Complete, object return next");
@@ -717,10 +716,10 @@ public class Sql {
             while (rset.next())
             {
                 City city = new City();
-                city.name = rset.getString("city.name");
-                city.country = rset.getString("country.name");
-                city.district = rset.getString("city.district");
-                city.population = rset.getString("city.population");
+                city.setName(rset.getString("city.name"));
+                city.setCountry(rset.getString("country.name"));
+                city.setDistrict(rset.getString("city.district"));
+                city.setPopulation(rset.getString("city.population"));
                 cities.add(city);
             }
             System.out.println("Query Complete, object return next");
@@ -764,10 +763,10 @@ public class Sql {
             while (rset.next())
             {
                 City city = new City();
-                city.name = rset.getString("city.name");
-                city.country = rset.getString("country.name");
-                city.district = rset.getString("city.district");
-                city.population = rset.getString("city.population");
+                city.setName(rset.getString("city.name"));
+                city.setCountry(rset.getString("country.name"));
+                city.setDistrict(rset.getString("city.district"));
+                city.setPopulation(rset.getString("city.population"));
                 cities.add(city);
             }
             System.out.println("Query Complete, object return next");
@@ -804,9 +803,9 @@ public class Sql {
             ArrayList<City> biggestCapitals = new ArrayList<>();
             while (rset.next()){
                 City capital = new City();
-                capital.name = rset.getString("city.Name");
-                capital.country = rset.getString("country.Name");
-                capital.population = rset.getString("city.Population");
+                capital.setName(rset.getString("city.name"));
+                capital.setCountry(rset.getString("country.name"));
+                capital.setPopulation(rset.getString("city.population"));
                 biggestCapitals.add(capital);
             }
             return biggestCapitals;
@@ -841,9 +840,9 @@ public class Sql {
             ArrayList<City> biggestContCapitals = new ArrayList<>();
             while (rset.next()) {
                 City capital = new City();
-                capital.name = rset.getString("city.Name");
-                capital.country = rset.getString("country.Name");
-                capital.population = rset.getString("city.Population");
+                capital.setName(rset.getString("city.name"));
+                capital.setCountry(rset.getString("country.name"));
+                capital.setPopulation(rset.getString("city.population"));
                 biggestContCapitals.add(capital);
             }
             return biggestContCapitals;
@@ -878,9 +877,9 @@ public class Sql {
             ArrayList<City> biggestRegionCapitals = new ArrayList<>();
             while (rset.next()) {
                 City capital = new City();
-                capital.name = rset.getString("city.Name");
-                capital.country = rset.getString("country.Name");
-                capital.population = rset.getString("city.Population");
+                capital.setName(rset.getString("city.name"));
+                capital.setCountry(rset.getString("country.name"));
+                capital.setPopulation(rset.getString("city.population"));
                 biggestRegionCapitals.add(capital);
             }
             return biggestRegionCapitals;
@@ -916,9 +915,9 @@ public class Sql {
             ArrayList<City> biggestNCapitals = new ArrayList<>();
             while (rset.next()){
                 City capital = new City();
-                capital.name = rset.getString("city.Name");
-                capital.country = rset.getString("country.Name");
-                capital.population = rset.getString("city.Population");
+                capital.setName(rset.getString("city.name"));
+                capital.setCountry(rset.getString("country.name"));
+                capital.setPopulation(rset.getString("city.population"));
                 biggestNCapitals.add(capital);
             }
             return biggestNCapitals;
@@ -956,9 +955,9 @@ public class Sql {
             ArrayList<City> biggestNContCapitals = new ArrayList<>();
             while (rset.next()) {
                 City capital = new City();
-                capital.name = rset.getString("city.Name");
-                capital.country = rset.getString("country.Name");
-                capital.population = rset.getString("city.Population");
+                capital.setName(rset.getString("city.name"));
+                capital.setCountry(rset.getString("country.name"));
+                capital.setPopulation(rset.getString("city.population"));
                 biggestNContCapitals.add(capital);
             }
             return biggestNContCapitals;
@@ -996,9 +995,9 @@ public class Sql {
             ArrayList<City> biggestNRegionCapitals = new ArrayList<>();
             while (rset.next()) {
                 City capital = new City();
-                capital.name = rset.getString("city.Name");
-                capital.country = rset.getString("country.Name");
-                capital.population = rset.getString("city.Population");
+                capital.setName(rset.getString("city.name"));
+                capital.setCountry(rset.getString("country.name"));
+                capital.setPopulation(rset.getString("city.population"));
                 biggestNRegionCapitals.add(capital);
             }
             return biggestNRegionCapitals;
@@ -1035,12 +1034,13 @@ public class Sql {
             // Check something is returned
             while(rset.next()) {
                 PopulationData popData = new PopulationData();
-                popData.identifier = rset.getString("country.continent");
-                popData.population = getPopulationOfContinent(con, popData.identifier);
-                popData.populationInCities = rset.getLong("citiesPopulation");
-                popData.populationPercentInCities = ((double)popData.populationInCities / popData.population) * 100;
-                popData.populationNotInCities = popData.population - popData.populationInCities;
-                popData.populationPercentNotInCities = ((double)popData.populationNotInCities / popData.population) * 100;
+                popData.setCode(rset.getString("country.code"));
+                popData.setIdentifier(rset.getString("country.continent"));
+                popData.setPopulation(getPopulationOfContinent(con, popData.getIdentifier()));
+                popData.setPopulationInCities(rset.getLong("citiesPopulation"));
+                popData.setPopulationPercentInCities(((double)popData.getPopulationInCities()) / popData.getPopulation() * 100);
+                popData.setPopulationNotInCities(popData.getPopulation() - popData.getPopulationInCities());
+                popData.setPopulationPercentNotInCities(((double)popData.getPopulationNotInCities() / popData.getPopulation()) * 100);
                 allPopulationData.add(popData);
             }
             return allPopulationData;
@@ -1074,12 +1074,13 @@ public class Sql {
             // Check something is returned
             while(rset.next()) {
                 PopulationData popData = new PopulationData();
-                popData.identifier = rset.getString("country.region");
-                popData.population = getPopulationOfRegion(con, popData.identifier);
-                popData.populationInCities = rset.getLong("citiesPopulation");
-                popData.populationPercentInCities = ((double)popData.populationInCities / popData.population) * 100;
-                popData.populationNotInCities = popData.population - popData.populationInCities;
-                popData.populationPercentNotInCities = ((double)popData.populationNotInCities / popData.population) * 100;
+                popData.setCode(rset.getString("country.code"));
+                popData.setIdentifier(rset.getString("country.continent"));
+                popData.setPopulation(getPopulationOfContinent(con, popData.getIdentifier()));
+                popData.setPopulationInCities(rset.getLong("citiesPopulation"));
+                popData.setPopulationPercentInCities(((double)popData.getPopulationInCities()) / popData.getPopulation() * 100);
+                popData.setPopulationNotInCities(popData.getPopulation() - popData.getPopulationInCities());
+                popData.setPopulationPercentNotInCities(((double)popData.getPopulationNotInCities() / popData.getPopulation()) * 100);
                 allPopulationData.add(popData);
             }
             return allPopulationData;
@@ -1113,13 +1114,13 @@ public class Sql {
             // Check something is returned
             while(rset.next()) {
                 PopulationData popData = new PopulationData();
-                popData.code = rset.getString("country.code");
-                popData.identifier = rset.getString("country.name");
-                popData.population = getCountryPopulation(con, popData.code);
-                popData.populationInCities = rset.getLong("citiesPopulation");
-                popData.populationPercentInCities = ((double)popData.populationInCities / popData.population) * 100;
-                popData.populationNotInCities = popData.population - popData.populationInCities;
-                popData.populationPercentNotInCities = ((double)popData.populationNotInCities / popData.population) * 100;
+                popData.setCode(rset.getString("country.code"));
+                popData.setIdentifier(rset.getString("country.continent"));
+                popData.setPopulation(getPopulationOfContinent(con, popData.getIdentifier()));
+                popData.setPopulationInCities(rset.getLong("citiesPopulation"));
+                popData.setPopulationPercentInCities(((double)popData.getPopulationInCities()) / popData.getPopulation() * 100);
+                popData.setPopulationNotInCities(popData.getPopulation() - popData.getPopulationInCities());
+                popData.setPopulationPercentNotInCities(((double)popData.getPopulationNotInCities() / popData.getPopulation()) * 100);
                 allPopulationData.add(popData);
             }
             return allPopulationData;

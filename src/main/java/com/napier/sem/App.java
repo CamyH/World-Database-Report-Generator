@@ -7,9 +7,8 @@ import com.napier.sem.world.City;
 import com.napier.sem.world.Country;
 import com.napier.sem.world.PopulationData;
 
-import java.sql.Array;
+
 import java.sql.Connection;
-import java.sql.ResultSet;
 import java.util.ArrayList;
 
 /**
@@ -24,7 +23,7 @@ public class App
     public static void main(String[] args)
     {
         // Status update
-        System.out.println("Showing a test function from everyones work");
+        System.out.println("Showing a test function from everyone's work");
 
         // Database connection setup
         DbConnection dbc = new DbConnection();
@@ -50,7 +49,11 @@ public class App
         // Report 1.4 - Return the top N countries in the world to topPopulatedCountriesInWorld object
         ArrayList<Country> topPopulatedCountriesInWorld = Sql.getTopPopulatedCountriesInWorld(con, 10);
         // Display report from topPopulatedCountriesInWorld
-        Reports.printCountries(topPopulatedCountriesInWorld);
+        if(topPopulatedCountriesInWorld != null) {
+            Reports.printCountries(topPopulatedCountriesInWorld);
+        }else{
+            System.out.println("Error getting top 10 most populous cities in the world.");
+        }
 /*
         // Report 1.5 - Return the top N countries in a continent to topPopulatedCountriesInContinent object
         ArrayList<Country> topPopulatedCountriesInContinent = Sql.getTopPopulatedCountriesInContinent(con, "Europe", 10);
@@ -93,7 +96,11 @@ public class App
         // Report 2.6 - Return top N populated cities in the world to topPopulatedCitiesInWorld object
         ArrayList<City> topPopulatedCitiesInWorld = Sql.getTopPopulatedCitiesInWorld(con, 10);
         // Display report from topPopulatedCitiesInWorld
-        Reports.printCities(topPopulatedCitiesInWorld);
+        if(topPopulatedCitiesInWorld != null) {
+            Reports.printCities(topPopulatedCitiesInWorld);
+        }else{
+            System.out.println("Error getting top 10 most populous cities in the world");
+        }
 /*
         // Report 2.7 - Return top N populated cities in a continent to topPopulatedCitiesInContinent object
         ArrayList<City> topPopulatedCitiesInContinent = Sql.getTopPopulatedCitiesInContinent(con, 10, "Asia");
@@ -115,7 +122,7 @@ public class App
         //Display report from topPopulatedCitiesInDistrict
         Reports.printCities(topPopulatedCitiesInDistrict);
 */
-        /************** CAPITAL CITIES FUNCTIONS ***************** Author Del */
+        /** ************ CAPITAL CITIES FUNCTIONS ***************** Author Del */
 /*
         // Report 3.1 - Return all the world's capitals by descending population
         ArrayList<City> biggestCapitals = Sql.getBiggestWorldCapitals(con);
@@ -131,8 +138,12 @@ public class App
  */
         // Report 3.4 - Return the top 3 most populous capitals across the world by descending population
         ArrayList<City> biggest3Capitals = Sql.getNBiggestWorldCapitals(con, 3);
-        Reports.printCapitals(biggest3Capitals);
- /*
+        if(biggest3Capitals != null) {
+            Reports.printCapitals(biggest3Capitals);
+        }else{
+            System.out.println("Error getting biggest 3 capitals.");
+        }
+        /*
         // Report 3.5 - Return the top 3 largest capitals in Europe by descending population
         ArrayList<City> biggest3EuropeCapitals = Sql.getNBiggestContinentCapitals(con, 3, "Europe");
         Reports.printCapitals(biggest3EuropeCapitals);
@@ -147,7 +158,11 @@ public class App
         // Report 4.1 - The population of people, people living in cities, and people not living in cities in each continent.
         // Antarctica is not shown as the population is set to 0 in the database //
         ArrayList<PopulationData> continentPopulationDataList = Sql.getPopulationDataContinent(con);
-        Reports.printPopulationDataContinent(continentPopulationDataList);
+        if(continentPopulationDataList != null) {
+            Reports.printPopulationDataContinent(continentPopulationDataList);
+        }else{
+            System.out.println("Error getting total, urban and rural population per continent.");
+        }
 /*
         // Report 4.2 - The population of people, people living in cities, and people not living in cities in each region.
         ArrayList<PopulationData> regionPopulationDataList = Sql.getPopulationDataRegion(con);
