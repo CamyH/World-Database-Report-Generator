@@ -1,9 +1,9 @@
 package com.napier.sem.world;
 
 /**
- * Project Authors: Colin, Cameron, Luke, Del
- * Date last modified: 20/02/2021
- * Purpose of class: This class is the city class with the required columns.
+ * Java class representing a city
+ * Date last modified: 06/03/2021
+ * Last modified by: Del
  */
 
 

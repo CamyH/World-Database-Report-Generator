@@ -13,9 +13,9 @@ import java.util.ArrayList;
 
 /**
  * Project Authors: Colin, Cameron, Luke, Del
- * Date last modified: 24/02/2021
- * Purpose of program: To run SQL queries to satisfy the given requirements
- * Last modified by: Colin
+ * Date last modified: 06/03/2021
+ * Purpose of program: Run SQL queries to satisfy the given requirements
+ * Last modified by: Del
  */
 
 public class App
@@ -29,7 +29,7 @@ public class App
         DbConnection dbc = new DbConnection();
         Connection con = dbc.getConnection();
 
-        /************** COUNTRIES FUNCTIONS ***************** Author Luke */
+        // ************** COUNTRIES FUNCTIONS ***************** Author: Luke */
 /*
         // Report 1.1 - Return all countries in the world to allCountriesInWorld object
         ArrayList<Country> allCountriesInWorld = Sql.getAllCountriesInWorld(con);
@@ -65,7 +65,7 @@ public class App
         // Display report from topPopulatedCountriesInRegion
         Reports.printCountries(topPopulatedCountriesInRegion);
 */
-        /************** CITIES FUNCTIONS ***************** Author Colin */
+        // ************** CITIES FUNCTIONS ***************** Author: Colin //
 /*
         // Report 2.1 - Return all cities in world to allCitiesInWorld object
         ArrayList<City> allCitiesInWorld = Sql.getAllCitiesInWorld(con);
@@ -122,7 +122,7 @@ public class App
         //Display report from topPopulatedCitiesInDistrict
         Reports.printCities(topPopulatedCitiesInDistrict);
 */
-        /** ************ CAPITAL CITIES FUNCTIONS ***************** Author Del */
+        // ************** CAPITAL CITIES FUNCTIONS ***************** Author: Del //
 /*
         // Report 3.1 - Return all the world's capitals by descending population
         ArrayList<City> biggestCapitals = Sql.getBiggestWorldCapitals(con);
@@ -153,7 +153,7 @@ public class App
         Reports.printCapitals(biggest3SEAsiaCapitals);
 */
 
-        /************** POPULATION FUNCTIONS ***************** Author Cameron */
+        // ************** POPULATION FUNCTIONS ***************** Author: Cameron //
 
         // Report 4.1 - The population of people, people living in cities, and people not living in cities in each continent.
         // Antarctica is not shown as the population is set to 0 in the database //
@@ -173,7 +173,7 @@ public class App
         ArrayList<PopulationData> countryPopulationDataList = Sql.getPopulationDataCountry(con);
         Reports.printPopulationDataCountry(countryPopulationDataList);
 */
-        /************** ADDITIONAL FUNCTIONS ***************** Author Cameron */
+        // ************** ADDITIONAL FUNCTIONS ***************** Author Cameron //
         // Report 1:
         // Get population of the world
         // Long totalPopulation = Sql.getWorldPopulation(con);

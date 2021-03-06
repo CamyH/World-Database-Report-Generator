@@ -12,9 +12,9 @@ import java.util.ArrayList;
 
 /**
  * Project Authors: Colin, Cameron, Luke, Del
- * Date last modified: 22/02/2021
+ * Date last modified: 06/03/2021
  * Purpose of class: This class handles the SQL queries to the database.
- * Last modified by: Colin
+ * Last modified by: Del
  */
 
 public class Sql {
@@ -1034,7 +1034,6 @@ public class Sql {
             // Check something is returned
             while(rset.next()) {
                 PopulationData popData = new PopulationData();
-                popData.setCode(rset.getString("country.code"));
                 popData.setIdentifier(rset.getString("country.continent"));
                 popData.setPopulation(getPopulationOfContinent(con, popData.getIdentifier()));
                 popData.setPopulationInCities(rset.getLong("citiesPopulation"));

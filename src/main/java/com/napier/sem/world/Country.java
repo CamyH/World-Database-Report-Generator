@@ -1,5 +1,10 @@
 package com.napier.sem.world;
 
+/**
+ * Java class representing a country
+ * Date last modified: 06/03/2021
+ * Last modified by: Del
+ */
 public class Country {
 
     /**

@@ -1,5 +1,11 @@
 package com.napier.sem.world;
 
+/**
+ * Java class holding general population data
+ * Date last modified: 06/03/2021
+ * Last modified by: Del
+ */
+
 public class PopulationData {
 
     /**
