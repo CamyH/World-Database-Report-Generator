@@ -1322,10 +1322,11 @@ public class Sql {
     public static ArrayList<Languages> getNumberOfLanguageSpeakers(Connection con, String language) {
         try {
             // Create string for SQL statement
-            String countryPopulation = "SELECT name, population, countrylanguage.Language, countrylanguage.Percentage " +
+            String countryPopulation = "SELECT name, population, countrylanguage.Language, population * (countrylanguage.Percentage / 100.0) AS PopPercent " +
                     "FROM country  " +
                     "JOIN countrylanguage ON country.code = countrylanguage.countryCode " +
-                    "WHERE countrylanguage.Language = ?;";
+                    "WHERE countrylanguage.Language = ? " +
+                    "ORDER BY PopPercent DESC;";
             // Create prepared statement with SQL statement
             PreparedStatement preparedStatement = con.prepareStatement(countryPopulation);
             // Set SQL statement ? to continent parameter
@@ -1342,13 +1343,13 @@ public class Sql {
                 languages.setName(rset.getString("name"));
                 languages.setPopulation(rset.getLong("population"));
                 languages.setLanguage(rset.getString("countryLanguage.Language"));
-                languages.setPercentage(rset.getLong("countryLanguage.percentage"));
+                languages.setPercentage(rset.getLong("PopPercent"));
                 languageData.add(languages);
             }
             return languageData;
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get the requested population data.");
+            System.out.println("Failed to get the requested language data.");
             return null;
         }
     }

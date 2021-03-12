@@ -221,7 +221,11 @@ public class App
         // Report 1:
         String language = "English";
         ArrayList<Languages> languageData = Sql.getNumberOfLanguageSpeakers(con, language);
-        Reports.printLanguageData(languageData);
+        if(languageData != null){
+            Reports.printLanguageData(languageData);
+        }else {
+            System.out.println("Error getting Language Data for the " + language + " language.");
+        }
 
         // Disconnect from database
         dbc.disconnect();

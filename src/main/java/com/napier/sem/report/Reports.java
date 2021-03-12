@@ -120,13 +120,16 @@ public class Reports {
 
     public static void printLanguageData(ArrayList<Languages> langData) {
         // Print header
-        System.out.printf("%-30s %-30s %-30s %-30s%n", "Country", "TotalPopulation", "Language", "Language(%)",
-                "PopulationNotInCities", "PopulationNotInCities(%)");
+        System.out.printf("%-30s %-30s %-30s %-30s%n", "Country", "TotalPopulation", "Language", "PopWhoSpeak");
         // Loop over all population data in the list
-        for (Languages languageData : langData) {
-            String dataString = String.format("%-30s %-30s %-30s %-30s",
-                    languageData.getName(), languageData.getPopulation(), languageData.getLanguage(), languageData.getPercentage());
-            System.out.println(dataString);
+        if (langData != null) {
+            for (Languages languageData : langData) {
+                String dataString = String.format("%-30s %-30s %-30s %-30s",
+                        languageData.getName(), languageData.getPopulation(), languageData.getLanguage(), languageData.getPercentage());
+                System.out.println(dataString);
+            }
+        }else {
+            System.out.println("Error printing Language Data. langData is null.");
         }
     }
 }

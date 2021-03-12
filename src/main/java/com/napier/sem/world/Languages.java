@@ -15,6 +15,8 @@ public class Languages {
 
     private Long percentage;
 
+    private Long percentageOfWorldPop;
+
     public String getName() {
         return name;
     }
@@ -45,5 +47,13 @@ public class Languages {
 
     public void setPercentage(Long percentage) {
         this.percentage = percentage;
+    }
+
+    public Long getPercentageOfWorldPop() {
+        return percentageOfWorldPop;
+    }
+
+    public void setPercentageOfWorldPop(Long percentageOfWorldPop) {
+        this.percentageOfWorldPop = percentageOfWorldPop;
     }
 }
