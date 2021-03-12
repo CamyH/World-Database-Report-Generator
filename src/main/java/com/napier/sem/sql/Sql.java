@@ -2,6 +2,7 @@ package com.napier.sem.sql;
 
 import com.napier.sem.world.City;
 import com.napier.sem.world.Country;
+import com.napier.sem.world.Languages;
 import com.napier.sem.world.PopulationData;
 
 import java.sql.Connection;
@@ -1130,7 +1131,6 @@ public class Sql {
         }
     }
 
-
     //************** ADDITIONAL QUERIES ***************** Author Cameron */
 
     /**
@@ -1317,5 +1317,39 @@ public class Sql {
         }
     }
 
+    //************** Language QUERIES ***************** Author Cameron */
 
+    public static ArrayList<Languages> getNumberOfLanguageSpeakers(Connection con, String language) {
+        try {
+            // Create string for SQL statement
+            String countryPopulation = "SELECT name, population, countrylanguage.Language, countrylanguage.Percentage " +
+                    "FROM country  " +
+                    "JOIN countrylanguage ON country.code = countrylanguage.countryCode " +
+                    "WHERE countrylanguage.Language = ?;";
+            // Create prepared statement with SQL statement
+            PreparedStatement preparedStatement = con.prepareStatement(countryPopulation);
+            // Set SQL statement ? to continent parameter
+            preparedStatement.setString(1, language);
+            // Execute SQL statement
+            ResultSet rset = preparedStatement.executeQuery();
+            // Return population of specified country + country name
+            // ArrayList to store all population data required
+            ArrayList<Languages> languageData = new ArrayList<>();
+            // Return population data of each country
+            // Check something is returned
+            while(rset.next()) {
+                Languages languages = new Languages();
+                languages.setName(rset.getString("name"));
+                languages.setPopulation(rset.getLong("population"));
+                languages.setLanguage(rset.getString("countryLanguage.Language"));
+                languages.setPercentage(rset.getLong("countryLanguage.percentage"));
+                languageData.add(languages);
+            }
+            return languageData;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get the requested population data.");
+            return null;
+        }
+    }
 }

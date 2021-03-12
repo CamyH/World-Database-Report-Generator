@@ -2,6 +2,7 @@ package com.napier.sem.report;
 
 import com.napier.sem.world.City;
 import com.napier.sem.world.Country;
+import com.napier.sem.world.Languages;
 import com.napier.sem.world.PopulationData;
 
 import java.util.ArrayList;
@@ -114,6 +115,18 @@ public class Reports {
                     String.format("%-30s %-30s %-30s %-30s %-30s %-30s",
                             country.getCode(), country.getName(), country.getContinent(), country.getRegion(), country.getPopulation(), country.getCapital());
             System.out.println(country_string);
+        }
+    }
+
+    public static void printLanguageData(ArrayList<Languages> langData) {
+        // Print header
+        System.out.printf("%-30s %-30s %-30s %-30s%n", "Country", "TotalPopulation", "Language", "Language(%)",
+                "PopulationNotInCities", "PopulationNotInCities(%)");
+        // Loop over all population data in the list
+        for (Languages languageData : langData) {
+            String dataString = String.format("%-30s %-30s %-30s %-30s",
+                    languageData.getName(), languageData.getPopulation(), languageData.getLanguage(), languageData.getPercentage());
+            System.out.println(dataString);
         }
     }
 }
