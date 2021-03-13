@@ -118,6 +118,10 @@ public class Reports {
         }
     }
 
+    /**
+     * Method to print all language data in ArrayList
+     * @param langData ArrayList of language data to print data from
+     */
     public static void printLanguageData(ArrayList<Languages> langData) {
         // Print header
         System.out.printf("%-30s %-30s %-30s %-30s %-30s%n", "Country", "TotalPopulation", "Language", "PopWhoSpeak", "PercentOfWorldPop");
