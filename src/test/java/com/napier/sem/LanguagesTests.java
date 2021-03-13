@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Test File Author: Cameron
- * Date last modified: 12/03/2021
+ * Date last modified: 13/03/2021
  * Purpose of File: Contain UnitTests for the Language Reports
  */
 
@@ -30,9 +30,13 @@ public class LanguagesTests
         // Init new instances of App & DbConnection
         app = new App();
         reports = new Reports();
-        db = new DbConnection();
-        // Grab connection to DB
-        con = db.getConnection();
+    }
+
+    @Test
+    void printLanguageDataTestEmpty()
+    {
+        ArrayList<Languages> languageData = new ArrayList<>();
+        Reports.printLanguageData(languageData);
     }
 
     @Test
@@ -46,6 +50,20 @@ public class LanguagesTests
     {
         ArrayList<Languages> languageData = new ArrayList<>();
         languageData.add(null);
+        Reports.printLanguageData(languageData);
+    }
+
+    @Test
+    void printLanguageDataTest()
+    {
+        ArrayList<Languages> languageData = new ArrayList<>();
+        Languages lang = new Languages();
+        lang.setName("France");
+        lang.setPopulation((long) 67000000);
+        lang.setLanguage("French");
+        lang.setNumberOfSpeakers((long) 60000000);
+        lang.setPercentageOfWorldPop(10.0);
+        languageData.add(lang);
         Reports.printLanguageData(languageData);
     }
 }
