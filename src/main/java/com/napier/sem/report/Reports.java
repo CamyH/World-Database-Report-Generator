@@ -120,12 +120,13 @@ public class Reports {
 
     public static void printLanguageData(ArrayList<Languages> langData) {
         // Print header
-        System.out.printf("%-30s %-30s %-30s %-30s%n", "Country", "TotalPopulation", "Language", "PopWhoSpeak");
+        System.out.printf("%-30s %-30s %-30s %-30s %-30s%n", "Country", "TotalPopulation", "Language", "PopWhoSpeak", "PercentOfWorldPop");
         // Loop over all population data in the list
         if (langData != null) {
             for (Languages languageData : langData) {
-                String dataString = String.format("%-30s %-30s %-30s %-30s",
-                        languageData.getName(), languageData.getPopulation(), languageData.getLanguage(), languageData.getPercentage());
+                String dataString = String.format("%-30s %-30s %-30s %-30s %-30s",
+                        languageData.getName(), languageData.getPopulation(), languageData.getLanguage(),
+                        languageData.getNumberOfSpeakers(), languageData.getPercentageOfWorldPop());
                 System.out.println(dataString);
             }
         }else {

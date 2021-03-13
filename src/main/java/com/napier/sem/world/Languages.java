@@ -13,9 +13,9 @@ public class Languages {
 
     private String language;
 
-    private Long percentage;
+    private Long numberOfSpeakers;
 
-    private Long percentageOfWorldPop;
+    private Double percentageOfWorldPop;
 
     public String getName() {
         return name;
@@ -41,19 +41,19 @@ public class Languages {
         this.language = language;
     }
 
-    public Long getPercentage() {
-        return percentage;
+    public Long getNumberOfSpeakers() {
+        return numberOfSpeakers;
     }
 
-    public void setPercentage(Long percentage) {
-        this.percentage = percentage;
+    public void setNumberOfSpeakers(Long numberOfSpeakers) {
+        this.numberOfSpeakers = numberOfSpeakers;
     }
 
-    public Long getPercentageOfWorldPop() {
+    public Double getPercentageOfWorldPop() {
         return percentageOfWorldPop;
     }
 
-    public void setPercentageOfWorldPop(Long percentageOfWorldPop) {
+    public void setPercentageOfWorldPop(Double percentageOfWorldPop) {
         this.percentageOfWorldPop = percentageOfWorldPop;
     }
 }

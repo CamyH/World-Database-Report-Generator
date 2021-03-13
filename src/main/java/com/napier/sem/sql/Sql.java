@@ -1317,16 +1317,22 @@ public class Sql {
         }
     }
 
-    //************** Language QUERIES ***************** Author Cameron */
+    //************** Language QUERY ***************** Author Cameron */
 
+    /**
+     * Method to return number of people who speak the given language in each country from greatest to smallest + percentage of world population
+     * @param con Holds connection to the database
+     * @param language Language variable
+     * @return ArrayList containing all the data for the language
+     */
     public static ArrayList<Languages> getNumberOfLanguageSpeakers(Connection con, String language) {
         try {
             // Create string for SQL statement
-            String countryPopulation = "SELECT name, population, countrylanguage.Language, population * (countrylanguage.Percentage / 100.0) AS PopPercent " +
+            String countryPopulation = "SELECT name, population, countrylanguage.Language, population * (countrylanguage.Percentage / 100.0) AS Speakers " +
                     "FROM country  " +
                     "JOIN countrylanguage ON country.code = countrylanguage.countryCode " +
                     "WHERE countrylanguage.Language = ? " +
-                    "ORDER BY PopPercent DESC;";
+                    "ORDER BY Speakers DESC;";
             // Create prepared statement with SQL statement
             PreparedStatement preparedStatement = con.prepareStatement(countryPopulation);
             // Set SQL statement ? to continent parameter
@@ -1336,6 +1342,8 @@ public class Sql {
             // Return population of specified country + country name
             // ArrayList to store all population data required
             ArrayList<Languages> languageData = new ArrayList<>();
+            // Get world population
+            Long worldPop = Sql.getWorldPopulation(con);
             // Return population data of each country
             // Check something is returned
             while(rset.next()) {
@@ -1343,7 +1351,9 @@ public class Sql {
                 languages.setName(rset.getString("name"));
                 languages.setPopulation(rset.getLong("population"));
                 languages.setLanguage(rset.getString("countryLanguage.Language"));
-                languages.setPercentage(rset.getLong("PopPercent"));
+                languages.setNumberOfSpeakers(rset.getLong("Speakers"));
+                if(worldPop != null)
+                    languages.setPercentageOfWorldPop(((double)languages.getNumberOfSpeakers() / worldPop) * 100);
                 languageData.add(languages);
             }
             return languageData;
