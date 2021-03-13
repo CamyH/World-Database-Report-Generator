@@ -105,15 +105,22 @@ public class Reports {
      */
     public static void printCountries(ArrayList<Country> countries)
     {
-        // Print header
-        System.out.printf("%-30s %-30s %-30s %-30s %-30s %-30s%n", "Code", "Name", "Continent", "Region", "Population", "Capital");
-        // Loop over all countries in the list
-        for (Country country : countries)
-        {
-            String country_string =
-                    String.format("%-30s %-30s %-30s %-30s %-30s %-30s",
-                            country.getCode(), country.getName(), country.getContinent(), country.getRegion(), country.getPopulation(), country.getCapital());
-            System.out.println(country_string);
+        if(countries == null){
+            System.out.println("No Country Data");
+        }
+        else {
+            // Print header
+            System.out.printf("%-30s %-30s %-30s %-30s %-30s %-30s%n", "Code", "Name", "Continent", "Region", "Population", "Capital");
+
+            // Loop over all countries in the list
+            for (Country country : countries) {
+                if(country == null)
+                    continue;
+                String country_string =
+                        String.format("%-30s %-30s %-30s %-30s %-30s %-30s",
+                                country.getCode(), country.getName(), country.getContinent(), country.getRegion(), country.getPopulation(), country.getCapital());
+                System.out.println(country_string);
+            }
         }
     }
 }
