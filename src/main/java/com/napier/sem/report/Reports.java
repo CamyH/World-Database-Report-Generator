@@ -53,15 +53,22 @@ public class Reports {
      * @param popData ArrayList of data
      */
     public static void printPopulationDataContinent(ArrayList<PopulationData> popData) {
-        // Print header
-        System.out.printf("%-30s %-30s %-30s %-30s %-30s %-30s%n", "Continent", "TotalPopulation", "PopulationInCities", "PopulationInCities(%)",
-                "PopulationNotInCities", "PopulationNotInCities(%)");
-        // Loop over all population data in the list
-        for (PopulationData populationData : popData) {
-            String dataString = String.format("%-30s %-30s %-30s %-30s %-30s %-30s",
-                    populationData.getIdentifier(), populationData.getPopulation(), populationData.getPopulationInCities(),
-                    Math.round(populationData.getPopulationPercentInCities()), populationData.getPopulationNotInCities(), Math.round(populationData.getPopulationPercentNotInCities()));
-            System.out.println(dataString);
+        if(popData == null){
+            System.out.println("No Population Data");
+        }
+        else {
+            // Print header
+            System.out.printf("%-30s %-30s %-30s %-30s %-30s %-30s%n", "Continent", "TotalPopulation", "PopulationInCities", "PopulationInCities(%)",
+                    "PopulationNotInCities", "PopulationNotInCities(%)");
+            // Loop over all population data in the list
+            for (PopulationData populationData : popData) {
+                if(populationData == null)
+                    continue;
+                String dataString = String.format("%-30s %-30s %-30s %-30s %-30s %-30s",
+                        populationData.getIdentifier(), populationData.getPopulation(), populationData.getPopulationInCities(),
+                        Math.round(populationData.getPopulationPercentInCities()), populationData.getPopulationNotInCities(), Math.round(populationData.getPopulationPercentNotInCities()));
+                System.out.println(dataString);
+            }
         }
     }
 
@@ -70,15 +77,22 @@ public class Reports {
      * @param popData ArrayList of data
      */
     public static void printPopulationDataRegion(ArrayList<PopulationData> popData) {
-        // Print header
-        System.out.printf("%-30s %-30s %-30s %-30s %-30s %-30s%n", "Region", "TotalPopulation", "PopulationInCities", "PopulationInCities(%)",
-                "PopulationNotInCities", "PopulationNotInCities(%)");
-        // Loop over all population data in the list
-        for (PopulationData populationData : popData) {
-            String dataString = String.format("%-30s %-30s %-30s %-30s %-30s %-30s",
-                    populationData.getIdentifier(), populationData.getPopulation(), populationData.getPopulationInCities(), Math.round(populationData.getPopulationPercentInCities()),
-                    populationData.getPopulationNotInCities(), Math.round(populationData.getPopulationPercentNotInCities()));
-            System.out.println(dataString);
+        if(popData == null){
+            System.out.println("No Population Data");
+        }
+        else {
+            // Print header
+            System.out.printf("%-30s %-30s %-30s %-30s %-30s %-30s%n", "Region", "TotalPopulation", "PopulationInCities", "PopulationInCities(%)",
+                    "PopulationNotInCities", "PopulationNotInCities(%)");
+            // Loop over all population data in the list
+            for (PopulationData populationData : popData) {
+                if(populationData == null)
+                    continue;
+                String dataString = String.format("%-30s %-30s %-30s %-30s %-30s %-30s",
+                        populationData.getIdentifier(), populationData.getPopulation(), populationData.getPopulationInCities(), Math.round(populationData.getPopulationPercentInCities()),
+                        populationData.getPopulationNotInCities(), Math.round(populationData.getPopulationPercentNotInCities()));
+                System.out.println(dataString);
+            }
         }
     }
 
@@ -87,15 +101,23 @@ public class Reports {
      * @param popData ArrayList of data
      */
     public static void printPopulationDataCountry(ArrayList<PopulationData> popData) {
-        // Print header
-        System.out.printf("%-30s %-30s %-30s %-30s %-30s %-30s%n", "Country", "TotalPopulation", "PopulationInCities", "PopulationInCities(%)",
-                "PopulationNotInCities", "PopulationNotInCities(%)");
-        // Loop over all population data in the list
-        for (PopulationData populationData : popData) {
-            String dataString = String.format("%-30s %-30s %-30s %-30s %-30s %-30s",
-                    populationData.getIdentifier(), populationData.getPopulation(), populationData.getPopulationInCities(),
-                    Math.round(populationData.getPopulationPercentInCities()), populationData.getPopulationNotInCities(), Math.round(populationData.getPopulationPercentNotInCities()));
-            System.out.println(dataString);
+        if(popData == null){
+            System.out.println("No Population Data");
+        }
+
+        else {
+            // Print header
+            System.out.printf("%-30s %-30s %-30s %-30s %-30s %-30s%n", "Country", "TotalPopulation", "PopulationInCities", "PopulationInCities(%)",
+                    "PopulationNotInCities", "PopulationNotInCities(%)");
+            // Loop over all population data in the list
+            for (PopulationData populationData : popData) {
+                if(populationData == null)
+                    continue;
+                String dataString = String.format("%-30s %-30s %-30s %-30s %-30s %-30s",
+                        populationData.getIdentifier(), populationData.getPopulation(), populationData.getPopulationInCities(),
+                        Math.round(populationData.getPopulationPercentInCities()), populationData.getPopulationNotInCities(), Math.round(populationData.getPopulationPercentNotInCities()));
+                System.out.println(dataString);
+            }
         }
     }
 
