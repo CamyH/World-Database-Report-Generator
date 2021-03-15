@@ -9,11 +9,9 @@ import org.junit.jupiter.api.Test;
 import java.sql.Connection;
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 /**
  * Test File Author: Cameron
- * Date last modified: 13/03/2021
+ * Date last modified: 15/03/2021
  * Purpose of File: Contain UnitTests for the Language Reports
  */
 
@@ -21,8 +19,6 @@ public class LanguagesTests
 {
     static App app;
     static Reports reports;
-    static DbConnection db;
-    static Connection con;
 
     @BeforeAll
     static void init()
@@ -67,4 +63,3 @@ public class LanguagesTests
         Reports.printLanguageData(languageData);
     }
 }
-
