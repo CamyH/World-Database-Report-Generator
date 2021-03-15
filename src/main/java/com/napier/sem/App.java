@@ -218,13 +218,44 @@ public class App
 
         // ************** LANGUAGE FUNCTIONS ***************** Author Cameron //
 
-        // Report 1:
-        String language = "English";
-        ArrayList<Languages> languageData = Sql.getNumberOfLanguageSpeakers(con, language);
-        if(languageData != null){
-            Reports.printLanguageData(languageData);
+        // Report 1 - English:
+        ArrayList<Languages> languageDataEnglish = Sql.getNumberOfLanguageSpeakers(con, "English");
+        if(languageDataEnglish != null){
+            Reports.printLanguageData(languageDataEnglish);
         }else {
-            System.out.println("Error getting Language Data for the " + language + " language.");
+            System.out.println("Error getting Language Data for the English language.");
+        }
+
+        // Report 2 - Chinese:
+        ArrayList<Languages> languageDataChinese = Sql.getNumberOfLanguageSpeakers(con, "Chinese");
+        if(languageDataChinese != null){
+            Reports.printLanguageData(languageDataChinese);
+        }else {
+            System.out.println("Error getting Language Data for the Chinese language.");
+        }
+
+        // Report 3 - Hindi:
+        ArrayList<Languages> languageDataHindi = Sql.getNumberOfLanguageSpeakers(con, "Hindi");
+        if(languageDataHindi != null){
+            Reports.printLanguageData(languageDataHindi);
+        }else {
+            System.out.println("Error getting Language Data for the Hindi language.");
+        }
+
+        // Report 4 - Arabic:
+        ArrayList<Languages> languageDataArabic = Sql.getNumberOfLanguageSpeakers(con, "Arabic");
+        if(languageDataArabic != null){
+            Reports.printLanguageData(languageDataArabic);
+        }else {
+            System.out.println("Error getting Language Data for the Arabic language.");
+        }
+
+        // Report 5 - Spanish:
+        ArrayList<Languages> languageDataSpanish = Sql.getNumberOfLanguageSpeakers(con, "Spanish");
+        if(languageDataSpanish != null){
+            Reports.printLanguageData(languageDataSpanish);
+        }else {
+            System.out.println("Error getting Language Data for the Spanish language.");
         }
 
         // Disconnect from database
