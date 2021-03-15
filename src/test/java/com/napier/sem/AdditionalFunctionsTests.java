@@ -1,17 +1,15 @@
 package com.napier.sem;
 
-import com.napier.sem.db.DbConnection;
 import com.napier.sem.report.Reports;
 import com.napier.sem.world.PopulationData;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import java.sql.Connection;
 import java.util.ArrayList;
 
 /**
  * Test File Author: Cameron
- * Date last modified: 13/03/2021
+ * Date last modified: 15/03/2021
  * Purpose of File: Contain UnitTests for the AdditionalFunctions Reports
  */
 
