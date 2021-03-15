@@ -2,16 +2,12 @@ package com.napier.sem;
 
 import com.napier.sem.db.DbConnection;
 import com.napier.sem.report.Reports;
-import com.napier.sem.sql.Sql;
-import com.napier.sem.world.Languages;
 import com.napier.sem.world.PopulationData;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.sql.Connection;
 import java.util.ArrayList;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Test File Author: Cameron
@@ -22,8 +18,6 @@ import static org.junit.jupiter.api.Assertions.*;
 public class AdditionalFunctionsTests
 {
     static App app;
-    static DbConnection db;
-    static Connection con;
 
     @BeforeAll
     static void init()
