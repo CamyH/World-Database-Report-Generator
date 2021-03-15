@@ -34,14 +34,6 @@ public class AdditionalFunctionsTests
         // Grab connection to DB
         //con = db.getConnection();
     }
-/*
-    @Test
-    void getWorldPopulation()
-    {
-        Long correctPopulation = 6078749450L;
-        Long methodPopulation = Sql.getWorldPopulation(con);
-        assertEquals(correctPopulation, methodPopulation);
-    }*/
 
     //************** Continent Tests QUERIES ******************/
 
