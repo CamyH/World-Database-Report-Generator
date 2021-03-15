@@ -2,7 +2,6 @@ package com.napier.sem;
 
 import com.napier.sem.report.Reports;
 import com.napier.sem.world.PopulationData;
-import com.napier.sem.world.Country;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
