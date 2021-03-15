@@ -28,11 +28,8 @@ public class AdditionalFunctionsTests
     @BeforeAll
     static void init()
     {
-        // Init new instances of App & DbConnection
+        // Init new instances of App
         app = new App();
-        //db = new DbConnection();
-        // Grab connection to DB
-        //con = db.getConnection();
     }
 
     //************** Continent Tests QUERIES ******************/
