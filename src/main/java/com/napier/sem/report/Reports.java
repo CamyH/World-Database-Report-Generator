@@ -2,14 +2,13 @@ package com.napier.sem.report;
 
 import com.napier.sem.world.City;
 import com.napier.sem.world.Country;
-import com.napier.sem.world.Languages;
 import com.napier.sem.world.PopulationData;
 
 import java.util.ArrayList;
 
 /**
  * Project Authors: Colin, Cameron, Luke, Del
- * Date last modified: 13/03/2021
+ * Date last modified: 06/03/2021
  * Purpose of class: This class handles the reports to the console.
  * Last modified by: Del
  */
@@ -54,24 +53,22 @@ public class Reports {
      * @param popData ArrayList of data
      */
     public static void printPopulationDataContinent(ArrayList<PopulationData> popData) {
-        // Print header
-        System.out.printf("%-30s %-30s %-30s %-30s %-30s %-30s%n", "Continent", "TotalPopulation", "PopulationInCities", "PopulationInCities(%)",
-                "PopulationNotInCities", "PopulationNotInCities(%)");
-        // Check if data is null
-        if (popData == null) {
-            System.out.println("No population data.");
-            return;
+        if(popData == null){
+            System.out.println("No Population Data");
         }
-        // Loop over all population data in the list
-        for (PopulationData populationData : popData) {
-            // Check if population data is null, if so skip to next
-            if (populationData == null) {
-                continue;
+        else {
+            // Print header
+            System.out.printf("%-30s %-30s %-30s %-30s %-30s %-30s%n", "Continent", "TotalPopulation", "PopulationInCities", "PopulationInCities(%)",
+                    "PopulationNotInCities", "PopulationNotInCities(%)");
+            // Loop over all population data in the list
+            for (PopulationData populationData : popData) {
+                if(populationData == null)
+                    continue;
+                String dataString = String.format("%-30s %-30s %-30s %-30s %-30s %-30s",
+                        populationData.getIdentifier(), populationData.getPopulation(), populationData.getPopulationInCities(),
+                        Math.round(populationData.getPopulationPercentInCities()), populationData.getPopulationNotInCities(), Math.round(populationData.getPopulationPercentNotInCities()));
+                System.out.println(dataString);
             }
-            String dataString = String.format("%-30s %-30s %-30s %-30s %-30s %-30s",
-                    populationData.getIdentifier(), populationData.getPopulation(), populationData.getPopulationInCities(),
-                    Math.round(populationData.getPopulationPercentInCities()), populationData.getPopulationNotInCities(), Math.round(populationData.getPopulationPercentNotInCities()));
-            System.out.println(dataString);
         }
     }
 
@@ -80,24 +77,22 @@ public class Reports {
      * @param popData ArrayList of data
      */
     public static void printPopulationDataRegion(ArrayList<PopulationData> popData) {
-        // Print header
-        System.out.printf("%-30s %-30s %-30s %-30s %-30s %-30s%n", "Region", "TotalPopulation", "PopulationInCities", "PopulationInCities(%)",
-                "PopulationNotInCities", "PopulationNotInCities(%)");
-        // Check if data is null
-        if (popData == null) {
-            System.out.println("No population data.");
-            return;
+        if(popData == null){
+            System.out.println("No Population Data");
         }
-        // Loop over all population data in the list
-        for (PopulationData populationData : popData) {
-            // Check if population data is null, if so skip to next
-            if (populationData == null) {
-                continue;
+        else {
+            // Print header
+            System.out.printf("%-30s %-30s %-30s %-30s %-30s %-30s%n", "Region", "TotalPopulation", "PopulationInCities", "PopulationInCities(%)",
+                    "PopulationNotInCities", "PopulationNotInCities(%)");
+            // Loop over all population data in the list
+            for (PopulationData populationData : popData) {
+                if(populationData == null)
+                    continue;
+                String dataString = String.format("%-30s %-30s %-30s %-30s %-30s %-30s",
+                        populationData.getIdentifier(), populationData.getPopulation(), populationData.getPopulationInCities(), Math.round(populationData.getPopulationPercentInCities()),
+                        populationData.getPopulationNotInCities(), Math.round(populationData.getPopulationPercentNotInCities()));
+                System.out.println(dataString);
             }
-            String dataString = String.format("%-30s %-30s %-30s %-30s %-30s %-30s",
-                    populationData.getIdentifier(), populationData.getPopulation(), populationData.getPopulationInCities(), Math.round(populationData.getPopulationPercentInCities()),
-                    populationData.getPopulationNotInCities(), Math.round(populationData.getPopulationPercentNotInCities()));
-            System.out.println(dataString);
         }
     }
 
@@ -106,24 +101,23 @@ public class Reports {
      * @param popData ArrayList of data
      */
     public static void printPopulationDataCountry(ArrayList<PopulationData> popData) {
-        // Print header
-        System.out.printf("%-30s %-30s %-30s %-30s %-30s %-30s%n", "Country", "TotalPopulation", "PopulationInCities", "PopulationInCities(%)",
-                "PopulationNotInCities", "PopulationNotInCities(%)");
-        // Check if data is null
-        if (popData == null) {
-            System.out.println("No population data.");
-            return;
+        if(popData == null){
+            System.out.println("No Population Data");
         }
-        // Loop over all population data in the list
-        for (PopulationData populationData : popData) {
-            // Check if population data is null, if so skip to next
-            if (populationData == null) {
-                continue;
+
+        else {
+            // Print header
+            System.out.printf("%-30s %-30s %-30s %-30s %-30s %-30s%n", "Country", "TotalPopulation", "PopulationInCities", "PopulationInCities(%)",
+                    "PopulationNotInCities", "PopulationNotInCities(%)");
+            // Loop over all population data in the list
+            for (PopulationData populationData : popData) {
+                if(populationData == null)
+                    continue;
+                String dataString = String.format("%-30s %-30s %-30s %-30s %-30s %-30s",
+                        populationData.getIdentifier(), populationData.getPopulation(), populationData.getPopulationInCities(),
+                        Math.round(populationData.getPopulationPercentInCities()), populationData.getPopulationNotInCities(), Math.round(populationData.getPopulationPercentNotInCities()));
+                System.out.println(dataString);
             }
-            String dataString = String.format("%-30s %-30s %-30s %-30s %-30s %-30s",
-                    populationData.getIdentifier(), populationData.getPopulation(), populationData.getPopulationInCities(),
-                    Math.round(populationData.getPopulationPercentInCities()), populationData.getPopulationNotInCities(), Math.round(populationData.getPopulationPercentNotInCities()));
-            System.out.println(dataString);
         }
     }
 
@@ -133,40 +127,22 @@ public class Reports {
      */
     public static void printCountries(ArrayList<Country> countries)
     {
-        // Print header
-        System.out.printf("%-30s %-30s %-30s %-30s %-30s %-30s%n", "Code", "Name", "Continent", "Region", "Population", "Capital");
-        // Loop over all countries in the list
-        for (Country country : countries)
-        {
-            String country_string =
-                    String.format("%-30s %-30s %-30s %-30s %-30s %-30s",
-                            country.getCode(), country.getName(), country.getContinent(), country.getRegion(), country.getPopulation(), country.getCapital());
-            System.out.println(country_string);
+        if(countries == null){
+            System.out.println("No Country Data");
         }
-    }
+        else {
+            // Print header
+            System.out.printf("%-30s %-30s %-30s %-30s %-30s %-30s%n", "Code", "Name", "Continent", "Region", "Population", "Capital");
 
-    /**
-     * Method to print all language data in ArrayList
-     * @param langData ArrayList of language data to print data from
-     */
-    public static void printLanguageData(ArrayList<Languages> langData) {
-        // Print header
-        System.out.printf("%-30s %-30s %-30s %-30s %-30s%n", "Country", "TotalPopulation", "Language", "PopWhoSpeak", "PercentOfWorldPop");
-        // Check if data is null
-        if (langData == null) {
-            System.out.println("No language data.");
-            return;
-        }
-        // Loop over all population data in the list
-        for (Languages languageData : langData) {
-            // Check if language data is null, if so skip to next
-            if (languageData == null) {
-                continue;
+            // Loop over all countries in the list
+            for (Country country : countries) {
+                if(country == null)
+                    continue;
+                String country_string =
+                        String.format("%-30s %-30s %-30s %-30s %-30s %-30s",
+                                country.getCode(), country.getName(), country.getContinent(), country.getRegion(), country.getPopulation(), country.getCapital());
+                System.out.println(country_string);
             }
-            String dataString = String.format("%-30s %-30s %-30s %-30s %-30s",
-                    languageData.getName(), languageData.getPopulation(), languageData.getLanguage(),
-                    languageData.getNumberOfSpeakers(), languageData.getPercentageOfWorldPop());
-            System.out.println(dataString);
         }
     }
 }
