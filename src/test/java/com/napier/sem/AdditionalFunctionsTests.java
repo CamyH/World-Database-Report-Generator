@@ -160,4 +160,3 @@ public class AdditionalFunctionsTests
         Reports.printPopulationDataCountry(popData);
     }
 }
-
