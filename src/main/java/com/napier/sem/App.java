@@ -175,42 +175,36 @@ public class App
         Reports.printPopulationDataCountry(countryPopulationDataList);
 */
         // ************** ADDITIONAL FUNCTIONS ***************** Author Cameron //
-        // Report 1:
-        // Get population of the world
+        // Report 5.1 - Get population of the world
         // Long totalPopulation = Sql.getWorldPopulation(con);
         // System.out.println("World Population: " + totalPopulation);
 
-        // Report 2:
-        // Get population of a continent
+        // Report 5.2 - Get population of a continent
         // Set continent to get population of
         // 'Asia','Europe','North America','Africa','Oceania','Antarctica','South America'
         // String continent = "Europe";
         // Long continentPopulation = Sql.getPopulationOfContinent(con, continent);
         // System.out.println("Population of " + continent + " is " + continentPopulation);
 
-        // Report 3:
-        // Get population of a region
+        // Report 5.3 - Get population of a region
         // Set region to get population of
         // String region = "Southern Europe";
         // Long regionPopulation = Sql.getPopulationOfRegion(con, region);
         // System.out.println("Population of " + region + " is " + regionPopulation);
 
-        // Report 4:
-        // Get the population of a country
+        // Report 5.4 - Get the population of a country
         // Set the country code
         // String code = "GBR";
         // Long countryPopulation = Sql.getCountryPopulation(con, code);
         // System.out.println("The population of " + code + " is " + countryPopulation);
 
-        // Report 5:
-        // Get the population of a district
+        // Report 5.5 - Get the population of a district
         // Set the district
         // String district = "England";
         // Long districtPopulation = Sql.getDistrictPopulation(con, district);
         // System.out.println("The population of " + district + " is " + districtPopulation);
 
-        // Report 6:
-        // Get the population of a city
+        // Report 5.6 - Get the population of a city
         // Set the city name
         // String cityName = "London";
         // Long cityPopulation = Sql.getCityPopulation(con, cityName);
@@ -218,7 +212,7 @@ public class App
 
         // ************** LANGUAGE FUNCTIONS ***************** Author Cameron //
 
-        // Report 1 - English:
+        // Report 6.1 - Return all the who speak English from greatest to smallest + percentage of world population:
         ArrayList<Languages> languageDataEnglish = Sql.getNumberOfLanguageSpeakers(con, "English");
         if(languageDataEnglish != null){
             Reports.printLanguageData(languageDataEnglish);
@@ -226,7 +220,7 @@ public class App
             System.out.println("Error getting Language Data for the English language.");
         }
 
-        // Report 2 - Chinese:
+        // Report 6.2 - Return all the who speak Chinese from greatest to smallest + percentage of world population:
         ArrayList<Languages> languageDataChinese = Sql.getNumberOfLanguageSpeakers(con, "Chinese");
         if(languageDataChinese != null){
             Reports.printLanguageData(languageDataChinese);
@@ -234,7 +228,7 @@ public class App
             System.out.println("Error getting Language Data for the Chinese language.");
         }
 
-        // Report 3 - Hindi:
+        // Report 6.3 - Return all the who speak Hindi from greatest to smallest + percentage of world population:
         ArrayList<Languages> languageDataHindi = Sql.getNumberOfLanguageSpeakers(con, "Hindi");
         if(languageDataHindi != null){
             Reports.printLanguageData(languageDataHindi);
@@ -242,7 +236,7 @@ public class App
             System.out.println("Error getting Language Data for the Hindi language.");
         }
 
-        // Report 4 - Arabic:
+        // Report 6.4 - Return all the who speak Arabic from greatest to smallest + percentage of world population:
         ArrayList<Languages> languageDataArabic = Sql.getNumberOfLanguageSpeakers(con, "Arabic");
         if(languageDataArabic != null){
             Reports.printLanguageData(languageDataArabic);
@@ -250,7 +244,7 @@ public class App
             System.out.println("Error getting Language Data for the Arabic language.");
         }
 
-        // Report 5 - Spanish:
+        // Report 6.5 - Return all the who speak Spanish from greatest to smallest + percentage of world population:
         ArrayList<Languages> languageDataSpanish = Sql.getNumberOfLanguageSpeakers(con, "Spanish");
         if(languageDataSpanish != null){
             Reports.printLanguageData(languageDataSpanish);
