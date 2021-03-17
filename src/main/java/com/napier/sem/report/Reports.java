@@ -2,6 +2,7 @@ package com.napier.sem.report;
 
 import com.napier.sem.world.City;
 import com.napier.sem.world.Country;
+import com.napier.sem.world.Languages;
 import com.napier.sem.world.PopulationData;
 
 import java.util.ArrayList;
@@ -28,17 +29,17 @@ public class Reports {
         else{
 
 
-        // Print header
-        System.out.printf("%-30s %-30s %-30s %-30s%n", "Name", "Country", "District", "Population");
-        // Loop over all cities in the list
-        for (City city : cities)
-        {
-            if(city == null)
-                continue;
-            String city_string =
-                    String.format("%-30s %-30s %-30s %-30s",
-                            city.getName(), city.getCountry(), city.getDistrict(), city.getPopulation());
-            System.out.println(city_string);
+            // Print header
+            System.out.printf("%-30s %-30s %-30s %-30s%n", "Name", "Country", "District", "Population");
+            // Loop over all cities in the list
+            for (City city : cities)
+            {
+                if(city == null)
+                    continue;
+                String city_string =
+                        String.format("%-30s %-30s %-30s %-30s",
+                                city.getName(), city.getCountry(), city.getDistrict(), city.getPopulation());
+                System.out.println(city_string);
             }
         }
     }
@@ -152,6 +153,31 @@ public class Reports {
                                 country.getCode(), country.getName(), country.getContinent(), country.getRegion(), country.getPopulation(), country.getCapital());
                 System.out.println(country_string);
             }
+        }
+    }
+
+    /**
+     * Method to print all language data in ArrayList
+     * @param langData ArrayList of language data to print data from
+     */
+    public static void printLanguageData(ArrayList<Languages> langData) {
+        // Print header
+        System.out.printf("%-30s %-30s %-30s %-30s %-30s%n", "Country", "TotalPopulation", "Language", "PopWhoSpeak", "PercentOfWorldPop");
+        // Check if data is null
+        if (langData == null) {
+            System.out.println("No language data.");
+            return;
+        }
+        // Loop over all population data in the list
+        for (Languages languageData : langData) {
+            // Check if language data is null, if so skip to next
+            if (languageData == null) {
+                continue;
+            }
+            String dataString = String.format("%-30s %-30s %-30s %-30s %-30s",
+                    languageData.getName(), languageData.getPopulation(), languageData.getLanguage(),
+                    languageData.getNumberOfSpeakers(), languageData.getPercentageOfWorldPop());
+            System.out.println(dataString);
         }
     }
 }

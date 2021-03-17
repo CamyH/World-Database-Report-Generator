@@ -24,14 +24,14 @@ public class DbConnection {
      * Constructor with automatically connect()
      */
     public DbConnection() {
-        this.connect();
+        this.connect("localhost:3306");
     }
 
 
     /**
      * Connect to the MySQL database.
      */
-    public void connect()
+    public void connect(String location)
     {
         try
         {
@@ -53,7 +53,7 @@ public class DbConnection {
                 // Wait a bit for db to start
                 Thread.sleep(30000);
                 // Connect to database
-                con = DriverManager.getConnection("jdbc:mysql://db:3306/world?useSSL=false", "root", "example");
+                con = DriverManager.getConnection("jdbc:mysql://" + location + "/employees?allowPublicKeyRetrieval=true&useSSL=false", "root", "example");
                 System.out.println("Successfully connected");
                 break;
             }

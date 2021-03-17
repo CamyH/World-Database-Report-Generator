@@ -5,10 +5,13 @@ import com.napier.sem.report.Reports;
 import com.napier.sem.sql.Sql;
 import com.napier.sem.world.City;
 import org.junit.jupiter.api.BeforeAll;
+
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assertions;
 
 import java.sql.Connection;
 import java.util.ArrayList;
+
 
 /**
  * Project Authors: Colin
@@ -22,6 +25,8 @@ public class CityTests {
     static App app;
     static Reports reports;
 
+    DbConnection dbc = new DbConnection();
+    Connection con = dbc.getConnection();
 
     @BeforeAll
     static void init()
@@ -65,13 +70,16 @@ public class CityTests {
         cities.add(city);
         Reports.printCities(cities);
     }
-/*
+
     @Test
-    void getAllCitiesInWorldNull(){
+    void getAllCitiesInWorld(){
 
-        Sql.getAllCitiesInWorld(con);
+       ArrayList<City> check = Sql.getAllCitiesInWorld(con);
+       int testPopulation = 10500000;
+       Assertions.assertEquals(check.get(0).getPopulation(),testPopulation);
+
     }
-
+/*
     @Test
     void getAllCitiesInWorldEmpty(){
 
