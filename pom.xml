@@ -42,6 +42,7 @@
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
+                    <appendAssemblyId>false</appendAssemblyId>
                 </configuration>
                 <executions>
                     <execution>
@@ -91,21 +92,6 @@
                 </executions>
             </plugin>
 
-            <plugin>
-            <artifactId>maven-assembly-plugin</artifactId>
-            <configuration>
-                <finalName>sem-set08103</finalName>
-                <archive>
-                    <manifest>
-                        <mainClass>com.napier.sem.App</mainClass>
-                    </manifest>
-                </archive>
-                <descriptorRefs>
-                    <descriptorRef>jar-with-dependencies</descriptorRef>
-                </descriptorRefs>
-                <appendAssemblyId>false</appendAssemblyId>
-            </configuration>
-            </plugin>
 
         </plugins>
     </build>
