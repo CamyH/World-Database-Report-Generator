@@ -2,6 +2,7 @@ package com.napier.sem.sql;
 
 import com.napier.sem.world.City;
 import com.napier.sem.world.Country;
+import com.napier.sem.world.Languages;
 import com.napier.sem.world.PopulationData;
 
 import java.sql.Connection;
@@ -12,7 +13,7 @@ import java.util.ArrayList;
 
 /**
  * Project Authors: Colin, Cameron, Luke, Del
- * Date last modified: 06/03/2021
+ * Date last modified: 13/03/2021
  * Purpose of class: This class handles the SQL queries to the database.
  * Last modified by: Del
  */
@@ -1130,7 +1131,6 @@ public class Sql {
         }
     }
 
-
     //************** ADDITIONAL QUERIES ***************** Author Cameron */
 
     /**
@@ -1317,5 +1317,50 @@ public class Sql {
         }
     }
 
+    //************** Language QUERY ***************** Author Cameron */
 
+    /**
+     * Method to return number of people who speak the given language in each country from greatest to smallest + percentage of world population
+     * @param con Holds connection to the database
+     * @param language Language variable
+     * @return ArrayList containing all the data for the language
+     */
+    public static ArrayList<Languages> getNumberOfLanguageSpeakers(Connection con, String language) {
+        try {
+            // Create string for SQL statement
+            String countryPopulation = "SELECT name, population, countrylanguage.Language, population * (countrylanguage.Percentage / 100.0) AS Speakers " +
+                    "FROM country  " +
+                    "JOIN countrylanguage ON country.code = countrylanguage.countryCode " +
+                    "WHERE countrylanguage.Language = ? " +
+                    "ORDER BY Speakers DESC;";
+            // Create prepared statement with SQL statement
+            PreparedStatement preparedStatement = con.prepareStatement(countryPopulation);
+            // Set SQL statement ? to continent parameter
+            preparedStatement.setString(1, language);
+            // Execute SQL statement
+            ResultSet rset = preparedStatement.executeQuery();
+            // Return population of specified country + country name
+            // ArrayList to store all population data required
+            ArrayList<Languages> languageData = new ArrayList<>();
+            // Get world population
+            Long worldPop = Sql.getWorldPopulation(con);
+            // Return population data of each country
+            // Check something is returned
+            while(rset.next()) {
+                Languages languages = new Languages();
+                languages.setName(rset.getString("name"));
+                languages.setPopulation(rset.getLong("population"));
+                languages.setLanguage(rset.getString("countryLanguage.Language"));
+                languages.setNumberOfSpeakers(rset.getLong("Speakers"));
+                if(worldPop != null)
+                    languages.setPercentageOfWorldPop(((double)languages.getNumberOfSpeakers() / worldPop) * 100);
+                languageData.add(languages);
+            }
+            return languageData;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get the requested language data.");
+            return null;
+        }
+    }
 }
