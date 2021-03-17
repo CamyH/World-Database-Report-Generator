@@ -27,7 +27,7 @@ public class City {
     /**
      * population variable for city object
      */
-    private String population;
+    private int population;
 
     public String getName() {
         return name;
@@ -53,11 +53,11 @@ public class City {
         this.district = district;
     }
 
-    public String getPopulation() {
+    public int getPopulation() {
         return population;
     }
 
-    public void setPopulation(String population) {
+    public void setPopulation(int population) {
         this.population = population;
     }
 }
