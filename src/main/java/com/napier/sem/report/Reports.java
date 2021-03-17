@@ -22,15 +22,24 @@ public class Reports {
      */
     public static void printCities(ArrayList<City> cities)
     {
+        if(cities == null){
+            System.out.println("No Country Data");
+        }
+        else{
+
+
         // Print header
         System.out.printf("%-30s %-30s %-30s %-30s%n", "Name", "Country", "District", "Population");
         // Loop over all cities in the list
         for (City city : cities)
         {
+            if(city == null)
+                continue;
             String city_string =
                     String.format("%-30s %-30s %-30s %-30s",
                             city.getName(), city.getCountry(), city.getDistrict(), city.getPopulation());
             System.out.println(city_string);
+            }
         }
     }
 

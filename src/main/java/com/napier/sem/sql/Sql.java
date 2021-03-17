@@ -350,7 +350,7 @@ public class Sql {
                 city.setName(rset.getString("city.name"));
                 city.setCountry(rset.getString("country.name"));
                 city.setDistrict(rset.getString("city.district"));
-                city.setPopulation(rset.getString("city.population"));
+                city.setPopulation(rset.getInt("city.population"));
                 cities.add(city);
             }
             System.out.println("Query Complete, object return next");
@@ -395,7 +395,7 @@ public class Sql {
                 city.setName(rset.getString("city.name"));
                 city.setCountry(rset.getString("country.name"));
                 city.setDistrict(rset.getString("city.district"));
-                city.setPopulation(rset.getString("city.population"));
+                city.setPopulation(rset.getInt("city.population"));
                 cities.add(city);
             }
             System.out.println("Query Complete, object return next");
@@ -439,7 +439,7 @@ public class Sql {
                 city.setName(rset.getString("city.name"));
                 city.setCountry(rset.getString("country.name"));
                 city.setDistrict(rset.getString("city.district"));
-                city.setPopulation(rset.getString("city.population"));
+                city.setPopulation(rset.getInt("city.population"));
                 cities.add(city);
             }
             System.out.println("Query Complete, object return next");
@@ -484,7 +484,7 @@ public class Sql {
                 city.setName(rset.getString("city.name"));
                 city.setCountry(rset.getString("country.name"));
                 city.setDistrict(rset.getString("city.district"));
-                city.setPopulation(rset.getString("city.population"));
+                city.setPopulation(rset.getInt("city.population"));
                 cities.add(city);
             }
             System.out.println("Query Complete, object return next");
@@ -529,7 +529,7 @@ public class Sql {
                 city.setName(rset.getString("city.name"));
                 city.setCountry(rset.getString("country.name"));
                 city.setDistrict(rset.getString("city.district"));
-                city.setPopulation(rset.getString("city.population"));
+                city.setPopulation(rset.getInt("city.population"));
                 cities.add(city);
             }
             System.out.println("Query Complete, object return next");
@@ -575,7 +575,7 @@ public class Sql {
                 city.setName(rset.getString("city.name"));
                 city.setCountry(rset.getString("country.name"));
                 city.setDistrict(rset.getString("city.district"));
-                city.setPopulation(rset.getString("city.population"));
+                city.setPopulation(rset.getInt("city.population"));
                 cities.add(city);
             }
             System.out.println("Query Complete, object return next");
@@ -623,7 +623,7 @@ public class Sql {
                 city.setName(rset.getString("city.name"));
                 city.setCountry(rset.getString("country.name"));
                 city.setDistrict(rset.getString("city.district"));
-                city.setPopulation(rset.getString("city.population"));
+                city.setPopulation(rset.getInt("city.population"));
                 cities.add(city);
             }
             System.out.println("Query Complete, object return next");
@@ -670,7 +670,7 @@ public class Sql {
                 city.setName(rset.getString("city.name"));
                 city.setCountry(rset.getString("country.name"));
                 city.setDistrict(rset.getString("city.district"));
-                city.setPopulation(rset.getString("city.population"));
+                city.setPopulation(rset.getInt("city.population"));
                 cities.add(city);
             }
             System.out.println("Query Complete, object return next");
@@ -719,7 +719,7 @@ public class Sql {
                 city.setName(rset.getString("city.name"));
                 city.setCountry(rset.getString("country.name"));
                 city.setDistrict(rset.getString("city.district"));
-                city.setPopulation(rset.getString("city.population"));
+                city.setPopulation(rset.getInt("city.population"));
                 cities.add(city);
             }
             System.out.println("Query Complete, object return next");
@@ -766,7 +766,7 @@ public class Sql {
                 city.setName(rset.getString("city.name"));
                 city.setCountry(rset.getString("country.name"));
                 city.setDistrict(rset.getString("city.district"));
-                city.setPopulation(rset.getString("city.population"));
+                city.setPopulation(rset.getInt("city.population"));
                 cities.add(city);
             }
             System.out.println("Query Complete, object return next");
@@ -805,7 +805,7 @@ public class Sql {
                 City capital = new City();
                 capital.setName(rset.getString("city.name"));
                 capital.setCountry(rset.getString("country.name"));
-                capital.setPopulation(rset.getString("city.population"));
+                capital.setPopulation(rset.getInt("city.population"));
                 biggestCapitals.add(capital);
             }
             return biggestCapitals;
@@ -842,7 +842,7 @@ public class Sql {
                 City capital = new City();
                 capital.setName(rset.getString("city.name"));
                 capital.setCountry(rset.getString("country.name"));
-                capital.setPopulation(rset.getString("city.population"));
+                capital.setPopulation(rset.getInt("city.population"));
                 biggestContCapitals.add(capital);
             }
             return biggestContCapitals;
@@ -879,7 +879,7 @@ public class Sql {
                 City capital = new City();
                 capital.setName(rset.getString("city.name"));
                 capital.setCountry(rset.getString("country.name"));
-                capital.setPopulation(rset.getString("city.population"));
+                capital.setPopulation(rset.getInt("city.population"));
                 biggestRegionCapitals.add(capital);
             }
             return biggestRegionCapitals;
@@ -917,7 +917,7 @@ public class Sql {
                 City capital = new City();
                 capital.setName(rset.getString("city.name"));
                 capital.setCountry(rset.getString("country.name"));
-                capital.setPopulation(rset.getString("city.population"));
+                capital.setPopulation(rset.getInt("city.population"));
                 biggestNCapitals.add(capital);
             }
             return biggestNCapitals;
@@ -957,7 +957,7 @@ public class Sql {
                 City capital = new City();
                 capital.setName(rset.getString("city.name"));
                 capital.setCountry(rset.getString("country.name"));
-                capital.setPopulation(rset.getString("city.population"));
+                capital.setPopulation(rset.getInt("city.population"));
                 biggestNContCapitals.add(capital);
             }
             return biggestNContCapitals;
@@ -997,7 +997,7 @@ public class Sql {
                 City capital = new City();
                 capital.setName(rset.getString("city.name"));
                 capital.setCountry(rset.getString("country.name"));
-                capital.setPopulation(rset.getString("city.population"));
+                capital.setPopulation(rset.getInt("city.population"));
                 biggestNRegionCapitals.add(capital);
             }
             return biggestNRegionCapitals;
