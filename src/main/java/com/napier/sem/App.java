@@ -27,8 +27,8 @@ public class App
         System.out.println("Showing a test function from everyone's work");
 
         // Database connection setup
-        DbConnection dbc = new DbConnection();
-        Connection con = dbc.getConnection();
+        //DbConnection dbc = new DbConnection();
+        //Connection con = dbc.getConnection();
 
         // ************** COUNTRIES FUNCTIONS ***************** Author: Luke */
 /*
@@ -46,7 +46,7 @@ public class App
         ArrayList<Country> allCountriesByRegion = Sql.getAllCountriesByRegion(con, "Caribbean");
         // Display report from allCountriesByRegion
         Reports.printCountries(allCountriesByRegion);
-*/
+
         // Report 1.4 - Return the top N countries in the world to topPopulatedCountriesInWorld object
         //ArrayList<Country> topPopulatedCountriesInWorld = Sql.getTopPopulatedCountriesInWorld(con, 10);
         // Display report from topPopulatedCountriesInWorld
@@ -55,7 +55,7 @@ public class App
         //}else{
         //    System.out.println("Error getting top 10 most populous cities in the world.");
         //}
-/*
+
         // Report 1.5 - Return the top N countries in a continent to topPopulatedCountriesInContinent object
         ArrayList<Country> topPopulatedCountriesInContinent = Sql.getTopPopulatedCountriesInContinent(con, "Europe", 10);
         // Display report from topPopulatedCountriesInContinent
@@ -93,7 +93,7 @@ public class App
         ArrayList<City> allCitiesInDistrict = Sql.getAllCitiesInDistrict(con, "Scotland");
         // Display report from allCitiesInDistrict
         Reports.printCities(allCitiesInDistrict);
-*/
+
         // Report 2.6 - Return top N populated cities in the world to topPopulatedCitiesInWorld object
         //ArrayList<City> topPopulatedCitiesInWorld = Sql.getTopPopulatedCitiesInWorld(con, 10);
         // Display report from topPopulatedCitiesInWorld
@@ -102,7 +102,7 @@ public class App
         //}else{
         //    System.out.println("Error getting top 10 most populous cities in the world");
         //}
-/*
+
         // Report 2.7 - Return top N populated cities in a continent to topPopulatedCitiesInContinent object
         ArrayList<City> topPopulatedCitiesInContinent = Sql.getTopPopulatedCitiesInContinent(con, 10, "Asia");
         // Display report from topPopulatedCitiesInContinent
@@ -136,7 +136,7 @@ public class App
         // Report 3.3 - Return all of Southeast Asia's capitals by descending population
         ArrayList<City> biggestSEAsiaCapitals = Sql.getBiggestRegionCapitals(con, "Southeast Asia");
         Reports.printCapitals(biggestSEAsiaCapitals);
- */
+
         // Report 3.4 - Return the top 3 most populous capitals across the world by descending population
         //ArrayList<City> biggestNCapitals = Sql.getNBiggestWorldCapitals(con, 10);
         //if(biggestNCapitals != null) {
@@ -155,7 +155,7 @@ public class App
 */
 
         // ************** POPULATION FUNCTIONS ***************** Author: Cameron //
-
+/*
         // Report 4.1 - The population of people, people living in cities, and people not living in cities in each continent.
         // Antarctica is not shown as the population is set to 0 in the database //
         //ArrayList<PopulationData> continentPopulationDataList = Sql.getPopulationDataContinent(con);
@@ -164,7 +164,7 @@ public class App
         //}else{
         //    System.out.println("Error getting total, urban and rural population per continent.");
         //}
-/*
+
         // Report 4.2 - The population of people, people living in cities, and people not living in cities in each region.
         ArrayList<PopulationData> regionPopulationDataList = Sql.getPopulationDataRegion(con);
         Reports.printPopulationDataRegion(regionPopulationDataList);
@@ -173,7 +173,7 @@ public class App
         // Report 4.3 - The population of people, people living in cities, and people not living in cities in each country.
         ArrayList<PopulationData> countryPopulationDataList = Sql.getPopulationDataCountry(con);
         Reports.printPopulationDataCountry(countryPopulationDataList);
-*/
+
         // ************** ADDITIONAL FUNCTIONS ***************** Author Cameron //
         // Report 5.1 - Get population of the world
         // Long totalPopulation = Sql.getWorldPopulation(con);
@@ -254,5 +254,8 @@ public class App
 
         // Disconnect from database
         dbc.disconnect();
+        */
+
+
     }
 }

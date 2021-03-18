@@ -78,6 +78,7 @@ public class CityTests {
        int testPopulation = 10500000;
        Assertions.assertEquals(check.get(0).getPopulation(),testPopulation);
 
+
     }
 /*
     @Test
