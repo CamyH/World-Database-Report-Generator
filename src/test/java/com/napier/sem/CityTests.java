@@ -80,33 +80,83 @@ public class CityTests {
 
 
     }
-/*
+
     @Test
-    void getAllCitiesInWorldEmpty(){
+    void getAllCitiesInContinent(){
+        String continent = "Asia";
+        ArrayList<City> check = Sql.getAllCitiesInContinent(con,continent);
+        int testPopulation = 10500000;
+        Assertions.assertEquals(check.get(0).getPopulation(),testPopulation);
 
     }
-    @Test
-    void getAllCitiesInWorldTest(){
 
+    @Test
+    void getAllCitiesInRegion(){
+        String region = "Caribbean";
+        ArrayList<City> check = Sql.getAllCitiesInRegion(con,region);
+        int testPopulation = 2256000;
+        Assertions.assertEquals(check.get(0).getPopulation(),testPopulation);
     }
+
     @Test
-    void getAllCitiesInContinent(){}
+    void getAllCitiesInCountry(){
+        String country = "Brazil";
+        ArrayList<City> check = Sql.getAllCitiesInCountry(con,country);
+        int testPopulation = 9968485;
+        Assertions.assertEquals(check.get(0).getPopulation(),testPopulation);
+    }
+
     @Test
-    void getAllCitiesInRegion(){}
+    void getAllCitiesInDistrict(){
+        String district = "Scotland";
+        ArrayList<City> check = Sql.getAllCitiesInDistrict(con,district);
+        int testPopulation = 619680;
+        Assertions.assertEquals(check.get(0).getPopulation(),testPopulation);
+    }
+
     @Test
-    void getAllCitiesInCountry(){}
+    void getTopPopulatedCitiesInWorld(){
+        int limit = 10;
+        ArrayList<City> check = Sql.getTopPopulatedCitiesInWorld(con,limit);
+        int testPopulation = 10500000;
+        Assertions.assertEquals(check.get(0).getPopulation(),testPopulation);
+    }
+
     @Test
-    void getAllCitiesInDistrict(){}
+    void getTopPopulatedCitiesInContinent(){
+        int limit = 10;
+        String continent = "Asia";
+        ArrayList<City> check = Sql.getTopPopulatedCitiesInContinent(con,limit,continent);
+        int testPopulation = 10500000;
+        Assertions.assertEquals(check.get(0).getPopulation(),testPopulation);
+    }
+
     @Test
-    void getTopPopulatedCitiesInWorld(){}
+    void getTopPopulatedCitiesInRegion(){
+        int limit = 10;
+        String region = "Caribbean";
+        ArrayList<City> check = Sql.getTopPopulatedCitiesInRegion(con,limit,region);
+        int testPopulation = 2256000;
+        Assertions.assertEquals(check.get(0).getPopulation(),testPopulation);
+    }
+
     @Test
-    void getTopPopulatedCitiesInContinent(){}
+    void getTopPopulatedCitiesInCountry(){
+        int limit = 10;
+        String country = "Brazil";
+        ArrayList<City> check = Sql.getTopPopulatedCitiesInCountry(con,limit,country);
+        int testPopulation = 9968485;
+        Assertions.assertEquals(check.get(0).getPopulation(),testPopulation);
+    }
+
     @Test
-    void getTopPopulatedCitiesInRegion(){}
-    @Test
-    void getTopPopulatedCitiesInCountry(){}
-    @Test
-    void getTopPopulatedCitiesInDistrict(){}
-*/
+    void getTopPopulatedCitiesInDistrict(){
+        int limit = 4;
+        String district = "Scotland";
+        ArrayList<City> check = Sql.getTopPopulatedCitiesInDistrict(con,limit,district);
+        int testPopulation = 619680;
+        Assertions.assertEquals(check.get(0).getPopulation(),testPopulation);
+    }
+
 
 }
