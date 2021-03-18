@@ -14,9 +14,9 @@ import java.util.ArrayList;
 
 /**
  * Project Authors: Colin, Cameron, Luke, Del
- * Date last modified: 06/03/2021
+ * Date last modified: 18/03/2021
  * Purpose of program: Run SQL queries to satisfy the given requirements
- * Last modified by: Del
+ * Last modified by: Colin
  */
 
 public class App
@@ -24,7 +24,7 @@ public class App
     public static void main(String[] args)
     {
         // Status update
-        System.out.println("Showing a test function from everyone's work");
+        System.out.println("Testing if travis works");
 
         // Database connection setup
         DbConnection dbc = new DbConnection();
