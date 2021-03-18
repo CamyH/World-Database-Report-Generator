@@ -27,9 +27,17 @@ public class App
         System.out.println("Showing a test function from everyone's work");
 
         // Database connection setup
-        //DbConnection dbc = new DbConnection();
-        //Connection con = dbc.getConnection();
+        DbConnection dbc = new DbConnection();
+        Connection con = dbc.getConnection();
 
+        if (args.length < 1)
+        {
+            dbc.connect("localhost:33060");
+        }
+        else
+        {
+            dbc.connect(args[0]);
+        }
         // ************** COUNTRIES FUNCTIONS ***************** Author: Luke */
 /*
         // Report 1.1 - Return all countries in the world to allCountriesInWorld object
