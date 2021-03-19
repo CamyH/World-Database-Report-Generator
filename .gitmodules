@@ -1,3 +1,3 @@
-[submodule "db/"]
-	path = db/
+[submodule "db"]
+	path = db
     url = https://github.com/CamyH/SEM-SET08103/blob/main/db/world.sql
