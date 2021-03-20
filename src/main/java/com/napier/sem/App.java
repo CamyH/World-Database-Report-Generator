@@ -14,9 +14,9 @@ import java.util.ArrayList;
 
 /**
  * Project Authors: Colin, Cameron, Luke, Del
- * Date last modified: 06/03/2021
+ * Date last modified: 20/03/2021
  * Purpose of program: Run SQL queries to satisfy the given requirements
- * Last modified by: Del
+ * Last modified by: Cameron
  */
 
 public class App
@@ -29,6 +29,13 @@ public class App
         // Database connection setup
         DbConnection dbc = new DbConnection();
         Connection con = dbc.getConnection();
+
+        if (args.length < 1)
+            dbc.connect("localhost:33060");
+
+        else
+            dbc.connect(args[0]);
+
 
         // ************** COUNTRIES FUNCTIONS ***************** Author: Luke */
 /*
