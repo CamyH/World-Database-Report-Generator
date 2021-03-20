@@ -70,7 +70,8 @@ public class LanguagesTests
     }
 
     @Test
-    void testGetNumberOfLanguageSpeakers() {
+    void testGetNumberOfLanguageSpeakers()
+    {
         Long testPop = 239943734L;
         ArrayList<Languages> languageData = Sql.getNumberOfLanguageSpeakers(con, "English");
         Assertions.assertEquals(languageData.get(0).getNumberOfSpeakers(), testPop, 1);
