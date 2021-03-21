@@ -55,7 +55,7 @@ public class AdditionalFunctionsTests {
     void testGetPopulationOfCountry()
     {
         Long testPop = 59623400L;
-        Long countryPop = Sql.getCountryPopulation(con, "GBR");
+        Long countryPop = Sql.getPopulationOfCountry(con, "GBR");
         Assertions.assertEquals(countryPop, testPop, 1);
     }
 
