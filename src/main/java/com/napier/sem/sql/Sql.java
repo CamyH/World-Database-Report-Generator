@@ -13,9 +13,9 @@ import java.util.ArrayList;
 
 /**
  * Project Authors: Colin, Cameron, Luke, Del
- * Date last modified: 13/03/2021
+ * Date last modified: 20/03/2021
  * Purpose of class: This class handles the SQL queries to the database.
- * Last modified by: Del
+ * Last modified by: Colin
  */
 
 public class Sql {
@@ -354,7 +354,6 @@ public class Sql {
                 city.setPopulation(rset.getInt("city.population"));
                 cities.add(city);
             }
-            System.out.println("Query Complete, object return next");
             return cities;
         }
         catch (Exception e)
@@ -399,7 +398,6 @@ public class Sql {
                 city.setPopulation(rset.getInt("city.population"));
                 cities.add(city);
             }
-            System.out.println("Query Complete, object return next");
             return cities;
         }
         catch (Exception e)
@@ -443,7 +441,6 @@ public class Sql {
                 city.setPopulation(rset.getInt("city.population"));
                 cities.add(city);
             }
-            System.out.println("Query Complete, object return next");
             return cities;
         }
         catch (Exception e)
@@ -488,7 +485,6 @@ public class Sql {
                 city.setPopulation(rset.getInt("city.population"));
                 cities.add(city);
             }
-            System.out.println("Query Complete, object return next");
             return cities;
         }
         catch (Exception e)
@@ -533,7 +529,6 @@ public class Sql {
                 city.setPopulation(rset.getInt("city.population"));
                 cities.add(city);
             }
-            System.out.println("Query Complete, object return next");
             return cities;
         }
         catch (Exception e)
@@ -579,7 +574,6 @@ public class Sql {
                 city.setPopulation(rset.getInt("city.population"));
                 cities.add(city);
             }
-            System.out.println("Query Complete, object return next");
             return cities;
         }
         catch (Exception e)
@@ -627,7 +621,6 @@ public class Sql {
                 city.setPopulation(rset.getInt("city.population"));
                 cities.add(city);
             }
-            System.out.println("Query Complete, object return next");
             return cities;
         }
         catch (Exception e)
@@ -674,7 +667,6 @@ public class Sql {
                 city.setPopulation(rset.getInt("city.population"));
                 cities.add(city);
             }
-            System.out.println("Query Complete, object return next");
             return cities;
         }
         catch (Exception e)
@@ -723,7 +715,6 @@ public class Sql {
                 city.setPopulation(rset.getInt("city.population"));
                 cities.add(city);
             }
-            System.out.println("Query Complete, object return next");
             return cities;
         }
         catch (Exception e)
@@ -770,7 +761,6 @@ public class Sql {
                 city.setPopulation(rset.getInt("city.population"));
                 cities.add(city);
             }
-            System.out.println("Query Complete, object return next");
             return cities;
         }
         catch (Exception e)
