@@ -6,9 +6,9 @@ import java.sql.SQLException;
 
 /**
  * Project Authors: Colin, Cameron, Luke, Del
- * Date last modified: 21/02/2021
+ * Date last modified: 18/03/2021
  * Purpose of class: This class handles the connection and disconnection of the database.
- * Last modified by: Del
+ * Last modified by: Colin
  */
 
 public class DbConnection {
@@ -17,7 +17,7 @@ public class DbConnection {
     /**
      * Connection to MySQL database.
      */
-    private Connection con = null;
+    public Connection con = null;
 
 
     /**
@@ -33,13 +33,10 @@ public class DbConnection {
      */
     public void connect(String location)
     {
-        try
-        {
+        try {
             // Load Database driver
             Class.forName("com.mysql.cj.jdbc.Driver");
-        }
-        catch (ClassNotFoundException e)
-        {
+        } catch (ClassNotFoundException e) {
             System.out.println("Could not load SQL driver");
             System.exit(-1);
         }
@@ -51,7 +48,7 @@ public class DbConnection {
             try
             {
                 // Wait a bit for db to start
-                Thread.sleep(30000);
+               //Thread.sleep(30000);
                 // Connect to database
                 con = DriverManager.getConnection("jdbc:mysql://" + location + "/world?allowPublicKeyRetrieval=true&useSSL=false", "root", "example");
                 System.out.println("Successfully connected");
@@ -62,7 +59,7 @@ public class DbConnection {
                 System.out.println("Failed to connect to database attempt " + Integer.toString(i));
                 System.out.println(sqle.getMessage());
             }
-            catch (InterruptedException ie)
+            catch (Exception ie)
             {
                 System.out.println("Thread interrupted? Should not happen.");
             }
