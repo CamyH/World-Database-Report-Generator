@@ -55,14 +55,16 @@ public class App
         // Display report from allCountriesByRegion
         Reports.printCountries(allCountriesByRegion);
 
+ */
+
         // Report 1.4 - Return the top N countries in the world to topPopulatedCountriesInWorld object
-        //ArrayList<Country> topPopulatedCountriesInWorld = Sql.getTopPopulatedCountriesInWorld(con, 10);
+        ArrayList<Country> topPopulatedCountriesInWorld = Sql.getTopPopulatedCountriesInWorld(con, 10);
         // Display report from topPopulatedCountriesInWorld
-        //if(topPopulatedCountriesInWorld != null) {
-        //    Reports.printCountries(topPopulatedCountriesInWorld);
-        //}else{
-        //    System.out.println("Error getting top 10 most populous cities in the world.");
-        //}
+        if(topPopulatedCountriesInWorld != null) {
+            Reports.printCountries(topPopulatedCountriesInWorld);
+        }else{
+           System.out.println("Error getting top 10 most populous cities in the world.");
+        }
 
         // Report 1.5 - Return the top N countries in a continent to topPopulatedCountriesInContinent object
         ArrayList<Country> topPopulatedCountriesInContinent = Sql.getTopPopulatedCountriesInContinent(con, "Europe", 10);
@@ -73,7 +75,7 @@ public class App
         ArrayList<Country> topPopulatedCountriesInRegion = Sql.getTopPopulatedCountriesInRegion(con, "Caribbean", 10);
         // Display report from topPopulatedCountriesInRegion
         Reports.printCountries(topPopulatedCountriesInRegion);
-*/
+
         // ************** CITIES FUNCTIONS ***************** Author: Colin //
 /*
         // Report 2.1 - Return all cities in world to allCitiesInWorld object
