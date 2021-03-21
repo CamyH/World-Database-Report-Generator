@@ -20,10 +20,7 @@ import java.util.ArrayList;
  */
 
 public class CapitalTests {
-
-    // population from query 1 10500000
-    //from query 2 3705025700
-    //from query 3 22720000
+    // world 9981619 europe 8389200 SEAsia 9604900
     static App app;
     static Reports reports;
 
@@ -37,5 +34,23 @@ public class CapitalTests {
         app = new App();
         reports = new Reports();
 
+    }
+
+    @Test
+    void biggestWorldCapitalsTest(){
+        ArrayList<City> biggestWorldCapitals = Sql.getBiggestWorldCapitals(con);
+        Assertions.assertNotEquals(null, biggestWorldCapitals);
+    }
+
+    @Test
+    void biggestContinentCapitalsTest(){
+        ArrayList<City> biggestContinentCapitals = Sql.getBiggestContinentCapitals(con, "Europe");
+        Assertions.assertNotEquals(null, biggestContinentCapitals);
+    }
+
+    @Test
+    void biggestRegionCapitalsTest(){
+        ArrayList<City> biggestRegionCapitals = Sql.getBiggestRegionCapitals(con, "SEAsia");
+        Assertions.assertNotEquals(null, biggestContinentCapitals);
     }
 }
