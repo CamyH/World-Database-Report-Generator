@@ -145,7 +145,7 @@ public class PopulationDataTests{
 
     @Test
     void getPopulationDataCountry(){
-        int testPopulation = 697604103;
+        int testPopulation = 2332100;
         ArrayList<PopulationData> check = Sql.getPopulationDataCountry(con);
         Assertions.assertEquals(check.get(0).getPopulationInCities(),testPopulation);
     }
@@ -159,7 +159,7 @@ public class PopulationDataTests{
 
     @Test
     void getPopulationDataRegion(){
-        int testPopulation = 697604103;
+        int testPopulation = 207688970;
         ArrayList<PopulationData> check = Sql.getPopulationDataRegion(con);
         Assertions.assertEquals(check.get(0).getPopulationInCities(),testPopulation);
     }
