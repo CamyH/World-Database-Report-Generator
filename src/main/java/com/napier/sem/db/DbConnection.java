@@ -6,9 +6,9 @@ import java.sql.SQLException;
 
 /**
  * Project Authors: Colin, Cameron, Luke, Del
- * Date last modified: 18/03/2021
+ * Date last modified: 20/03/2021
  * Purpose of class: This class handles the connection and disconnection of the database.
- * Last modified by: Colin
+ * Last modified by: Cameron
  */
 
 public class DbConnection {
