@@ -55,8 +55,6 @@ public class App
         // Display report from allCountriesByRegion
         Reports.printCountries(allCountriesByRegion);
 
- */
-
         // Report 1.4 - Return the top N countries in the world to topPopulatedCountriesInWorld object
         ArrayList<Country> topPopulatedCountriesInWorld = Sql.getTopPopulatedCountriesInWorld(con, 10);
         // Display report from topPopulatedCountriesInWorld
@@ -75,7 +73,7 @@ public class App
         ArrayList<Country> topPopulatedCountriesInRegion = Sql.getTopPopulatedCountriesInRegion(con, "Caribbean", 10);
         // Display report from topPopulatedCountriesInRegion
         Reports.printCountries(topPopulatedCountriesInRegion);
-
+*\
         // ************** CITIES FUNCTIONS ***************** Author: Colin //
 /*
         // Report 2.1 - Return all cities in world to allCitiesInWorld object
@@ -165,15 +163,15 @@ public class App
 */
 
         // ************** POPULATION FUNCTIONS ***************** Author: Cameron //
-/*
+
         // Report 4.1 - The population of people, people living in cities, and people not living in cities in each continent.
         // Antarctica is not shown as the population is set to 0 in the database //
-        //ArrayList<PopulationData> continentPopulationDataList = Sql.getPopulationDataContinent(con);
-        //if(continentPopulationDataList != null) {
-        //    Reports.printPopulationDataContinent(continentPopulationDataList);
-        //}else{
-        //    System.out.println("Error getting total, urban and rural population per continent.");
-        //}
+        ArrayList<PopulationData> continentPopulationDataList = Sql.getPopulationDataContinent(con);
+        if(continentPopulationDataList != null) {
+            Reports.printPopulationDataContinent(continentPopulationDataList);
+        }else{
+            System.out.println("Error getting total, urban and rural population per continent.");
+        }
 
         // Report 4.2 - The population of people, people living in cities, and people not living in cities in each region.
         ArrayList<PopulationData> regionPopulationDataList = Sql.getPopulationDataRegion(con);
@@ -183,7 +181,7 @@ public class App
         // Report 4.3 - The population of people, people living in cities, and people not living in cities in each country.
         ArrayList<PopulationData> countryPopulationDataList = Sql.getPopulationDataCountry(con);
         Reports.printPopulationDataCountry(countryPopulationDataList);
-
+/*
         // ************** ADDITIONAL FUNCTIONS ***************** Author Cameron //
         // Report 5.1 - Get population of the world
         // Long totalPopulation = Sql.getWorldPopulation(con);

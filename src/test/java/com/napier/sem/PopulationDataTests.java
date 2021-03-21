@@ -1,9 +1,15 @@
 package com.napier.sem;
 
+import com.napier.sem.db.DbConnection;
 import com.napier.sem.report.Reports;
+import com.napier.sem.sql.Sql;
+import com.napier.sem.world.Country;
 import com.napier.sem.world.PopulationData;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+
+import java.sql.Connection;
 import java.util.ArrayList;
 
 /**
@@ -17,13 +23,16 @@ public class PopulationDataTests{
     static App app;
     static Reports reports;
 
+    DbConnection dbc = new DbConnection();
+    Connection con = dbc.getConnection();
 
     @BeforeAll
     static void init()
     {
-        // Init new instances of App & DbConnection
+        // Init new instances of App & Reports
         app = new App();
         reports = new Reports();
+
     }
 
     @Test
@@ -132,5 +141,26 @@ public class PopulationDataTests{
         popData.setPopulationPercentNotInCities((double)14);
         populationData.add(popData);
         Reports.printPopulationDataRegion(populationData);
+    }
+
+    @Test
+    void getPopulationDataCountry(){
+        int testPopulation = 697604103;
+        ArrayList<PopulationData> check = Sql.getPopulationDataCountry(con);
+        Assertions.assertEquals(check.get(0).getPopulationInCities(),testPopulation);
+    }
+
+    @Test
+    void getPopulationDataContinent(){
+        int testPopulation = 697604103;
+        ArrayList<PopulationData> check = Sql.getPopulationDataContinent(con);
+        Assertions.assertEquals(check.get(0).getPopulationInCities(),testPopulation);
+    }
+
+    @Test
+    void getPopulationDataRegion(){
+        int testPopulation = 697604103;
+        ArrayList<PopulationData> check = Sql.getPopulationDataRegion(con);
+        Assertions.assertEquals(check.get(0).getPopulationInCities(),testPopulation);
     }
 }
