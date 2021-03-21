@@ -171,16 +171,16 @@ public class App
         //}else{
         //    System.out.println("Error getting total, urban and rural population per continent.");
         //}
-/*
+
         // Report 4.2 - The population of people, people living in cities, and people not living in cities in each region.
-        ArrayList<PopulationData> regionPopulationDataList = Sql.getPopulationDataRegion(con);
-        Reports.printPopulationDataRegion(regionPopulationDataList);
+//        ArrayList<PopulationData> regionPopulationDataList = Sql.getPopulationDataRegion(con);
+//        Reports.printPopulationDataRegion(regionPopulationDataList);
 
 
         // Report 4.3 - The population of people, people living in cities, and people not living in cities in each country.
         ArrayList<PopulationData> countryPopulationDataList = Sql.getPopulationDataCountry(con);
         Reports.printPopulationDataCountry(countryPopulationDataList);
-*/
+
         // ************** ADDITIONAL FUNCTIONS ***************** Author Cameron //
         // Report 5.1 - Get population of the world
         // Long totalPopulation = Sql.getWorldPopulation(con);
