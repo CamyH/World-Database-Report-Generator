@@ -37,20 +37,60 @@ public class CapitalTests {
     }
 
     @Test
+    void printCapitalsEmptyTest()
+    {
+        ArrayList<City> city = new ArrayList<>();
+        Reports.printCapitals(city);
+    }
+
+    @Test
+    void printCapitalsContainsNullTest()
+    {
+        ArrayList<City> city = new ArrayList<>();
+        city.add(null);
+        Reports.printCities(city);
+    }
+
+
+    @Test
     void biggestWorldCapitalsTest(){
         ArrayList<City> biggestWorldCapitals = Sql.getBiggestWorldCapitals(con);
         Assertions.assertNotEquals(null, biggestWorldCapitals);
+        Assertions.assertEquals(9981619, biggestWorldCapitals.get(0).getPopulation());
     }
 
     @Test
     void biggestContinentCapitalsTest(){
         ArrayList<City> biggestContinentCapitals = Sql.getBiggestContinentCapitals(con, "Europe");
         Assertions.assertNotEquals(null, biggestContinentCapitals);
+        Assertions.assertEquals(8389200, biggestContinentCapitals.get(0).getPopulation());
     }
 
     @Test
     void biggestRegionCapitalsTest(){
-        ArrayList<City> biggestRegionCapitals = Sql.getBiggestRegionCapitals(con, "SEAsia");
-        Assertions.assertNotEquals(null, biggestContinentCapitals);
+        ArrayList<City> biggestRegionCapitals = Sql.getBiggestRegionCapitals(con, "Southeast Asia");
+        Assertions.assertNotEquals(null, biggestRegionCapitals);
+        Assertions.assertEquals(9604900, biggestRegionCapitals.get(0).getPopulation());
+    }
+
+    @Test
+    void biggestNWorldCapitalsTest(){
+        ArrayList<City> biggestNWorldCapitals = Sql.getNBiggestWorldCapitals(con, 5);
+        Assertions.assertNotEquals(null, biggestNWorldCapitals);
+        Assertions.assertEquals(9981619, biggestNWorldCapitals.get(0).getPopulation());
+    }
+
+    @Test
+    void biggestNContinentCapitalsTest(){
+        ArrayList<City> biggestNContinentCapitals = Sql.getNBiggestContinentCapitals(con, 5, "Europe");
+        Assertions.assertNotEquals(null, biggestNContinentCapitals);
+        Assertions.assertEquals(8389200, biggestNContinentCapitals.get(0).getPopulation());
+    }
+
+    @Test
+    void biggestRegionNCapitalsTest(){
+        ArrayList<City> biggestNRegionCapitals = Sql.getNBiggestRegionCapitals(con, 5, "Southeast Asia");
+        Assertions.assertNotEquals(null, biggestNRegionCapitals);
+        Assertions.assertEquals(9604900, biggestNRegionCapitals.get(0).getPopulation());
     }
 }
