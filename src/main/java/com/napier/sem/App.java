@@ -14,9 +14,9 @@ import java.util.ArrayList;
 
 /**
  * Project Authors: Colin, Cameron, Luke, Del
- * Date last modified: 18/03/2021
+ * Date last modified: 20/03/2021
  * Purpose of program: Run SQL queries to satisfy the given requirements
- * Last modified by: Colin
+ * Last modified by: Cameron
  */
 
 public class App
@@ -24,20 +24,19 @@ public class App
     public static void main(String[] args)
     {
         // Status update
-        System.out.println("Testing if travis works");
+        System.out.println("Showing a test function from everyone's work");
 
         // Database connection setup
         DbConnection dbc = new DbConnection();
         Connection con = dbc.getConnection();
 
         if (args.length < 1)
-        {
             dbc.connect("localhost:33060");
-        }
+
         else
-        {
             dbc.connect(args[0]);
-        }
+
+
         // ************** COUNTRIES FUNCTIONS ***************** Author: Luke */
 /*
         // Report 1.1 - Return all countries in the world to allCountriesInWorld object
@@ -54,7 +53,7 @@ public class App
         ArrayList<Country> allCountriesByRegion = Sql.getAllCountriesByRegion(con, "Caribbean");
         // Display report from allCountriesByRegion
         Reports.printCountries(allCountriesByRegion);
-
+*/
         // Report 1.4 - Return the top N countries in the world to topPopulatedCountriesInWorld object
         //ArrayList<Country> topPopulatedCountriesInWorld = Sql.getTopPopulatedCountriesInWorld(con, 10);
         // Display report from topPopulatedCountriesInWorld
@@ -63,7 +62,7 @@ public class App
         //}else{
         //    System.out.println("Error getting top 10 most populous cities in the world.");
         //}
-
+/*
         // Report 1.5 - Return the top N countries in a continent to topPopulatedCountriesInContinent object
         ArrayList<Country> topPopulatedCountriesInContinent = Sql.getTopPopulatedCountriesInContinent(con, "Europe", 10);
         // Display report from topPopulatedCountriesInContinent
@@ -101,7 +100,7 @@ public class App
         ArrayList<City> allCitiesInDistrict = Sql.getAllCitiesInDistrict(con, "Scotland");
         // Display report from allCitiesInDistrict
         Reports.printCities(allCitiesInDistrict);
-
+*/
         // Report 2.6 - Return top N populated cities in the world to topPopulatedCitiesInWorld object
         //ArrayList<City> topPopulatedCitiesInWorld = Sql.getTopPopulatedCitiesInWorld(con, 10);
         // Display report from topPopulatedCitiesInWorld
@@ -110,7 +109,7 @@ public class App
         //}else{
         //    System.out.println("Error getting top 10 most populous cities in the world");
         //}
-
+/*
         // Report 2.7 - Return top N populated cities in a continent to topPopulatedCitiesInContinent object
         ArrayList<City> topPopulatedCitiesInContinent = Sql.getTopPopulatedCitiesInContinent(con, 10, "Asia");
         // Display report from topPopulatedCitiesInContinent
@@ -144,7 +143,7 @@ public class App
         // Report 3.3 - Return all of Southeast Asia's capitals by descending population
         ArrayList<City> biggestSEAsiaCapitals = Sql.getBiggestRegionCapitals(con, "Southeast Asia");
         Reports.printCapitals(biggestSEAsiaCapitals);
-
+ */
         // Report 3.4 - Return the top 3 most populous capitals across the world by descending population
         //ArrayList<City> biggestNCapitals = Sql.getNBiggestWorldCapitals(con, 10);
         //if(biggestNCapitals != null) {
@@ -163,7 +162,7 @@ public class App
 */
 
         // ************** POPULATION FUNCTIONS ***************** Author: Cameron //
-/*
+
         // Report 4.1 - The population of people, people living in cities, and people not living in cities in each continent.
         // Antarctica is not shown as the population is set to 0 in the database //
         //ArrayList<PopulationData> continentPopulationDataList = Sql.getPopulationDataContinent(con);
@@ -172,7 +171,7 @@ public class App
         //}else{
         //    System.out.println("Error getting total, urban and rural population per continent.");
         //}
-
+/*
         // Report 4.2 - The population of people, people living in cities, and people not living in cities in each region.
         ArrayList<PopulationData> regionPopulationDataList = Sql.getPopulationDataRegion(con);
         Reports.printPopulationDataRegion(regionPopulationDataList);
@@ -181,7 +180,7 @@ public class App
         // Report 4.3 - The population of people, people living in cities, and people not living in cities in each country.
         ArrayList<PopulationData> countryPopulationDataList = Sql.getPopulationDataCountry(con);
         Reports.printPopulationDataCountry(countryPopulationDataList);
-
+*/
         // ************** ADDITIONAL FUNCTIONS ***************** Author Cameron //
         // Report 5.1 - Get population of the world
         // Long totalPopulation = Sql.getWorldPopulation(con);
@@ -221,49 +220,46 @@ public class App
         // ************** LANGUAGE FUNCTIONS ***************** Author Cameron //
 
         // Report 6.1 - Return all the who speak English from greatest to smallest + percentage of world population:
-        ArrayList<Languages> languageDataEnglish = Sql.getNumberOfLanguageSpeakers(con, "English");
-        if(languageDataEnglish != null){
-            Reports.printLanguageData(languageDataEnglish);
-        }else {
-            System.out.println("Error getting Language Data for the English language.");
-        }
+//        ArrayList<Languages> languageDataEnglish = Sql.getNumberOfLanguageSpeakers(con, "English");
+//        if(languageDataEnglish != null){
+//            Reports.printLanguageData(languageDataEnglish);
+//        }else {
+//            System.out.println("Error getting Language Data for the English language.");
+//        }
 
         // Report 6.2 - Return all the who speak Chinese from greatest to smallest + percentage of world population:
-        ArrayList<Languages> languageDataChinese = Sql.getNumberOfLanguageSpeakers(con, "Chinese");
-        if(languageDataChinese != null){
-            Reports.printLanguageData(languageDataChinese);
-        }else {
-            System.out.println("Error getting Language Data for the Chinese language.");
-        }
+//        ArrayList<Languages> languageDataChinese = Sql.getNumberOfLanguageSpeakers(con, "Chinese");
+//        if(languageDataChinese != null){
+//            Reports.printLanguageData(languageDataChinese);
+//        }else {
+//            System.out.println("Error getting Language Data for the Chinese language.");
+//        }
 
         // Report 6.3 - Return all the who speak Hindi from greatest to smallest + percentage of world population:
-        ArrayList<Languages> languageDataHindi = Sql.getNumberOfLanguageSpeakers(con, "Hindi");
-        if(languageDataHindi != null){
-            Reports.printLanguageData(languageDataHindi);
-        }else {
-            System.out.println("Error getting Language Data for the Hindi language.");
-        }
+//        ArrayList<Languages> languageDataHindi = Sql.getNumberOfLanguageSpeakers(con, "Hindi");
+//        if(languageDataHindi != null){
+//            Reports.printLanguageData(languageDataHindi);
+//        }else {
+//            System.out.println("Error getting Language Data for the Hindi language.");
+//        }
 
         // Report 6.4 - Return all the who speak Arabic from greatest to smallest + percentage of world population:
-        ArrayList<Languages> languageDataArabic = Sql.getNumberOfLanguageSpeakers(con, "Arabic");
-        if(languageDataArabic != null){
-            Reports.printLanguageData(languageDataArabic);
-        }else {
-            System.out.println("Error getting Language Data for the Arabic language.");
-        }
+//        ArrayList<Languages> languageDataArabic = Sql.getNumberOfLanguageSpeakers(con, "Arabic");
+//        if(languageDataArabic != null){
+//            Reports.printLanguageData(languageDataArabic);
+//        }else {
+//            System.out.println("Error getting Language Data for the Arabic language.");
+//        }
 
         // Report 6.5 - Return all the who speak Spanish from greatest to smallest + percentage of world population:
-        ArrayList<Languages> languageDataSpanish = Sql.getNumberOfLanguageSpeakers(con, "Spanish");
-        if(languageDataSpanish != null){
-            Reports.printLanguageData(languageDataSpanish);
-        }else {
-            System.out.println("Error getting Language Data for the Spanish language.");
-        }
+//        ArrayList<Languages> languageDataSpanish = Sql.getNumberOfLanguageSpeakers(con, "Spanish");
+//        if(languageDataSpanish != null){
+//            Reports.printLanguageData(languageDataSpanish);
+//        }else {
+//            System.out.println("Error getting Language Data for the Spanish language.");
+//        }
 
         // Disconnect from database
         dbc.disconnect();
-        */
-
-
     }
 }
