@@ -47,8 +47,9 @@ public class DbConnection {
             System.out.println("Connecting to database...");
             try
             {
-                // Wait a bit for db to start
-               //Thread.sleep(30000);
+                // Wait a bit for db to
+                //Whoever commented out the connection attempt delay should be shot
+                Thread.sleep(15000);
                 // Connect to database
                 con = DriverManager.getConnection("jdbc:mysql://" + location + "/world?allowPublicKeyRetrieval=true&useSSL=false", "root", "example");
                 System.out.println("Successfully connected");
