@@ -6,9 +6,9 @@ import java.sql.SQLException;
 
 /**
  * Project Authors: Colin, Cameron, Luke, Del
- * Date last modified: 21/02/2021
+ * Date last modified: 20/03/2021
  * Purpose of class: This class handles the connection and disconnection of the database.
- * Last modified by: Del
+ * Last modified by: Cameron
  */
 
 public class DbConnection {
@@ -17,29 +17,26 @@ public class DbConnection {
     /**
      * Connection to MySQL database.
      */
-    private Connection con = null;
+    public Connection con = null;
 
 
     /**
      * Constructor with automatically connect()
      */
     public DbConnection() {
-        this.connect();
+        this.connect("localhost:33060");
     }
 
 
     /**
      * Connect to the MySQL database.
      */
-    public void connect()
+    public void connect(String location)
     {
-        try
-        {
+        try {
             // Load Database driver
             Class.forName("com.mysql.cj.jdbc.Driver");
-        }
-        catch (ClassNotFoundException e)
-        {
+        } catch (ClassNotFoundException e) {
             System.out.println("Could not load SQL driver");
             System.exit(-1);
         }
@@ -50,19 +47,19 @@ public class DbConnection {
             System.out.println("Connecting to database...");
             try
             {
-                // Wait a bit for db to start
-                Thread.sleep(30000);
+                // Wait a bit for db to
+                //Whoever commented out the connection attempt delay should be shot
                 // Connect to database
-                con = DriverManager.getConnection("jdbc:mysql://db:3306/world?useSSL=false", "root", "example");
+                con = DriverManager.getConnection("jdbc:mysql://" + location + "/world?allowPublicKeyRetrieval=true&useSSL=false", "root", "example");
                 System.out.println("Successfully connected");
                 break;
             }
             catch (SQLException sqle)
             {
-                System.out.println("Failed to connect to database attempt " + i);
+                System.out.println("Failed to connect to database attempt " + Integer.toString(i));
                 System.out.println(sqle.getMessage());
             }
-            catch (InterruptedException ie)
+            catch (Exception ie)
             {
                 System.out.println("Thread interrupted? Should not happen.");
             }

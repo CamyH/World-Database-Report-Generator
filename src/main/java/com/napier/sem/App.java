@@ -14,9 +14,9 @@ import java.util.ArrayList;
 
 /**
  * Project Authors: Colin, Cameron, Luke, Del
- * Date last modified: 06/03/2021
+ * Date last modified: 21/03/2021
  * Purpose of program: Run SQL queries to satisfy the given requirements
- * Last modified by: Del
+ * Last modified by: Cameron
  */
 
 public class App
@@ -29,6 +29,13 @@ public class App
         // Database connection setup
         DbConnection dbc = new DbConnection();
         Connection con = dbc.getConnection();
+
+        if (args.length < 1)
+            dbc.connect("localhost:33060");
+
+        else
+            dbc.connect(args[0]);
+
 
         // ************** COUNTRIES FUNCTIONS ***************** Author: Luke */
 /*
@@ -213,44 +220,44 @@ public class App
         // ************** LANGUAGE FUNCTIONS ***************** Author Cameron //
 
         // Report 6.1 - Return all the who speak English from greatest to smallest + percentage of world population:
-        ArrayList<Languages> languageDataEnglish = Sql.getNumberOfLanguageSpeakers(con, "English");
-        if(languageDataEnglish != null){
-            Reports.printLanguageData(languageDataEnglish);
-        }else {
-            System.out.println("Error getting Language Data for the English language.");
-        }
+//        ArrayList<Languages> languageDataEnglish = Sql.getNumberOfLanguageSpeakers(con, "English");
+//        if(languageDataEnglish != null){
+//            Reports.printLanguageData(languageDataEnglish);
+//        }else {
+//            System.out.println("Error getting Language Data for the English language.");
+//        }
 
         // Report 6.2 - Return all the who speak Chinese from greatest to smallest + percentage of world population:
-        ArrayList<Languages> languageDataChinese = Sql.getNumberOfLanguageSpeakers(con, "Chinese");
-        if(languageDataChinese != null){
-            Reports.printLanguageData(languageDataChinese);
-        }else {
-            System.out.println("Error getting Language Data for the Chinese language.");
-        }
+//        ArrayList<Languages> languageDataChinese = Sql.getNumberOfLanguageSpeakers(con, "Chinese");
+//        if(languageDataChinese != null){
+//            Reports.printLanguageData(languageDataChinese);
+//        }else {
+//            System.out.println("Error getting Language Data for the Chinese language.");
+//        }
 
         // Report 6.3 - Return all the who speak Hindi from greatest to smallest + percentage of world population:
-        ArrayList<Languages> languageDataHindi = Sql.getNumberOfLanguageSpeakers(con, "Hindi");
-        if(languageDataHindi != null){
-            Reports.printLanguageData(languageDataHindi);
-        }else {
-            System.out.println("Error getting Language Data for the Hindi language.");
-        }
+//        ArrayList<Languages> languageDataHindi = Sql.getNumberOfLanguageSpeakers(con, "Hindi");
+//        if(languageDataHindi != null){
+//            Reports.printLanguageData(languageDataHindi);
+//        }else {
+//            System.out.println("Error getting Language Data for the Hindi language.");
+//        }
 
         // Report 6.4 - Return all the who speak Arabic from greatest to smallest + percentage of world population:
-        ArrayList<Languages> languageDataArabic = Sql.getNumberOfLanguageSpeakers(con, "Arabic");
-        if(languageDataArabic != null){
-            Reports.printLanguageData(languageDataArabic);
-        }else {
-            System.out.println("Error getting Language Data for the Arabic language.");
-        }
+//        ArrayList<Languages> languageDataArabic = Sql.getNumberOfLanguageSpeakers(con, "Arabic");
+//        if(languageDataArabic != null){
+//            Reports.printLanguageData(languageDataArabic);
+//        }else {
+//            System.out.println("Error getting Language Data for the Arabic language.");
+//        }
 
         // Report 6.5 - Return all the who speak Spanish from greatest to smallest + percentage of world population:
-        ArrayList<Languages> languageDataSpanish = Sql.getNumberOfLanguageSpeakers(con, "Spanish");
-        if(languageDataSpanish != null){
-            Reports.printLanguageData(languageDataSpanish);
-        }else {
-            System.out.println("Error getting Language Data for the Spanish language.");
-        }
+//        ArrayList<Languages> languageDataSpanish = Sql.getNumberOfLanguageSpeakers(con, "Spanish");
+//        if(languageDataSpanish != null){
+//            Reports.printLanguageData(languageDataSpanish);
+//        }else {
+//            System.out.println("Error getting Language Data for the Spanish language.");
+//        }
 
         // Disconnect from database
         dbc.disconnect();
