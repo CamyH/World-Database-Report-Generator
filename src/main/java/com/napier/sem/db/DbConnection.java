@@ -4,11 +4,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-
 /**
  * Project Authors: Colin, Cameron, Luke, Del
  * Date last modified: 21/02/2021
  * Purpose of class: This class handles the connection and disconnection of the database.
+ * Last modified by: Del
  */
 
 public class DbConnection {
@@ -59,7 +59,7 @@ public class DbConnection {
             }
             catch (SQLException sqle)
             {
-                System.out.println("Failed to connect to database attempt " + Integer.toString(i));
+                System.out.println("Failed to connect to database attempt " + i);
                 System.out.println(sqle.getMessage());
             }
             catch (InterruptedException ie)
