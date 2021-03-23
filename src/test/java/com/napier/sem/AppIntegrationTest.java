@@ -28,104 +28,67 @@ public class AppIntegrationTest {
         reports = new Reports();
 
     }
+
+    //************** COUNTRY INTEGRATION TESTS ***************** Author Luke */
+
     @Test
-    void testGetWorldPopulation()
-    {
-        Long testPop = 6078749450L;
-        Long worldPop = Sql.getWorldPopulation(con);
-        Assertions.assertEquals(worldPop, testPop, 1);
+    void getAllCountriesInWorld(){
+        ArrayList<Country> check = Sql.getAllCountriesInWorld(con);
+        int testPopulation = 1277558000;
+        Assertions.assertEquals(check.get(0).getPopulation(),testPopulation);
     }
 
     @Test
-    void testGetPopulationOfContinent()
-    {
-        Long testPop = 730074600L;
-        Long continentPop = Sql.getPopulationOfContinent(con, "Europe");
-        Assertions.assertEquals(continentPop, testPop, 1);
+    void getAllCountriesInContinent(){
+        String continent = "Asia";
+        ArrayList<Country> check = Sql.getAllCountriesInContinent(con, continent);
+        int testPopulation = 1277558000;
+        Assertions.assertEquals(check.get(0).getPopulation(),testPopulation);
+
     }
 
     @Test
-    void testGetPopulationOfRegion()
-    {
-        Long testPop = 144674200L;
-        Long regionPop = Sql.getPopulationOfRegion(con, "Southern Europe");
-        Assertions.assertEquals(regionPop, testPop, 1);
+    void getAllCountriesByRegion(){
+        String region = "Caribbean";
+        ArrayList<Country> check = Sql.getAllCountriesByRegion(con,region);
+        int testPopulation = 11201000;
+        Assertions.assertEquals(check.get(0).getPopulation(),testPopulation);
+    }
+
+
+    @Test
+    void getTopPopulatedCountriesInWorld(){
+        int testPopulation = 1277558000;
+        int limit = 10;
+        ArrayList<Country> check = Sql.getTopPopulatedCountriesInWorld(con, limit);
+        Assertions.assertEquals(check.get(0).getPopulation(),testPopulation);
     }
 
     @Test
-    void testGetPopulationOfCountry()
-    {
-        Long testPop = 59623400L;
-        Long countryPop = Sql.getPopulationOfCountry(con, "GBR");
-        Assertions.assertEquals(countryPop, testPop, 1);
+    void getTopPopulatedCountriesInContinent(){
+        int testPopulation = 146934000;
+        int limit = 10;
+        String continent = "Europe";
+        ArrayList<Country> check = Sql.getTopPopulatedCountriesInContinent(con, continent, limit);
+        Assertions.assertEquals(check.get(0).getPopulation(),testPopulation);
     }
 
     @Test
-    void testGetDistrictPopulation()
-    {
-        Long testPop = 19978543L;
-        Long districtPop = Sql.getDistrictPopulation(con, "England");
-        Assertions.assertEquals(districtPop, testPop, 1);
+    void getTopPopulatedCountriesInRegion(){
+        int testPopulation = 11201000;
+        int limit = 10;
+        String region = "Caribbean";
+        ArrayList<Country> check = Sql.getTopPopulatedCountriesInRegion(con, region, limit);
+        Assertions.assertEquals(check.get(0).getPopulation(),testPopulation);
     }
 
-    @Test
-    void testGetCityPopulation()
-    {
-        Long testPop = 7285000L;
-        Long cityPopulation = Sql.getCityPopulation(con, "London");
-        Assertions.assertEquals(cityPopulation, testPop, 1);
-    }
-
-    @Test
-    void biggestWorldCapitalsTest(){
-        ArrayList<City> biggestWorldCapitals = Sql.getBiggestWorldCapitals(con);
-        Assertions.assertNotEquals(null, biggestWorldCapitals);
-        Assertions.assertEquals(9981619, biggestWorldCapitals.get(0).getPopulation());
-    }
-
-    @Test
-    void biggestContinentCapitalsTest(){
-        ArrayList<City> biggestContinentCapitals = Sql.getBiggestContinentCapitals(con, "Europe");
-        Assertions.assertNotEquals(null, biggestContinentCapitals);
-        Assertions.assertEquals(8389200, biggestContinentCapitals.get(0).getPopulation());
-    }
-
-    @Test
-    void biggestRegionCapitalsTest(){
-        ArrayList<City> biggestRegionCapitals = Sql.getBiggestRegionCapitals(con, "Southeast Asia");
-        Assertions.assertNotEquals(null, biggestRegionCapitals);
-        Assertions.assertEquals(9604900, biggestRegionCapitals.get(0).getPopulation());
-    }
-
-    @Test
-    void biggestNWorldCapitalsTest(){
-        ArrayList<City> biggestNWorldCapitals = Sql.getNBiggestWorldCapitals(con, 5);
-        Assertions.assertNotEquals(null, biggestNWorldCapitals);
-        Assertions.assertEquals(9981619, biggestNWorldCapitals.get(0).getPopulation());
-    }
-
-    @Test
-    void biggestNContinentCapitalsTest(){
-        ArrayList<City> biggestNContinentCapitals = Sql.getNBiggestContinentCapitals(con, 5, "Europe");
-        Assertions.assertNotEquals(null, biggestNContinentCapitals);
-        Assertions.assertEquals(8389200, biggestNContinentCapitals.get(0).getPopulation());
-    }
-
-    @Test
-    void biggestRegionNCapitalsTest(){
-        ArrayList<City> biggestNRegionCapitals = Sql.getNBiggestRegionCapitals(con, 5, "Southeast Asia");
-        Assertions.assertNotEquals(null, biggestNRegionCapitals);
-        Assertions.assertEquals(9604900, biggestNRegionCapitals.get(0).getPopulation());
-    }
+    //************** CITIES INTEGRATION TESTS ***************** Author Colin */
 
     @Test
     void getAllCitiesInWorld(){
-
         ArrayList<City> check = Sql.getAllCitiesInWorld(con);
         int testPopulation = 10500000;
         Assertions.assertEquals(check.get(0).getPopulation(),testPopulation);
-
-
     }
 
     @Test
@@ -204,56 +167,51 @@ public class AppIntegrationTest {
         int testPopulation = 619680;
         Assertions.assertEquals(check.get(0).getPopulation(),testPopulation);
     }
+
+    //************** CAPITAL INTEGRATION TESTS ***************** Author Del */
     @Test
-    void getAllCountriesInWorld(){
-        ArrayList<Country> check = Sql.getAllCountriesInWorld(con);
-        int testPopulation = 1277558000;
-        Assertions.assertEquals(check.get(0).getPopulation(),testPopulation);
+    void biggestWorldCapitalsTest(){
+        ArrayList<City> biggestWorldCapitals = Sql.getBiggestWorldCapitals(con);
+        Assertions.assertNotEquals(null, biggestWorldCapitals);
+        Assertions.assertEquals(9981619, biggestWorldCapitals.get(0).getPopulation());
     }
 
     @Test
-    void getAllCountriesInContinent(){
-        String continent = "Asia";
-        ArrayList<Country> check = Sql.getAllCountriesInContinent(con, continent);
-        int testPopulation = 1277558000;
-        Assertions.assertEquals(check.get(0).getPopulation(),testPopulation);
-
+    void biggestContinentCapitalsTest(){
+        ArrayList<City> biggestContinentCapitals = Sql.getBiggestContinentCapitals(con, "Europe");
+        Assertions.assertNotEquals(null, biggestContinentCapitals);
+        Assertions.assertEquals(8389200, biggestContinentCapitals.get(0).getPopulation());
     }
 
     @Test
-    void getAllCountriesByRegion(){
-        String region = "Caribbean";
-        ArrayList<Country> check = Sql.getAllCountriesByRegion(con,region);
-        int testPopulation = 11201000;
-        Assertions.assertEquals(check.get(0).getPopulation(),testPopulation);
-    }
-
-
-    @Test
-    void getTopPopulatedCountriesInWorld(){
-        int testPopulation = 1277558000;
-        int limit = 10;
-        ArrayList<Country> check = Sql.getTopPopulatedCountriesInWorld(con, limit);
-        Assertions.assertEquals(check.get(0).getPopulation(),testPopulation);
+    void biggestRegionCapitalsTest(){
+        ArrayList<City> biggestRegionCapitals = Sql.getBiggestRegionCapitals(con, "Southeast Asia");
+        Assertions.assertNotEquals(null, biggestRegionCapitals);
+        Assertions.assertEquals(9604900, biggestRegionCapitals.get(0).getPopulation());
     }
 
     @Test
-    void getTopPopulatedCountriesInContinent(){
-        int testPopulation = 146934000;
-        int limit = 10;
-        String continent = "Europe";
-        ArrayList<Country> check = Sql.getTopPopulatedCountriesInContinent(con, continent, limit);
-        Assertions.assertEquals(check.get(0).getPopulation(),testPopulation);
+    void biggestNWorldCapitalsTest(){
+        ArrayList<City> biggestNWorldCapitals = Sql.getNBiggestWorldCapitals(con, 5);
+        Assertions.assertNotEquals(null, biggestNWorldCapitals);
+        Assertions.assertEquals(9981619, biggestNWorldCapitals.get(0).getPopulation());
     }
 
     @Test
-    void getTopPopulatedCountriesInRegion(){
-        int testPopulation = 11201000;
-        int limit = 10;
-        String region = "Caribbean";
-        ArrayList<Country> check = Sql.getTopPopulatedCountriesInRegion(con, region, limit);
-        Assertions.assertEquals(check.get(0).getPopulation(),testPopulation);
+    void biggestNContinentCapitalsTest(){
+        ArrayList<City> biggestNContinentCapitals = Sql.getNBiggestContinentCapitals(con, 5, "Europe");
+        Assertions.assertNotEquals(null, biggestNContinentCapitals);
+        Assertions.assertEquals(8389200, biggestNContinentCapitals.get(0).getPopulation());
     }
+
+    @Test
+    void biggestRegionNCapitalsTest(){
+        ArrayList<City> biggestNRegionCapitals = Sql.getNBiggestRegionCapitals(con, 5, "Southeast Asia");
+        Assertions.assertNotEquals(null, biggestNRegionCapitals);
+        Assertions.assertEquals(9604900, biggestNRegionCapitals.get(0).getPopulation());
+    }
+
+    //************** LANGUAGE INTEGRATION TESTS ***************** Author Cameron */
 
     @Test
     void testGetNumberOfLanguageSpeakers()
@@ -262,6 +220,9 @@ public class AppIntegrationTest {
         ArrayList<Languages> languageData = Sql.getNumberOfLanguageSpeakers(con, "English");
         Assertions.assertEquals(languageData.get(0).getNumberOfSpeakers(), testPop, 1);
     }
+
+
+    //************** POPULATION INTEGRATION TESTS ***************** Author Luke */
 
     @Test
     void getPopulationDataCountry(){
@@ -282,5 +243,55 @@ public class AppIntegrationTest {
         int testPopulation = 207688970;
         ArrayList<PopulationData> check = Sql.getPopulationDataRegion(con);
         Assertions.assertEquals(check.get(0).getPopulationInCities(),testPopulation);
+    }
+
+    //************** ADDITIONAL FUNCTIONS INTEGRATION TESTS ***************** Author Cameron */
+
+    @Test
+    void testGetWorldPopulation()
+    {
+        Long testPop = 6078749450L;
+        Long worldPop = Sql.getWorldPopulation(con);
+        Assertions.assertEquals(worldPop, testPop, 1);
+    }
+
+    @Test
+    void testGetPopulationOfContinent()
+    {
+        Long testPop = 730074600L;
+        Long continentPop = Sql.getPopulationOfContinent(con, "Europe");
+        Assertions.assertEquals(continentPop, testPop, 1);
+    }
+
+    @Test
+    void testGetPopulationOfRegion()
+    {
+        Long testPop = 144674200L;
+        Long regionPop = Sql.getPopulationOfRegion(con, "Southern Europe");
+        Assertions.assertEquals(regionPop, testPop, 1);
+    }
+
+    @Test
+    void testGetPopulationOfCountry()
+    {
+        Long testPop = 59623400L;
+        Long countryPop = Sql.getPopulationOfCountry(con, "GBR");
+        Assertions.assertEquals(countryPop, testPop, 1);
+    }
+
+    @Test
+    void testGetDistrictPopulation()
+    {
+        Long testPop = 19978543L;
+        Long districtPop = Sql.getDistrictPopulation(con, "England");
+        Assertions.assertEquals(districtPop, testPop, 1);
+    }
+
+    @Test
+    void testGetCityPopulation()
+    {
+        Long testPop = 7285000L;
+        Long cityPopulation = Sql.getCityPopulation(con, "London");
+        Assertions.assertEquals(cityPopulation, testPop, 1);
     }
 }
