@@ -1,5 +1,6 @@
 package com.napier.sem;
 
+import com.napier.sem.db.DbConnection;
 import com.napier.sem.report.Reports;
 import com.napier.sem.world.City;
 import com.napier.sem.world.Country;
@@ -8,38 +9,49 @@ import com.napier.sem.world.PopulationData;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import java.sql.Connection;
 import java.util.ArrayList;
 
 public class AppTest
 {
     static App app;
+    static Reports reports;
 
     @BeforeAll
     static void init()
     {
+        // Init new instances of App & Reports
         app = new App();
+        reports = new Reports();
+
     }
 
+    //************** COUNTRIES UNIT TESTS ***************** Author Luke */
+
     @Test
-    void printCountriesTestEmpty() {
+    void printCountriesTestEmpty()
+    {
         ArrayList<Country> countries = new ArrayList<>();
         Reports.printCountries(countries);
     }
 
     @Test
-    void printCountriesTestNull() {
+    void printCountriesTestNull()
+    {
         Reports.printCountries(null);
     }
 
     @Test
-    void printCountriesTestContainsNull() {
+    void printCountriesTestContainsNull()
+    {
         ArrayList<Country> countries = new ArrayList<>();
         countries.add(null);
         Reports.printCountries(countries);
     }
 
     @Test
-    void printCountriesTest() {
+    void printCountriesTest()
+    {
         ArrayList<Country> countries = new ArrayList<>();
         Country country = new Country();
         country.setCode("ABC");
@@ -51,6 +63,8 @@ public class AppTest
         countries.add(country);
         Reports.printCountries(countries);
     }
+
+    //************** CAPITAL CITIES UNIT TESTS ***************** Author Del */
 
     @Test
     void printCapitalsEmptyTest()
@@ -67,6 +81,7 @@ public class AppTest
         Reports.printCities(city);
     }
 
+    //************** CITIES UNIT TESTS ***************** Author Colin */
 
     @Test
     void printCityTestEmpty()
@@ -102,6 +117,8 @@ public class AppTest
         Reports.printCities(cities);
     }
 
+    //************** LANGUAGE UNIT TESTS ***************** Author Cameron */
+
     @Test
     void printLanguageDataTestEmpty()
     {
@@ -136,6 +153,9 @@ public class AppTest
         languageData.add(lang);
         Reports.printLanguageData(languageData);
     }
+
+    //************** POPULATION UNIT TESTS ***************** Author Luke */
+
     @Test
     void printPopulationDataCountriesTestEmpty()
     {
