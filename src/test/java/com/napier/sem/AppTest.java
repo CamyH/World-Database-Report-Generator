@@ -1,30 +1,160 @@
 package com.napier.sem;
 
+import com.napier.sem.db.DbConnection;
 import com.napier.sem.report.Reports;
+import com.napier.sem.world.City;
+import com.napier.sem.world.Country;
+import com.napier.sem.world.Languages;
 import com.napier.sem.world.PopulationData;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+
+import java.sql.Connection;
 import java.util.ArrayList;
 
-/**
- * Project Authors: Luke
- * Date last modified: 13/03/2021
- * Purpose of class: To test reports populationData print method.
- * Last modified by: Luke
- */
-
-public class PopulationDataTests{
+public class AppTest
+{
     static App app;
     static Reports reports;
-
 
     @BeforeAll
     static void init()
     {
-        // Init new instances of App & DbConnection
+        // Init new instances of App & Reports
         app = new App();
         reports = new Reports();
+
     }
+
+    //************** COUNTRIES UNIT TESTS ***************** Author Luke */
+
+    @Test
+    void printCountriesTestEmpty()
+    {
+        ArrayList<Country> countries = new ArrayList<>();
+        Reports.printCountries(countries);
+    }
+
+    @Test
+    void printCountriesTestNull()
+    {
+        Reports.printCountries(null);
+    }
+
+    @Test
+    void printCountriesTestContainsNull()
+    {
+        ArrayList<Country> countries = new ArrayList<>();
+        countries.add(null);
+        Reports.printCountries(countries);
+    }
+
+    @Test
+    void printCountriesTest()
+    {
+        ArrayList<Country> countries = new ArrayList<>();
+        Country country = new Country();
+        country.setCode("ABC");
+        country.setName("France");
+        country.setContinent("Europe");
+        country.setRegion("French");
+        country.setPopulation(67000000);
+        country.setCapital(145);
+        countries.add(country);
+        Reports.printCountries(countries);
+    }
+
+    //************** CAPITAL CITIES UNIT TESTS ***************** Author Del */
+
+    @Test
+    void printCapitalsEmptyTest()
+    {
+        ArrayList<City> city = new ArrayList<>();
+        Reports.printCapitals(city);
+    }
+
+    @Test
+    void printCapitalsContainsNullTest()
+    {
+        ArrayList<City> city = new ArrayList<>();
+        city.add(null);
+        Reports.printCities(city);
+    }
+
+    //************** CITIES UNIT TESTS ***************** Author Colin */
+
+    @Test
+    void printCityTestEmpty()
+    {
+        ArrayList<City> city = new ArrayList<>();
+        Reports.printCities(city);
+    }
+
+    @Test
+    void printCitiesTestNull()
+    {
+        Reports.printCities(null);
+    }
+
+    @Test
+    void printCitiesTestContainsNull()
+    {
+        ArrayList<City> city = new ArrayList<>();
+        city.add(null);
+        Reports.printCities(city);
+    }
+
+    @Test
+    void printCitiesTest()
+    {
+        ArrayList<City> cities = new ArrayList<>();
+        City city = new City();
+        city.setName("France");
+        city.setCountry("Europe");
+        city.setDistrict("Corse");
+        city.setPopulation(100000);
+        cities.add(city);
+        Reports.printCities(cities);
+    }
+
+    //************** LANGUAGE UNIT TESTS ***************** Author Cameron */
+
+    @Test
+    void printLanguageDataTestEmpty()
+    {
+        ArrayList<Languages> languageData = new ArrayList<>();
+        Reports.printLanguageData(languageData);
+    }
+
+    @Test
+    void printLanguageDataTestNull()
+    {
+        Reports.printLanguageData(null);
+    }
+
+    @Test
+    void printLanguageDataTestContainsNull()
+    {
+        ArrayList<Languages> languageData = new ArrayList<>();
+        languageData.add(null);
+        Reports.printLanguageData(languageData);
+    }
+
+    @Test
+    void printLanguageDataTest()
+    {
+        ArrayList<Languages> languageData = new ArrayList<>();
+        Languages lang = new Languages();
+        lang.setName("France");
+        lang.setPopulation((long) 67000000);
+        lang.setLanguage("French");
+        lang.setNumberOfSpeakers((long) 60000000);
+        lang.setPercentageOfWorldPop(10.0);
+        languageData.add(lang);
+        Reports.printLanguageData(languageData);
+    }
+
+    //************** POPULATION UNIT TESTS ***************** Author Luke */
 
     @Test
     void printPopulationDataCountriesTestEmpty()

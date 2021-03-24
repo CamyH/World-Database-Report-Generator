@@ -13,9 +13,9 @@ import java.util.ArrayList;
 
 /**
  * Project Authors: Colin, Cameron, Luke, Del
- * Date last modified: 13/03/2021
+ * Date last modified: 20/03/2021
  * Purpose of class: This class handles the SQL queries to the database.
- * Last modified by: Del
+ * Last modified by: Colin
  */
 
 public class Sql {
@@ -354,7 +354,6 @@ public class Sql {
                 city.setPopulation(rset.getInt("city.population"));
                 cities.add(city);
             }
-            System.out.println("Query Complete, object return next");
             return cities;
         }
         catch (Exception e)
@@ -399,7 +398,6 @@ public class Sql {
                 city.setPopulation(rset.getInt("city.population"));
                 cities.add(city);
             }
-            System.out.println("Query Complete, object return next");
             return cities;
         }
         catch (Exception e)
@@ -443,7 +441,6 @@ public class Sql {
                 city.setPopulation(rset.getInt("city.population"));
                 cities.add(city);
             }
-            System.out.println("Query Complete, object return next");
             return cities;
         }
         catch (Exception e)
@@ -488,7 +485,6 @@ public class Sql {
                 city.setPopulation(rset.getInt("city.population"));
                 cities.add(city);
             }
-            System.out.println("Query Complete, object return next");
             return cities;
         }
         catch (Exception e)
@@ -533,7 +529,6 @@ public class Sql {
                 city.setPopulation(rset.getInt("city.population"));
                 cities.add(city);
             }
-            System.out.println("Query Complete, object return next");
             return cities;
         }
         catch (Exception e)
@@ -579,7 +574,6 @@ public class Sql {
                 city.setPopulation(rset.getInt("city.population"));
                 cities.add(city);
             }
-            System.out.println("Query Complete, object return next");
             return cities;
         }
         catch (Exception e)
@@ -627,7 +621,6 @@ public class Sql {
                 city.setPopulation(rset.getInt("city.population"));
                 cities.add(city);
             }
-            System.out.println("Query Complete, object return next");
             return cities;
         }
         catch (Exception e)
@@ -674,7 +667,6 @@ public class Sql {
                 city.setPopulation(rset.getInt("city.population"));
                 cities.add(city);
             }
-            System.out.println("Query Complete, object return next");
             return cities;
         }
         catch (Exception e)
@@ -723,7 +715,6 @@ public class Sql {
                 city.setPopulation(rset.getInt("city.population"));
                 cities.add(city);
             }
-            System.out.println("Query Complete, object return next");
             return cities;
         }
         catch (Exception e)
@@ -770,7 +761,6 @@ public class Sql {
                 city.setPopulation(rset.getInt("city.population"));
                 cities.add(city);
             }
-            System.out.println("Query Complete, object return next");
             return cities;
         }
         catch (Exception e)
@@ -1023,10 +1013,10 @@ public class Sql {
             // Create SQL statement
             Statement peopleInCitiesStatement = con.createStatement();
             // Create string for SQL statement
-            String citiesPopulation = "SELECT country.continent, SUM(city.population) as citiesPopulation " +
+            String citiesPopulation = "SELECT country.Continent, SUM(city.population) as citiesPopulation " +
                     "FROM city " +
                     "JOIN country ON CountryCode=country.code " +
-                    "GROUP BY country.continent; ";
+                    "GROUP BY country.Continent; ";
             // Execute SQL statement
             ResultSet rset = peopleInCitiesStatement.executeQuery(citiesPopulation);
             // ArrayList to store all population data required
@@ -1074,9 +1064,8 @@ public class Sql {
             // Check something is returned
             while(rset.next()) {
                 PopulationData popData = new PopulationData();
-                popData.setCode(rset.getString("country.code"));
-                popData.setIdentifier(rset.getString("country.continent"));
-                popData.setPopulation(getPopulationOfContinent(con, popData.getIdentifier()));
+                popData.setIdentifier(rset.getString("country.region"));
+                popData.setPopulation(getPopulationOfRegion(con, popData.getIdentifier()));
                 popData.setPopulationInCities(rset.getLong("citiesPopulation"));
                 popData.setPopulationPercentInCities(((double)popData.getPopulationInCities()) / popData.getPopulation() * 100);
                 popData.setPopulationNotInCities(popData.getPopulation() - popData.getPopulationInCities());
@@ -1102,10 +1091,10 @@ public class Sql {
             // Create SQL statement
             Statement peopleInCitiesStatement = con.createStatement();
             // Create string for SQL statement
-            String citiesPopulation = "SELECT country.code, country.name, SUM(city.population) as citiesPopulation " +
+            String citiesPopulation = "SELECT country.Code, country.name, SUM(city.population) as citiesPopulation " +
                     "FROM city " +
-                    "JOIN country ON CountryCode=country.code " +
-                    "GROUP BY country.name, country.code; ";
+                    "JOIN country ON CountryCode=country.Code " +
+                    "GROUP BY country.name, country.Code; ";
             // Execute SQL statement
             ResultSet rset = peopleInCitiesStatement.executeQuery(citiesPopulation);
             // ArrayList to store all population data required
@@ -1115,8 +1104,8 @@ public class Sql {
             while(rset.next()) {
                 PopulationData popData = new PopulationData();
                 popData.setCode(rset.getString("country.code"));
-                popData.setIdentifier(rset.getString("country.continent"));
-                popData.setPopulation(getPopulationOfContinent(con, popData.getIdentifier()));
+                popData.setIdentifier(rset.getString("country.name"));
+                popData.setPopulation(getPopulationOfCountry(con, popData.getCode()));
                 popData.setPopulationInCities(rset.getLong("citiesPopulation"));
                 popData.setPopulationPercentInCities(((double)popData.getPopulationInCities()) / popData.getPopulation() * 100);
                 popData.setPopulationNotInCities(popData.getPopulation() - popData.getPopulationInCities());
@@ -1230,7 +1219,7 @@ public class Sql {
      * @param code Contains the unique country code used to retrieve the correct population
      * @return The population of a country or null if there is an error
      * Report 29 */
-    public static Long getCountryPopulation(Connection con, String code) {
+    public static Long getPopulationOfCountry(Connection con, String code) {
         try {
             // Create string for SQL statement
             String countryPopulation = "SELECT name, population " +
