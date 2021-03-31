@@ -51,7 +51,7 @@ stages:
   - unit tests
   - integration tests
   - name: GitHub Release
-    if: branch = fix/travis-deploy-stage
+    if: branch = main
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
