@@ -38,12 +38,12 @@ public class App
 
 
         // ************** COUNTRIES FUNCTIONS ***************** Author: Luke */
-/*
+
         // Report 1.1 - Return all countries in the world to allCountriesInWorld object
         ArrayList<Country> allCountriesInWorld = Sql.getAllCountriesInWorld(con);
         // Display report from allCountriesInWorld
         Reports.printCountries(allCountriesInWorld);
-
+/*
         // Report 1.2 - Return all countries in a continent to allCountriesInContinent object
         ArrayList<Country> allCountriesInContinent = Sql.getAllCountriesInContinent(con, "Europe");
         // Display report from allCountriesInContinent
