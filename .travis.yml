@@ -44,14 +44,14 @@ jobs:
         provider: releases
         api_key: $GITHUB_OAUTH_TOKEN
         # Copy built JAR file.  JAR built in $TRAVIS_BUILD_DIR/
-        file: $TRAVIS_BUILD_DIR/target/seMethods.jar
+        file: $TRAVIS_BUILD_DIR/target/sem-set08103.jar
         skip_cleanup: true
 
 stages:
   - unit tests
   - integration tests
   - name: GitHub Release
-    if: branch = develop
+    if: branch = main
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
