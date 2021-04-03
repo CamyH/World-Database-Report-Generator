@@ -71,7 +71,7 @@ public class AppTest
     }
 
     /**
-     * Create a simple Country object and attempt to print it.
+     * Create a simple Country object and attempt to print a report for it.
      */
     @Test
     void printCountriesTest()
@@ -90,11 +90,11 @@ public class AppTest
 
     //************** CAPITAL CITIES UNIT TESTS ***************** Author Del */
     /*
-     * Series of unit tests regarding the Capital-based functions as authored by Luke.
+     * Series of unit tests regarding the Capital-based functions as authored by Del.
      */
 
     /**
-     * Attempt to print an empty Capitals report.
+     * Attempt to print a Capitals report with an empty list.
      */
     @Test
     void printCapitalsEmptyTest()
@@ -103,6 +103,9 @@ public class AppTest
         Reports.printCapitals(city);
     }
 
+    /**
+     * Attempts to print a Capitals report with null passed as an argument.
+     */
     @Test
     void printCapitalsNullTest()
     {
@@ -121,7 +124,7 @@ public class AppTest
     }
 
     /**
-     * Create a simple Capital object and attempt to print it.
+     * Create a simple Capital object and attempt to print a report for it.
      */
     @Test
     void printCapitalsTest()
@@ -138,10 +141,12 @@ public class AppTest
 
     //************** CITIES UNIT TESTS ***************** Author Colin */
     /*
-     * Series of unit tests regarding the Capital-based functions as authored by Luke.
+     * Series of unit tests regarding the City-based functions as authored by Colin.
      */
 
-
+    /**
+     * Attempt to print a City report with an empty list.
+     */
     @Test
     void printCityTestEmpty()
     {
@@ -149,12 +154,18 @@ public class AppTest
         Reports.printCities(city);
     }
 
+    /**
+     * Attempt to print a City report where the argument is null.
+     */
     @Test
     void printCitiesTestNull()
     {
         Reports.printCities(null);
     }
 
+    /**
+     * Attempt to print a City report where the only entry in the list is null.
+     */
     @Test
     void printCitiesTestContainsNull()
     {
@@ -163,6 +174,10 @@ public class AppTest
         Reports.printCities(city);
     }
 
+    /**
+     * Create a simple City object and attempt to print a report for it.
+     * Side note, who names their city "France"?
+     */
     @Test
     void printCitiesTest()
     {
@@ -177,7 +192,13 @@ public class AppTest
     }
 
     //************** LANGUAGE UNIT TESTS ***************** Author Cameron */
+    /*
+     * Series of unit tests regarding the Language-based functions as authored by Cameron.
+     */
 
+    /**
+     * Attempt to print a Language report with an empty list passed to it.
+     */
     @Test
     void printLanguageDataTestEmpty()
     {
@@ -185,12 +206,18 @@ public class AppTest
         Reports.printLanguageData(languageData);
     }
 
+    /**
+     * Attempt to print a Language report with null passed to it.
+     */
     @Test
     void printLanguageDataTestNull()
     {
         Reports.printLanguageData(null);
     }
 
+    /**
+     * Attempt to print a Language report with a list where the only entry is null.
+     */
     @Test
     void printLanguageDataTestContainsNull()
     {
@@ -199,6 +226,9 @@ public class AppTest
         Reports.printLanguageData(languageData);
     }
 
+    /**
+     * Create a simple Languages object and attempt to print a report for it.
+     */
     @Test
     void printLanguageDataTest()
     {
@@ -214,7 +244,13 @@ public class AppTest
     }
 
     //************** POPULATION UNIT TESTS ***************** Author Luke */
+    /*
+     * Series of unit tests regarding the Population-based functions as authored by Luke.
+     */
 
+    /**
+     * Attempt to print a Country Population report with an empty list.
+     */
     @Test
     void printPopulationDataCountriesTestEmpty()
     {
@@ -222,6 +258,9 @@ public class AppTest
         Reports.printPopulationDataCountry(populationData);
     }
 
+    /**
+     * Attempt to print a Continent Population report with an empty list.
+     */
     @Test
     void printPopulationDataContinentTestEmpty()
     {
@@ -229,6 +268,9 @@ public class AppTest
         Reports.printPopulationDataContinent(populationData);
     }
 
+    /**
+     * Attempt to print a Region Population report with an empty list.
+     */
     @Test
     void printPopulationDataRegionTestEmpty()
     {
@@ -236,24 +278,36 @@ public class AppTest
         Reports.printPopulationDataRegion(populationData);
     }
 
+    /**
+     * Attempt to print a Country Population report with a null list.
+     */
     @Test
     void printPopulationDataCountryTestNull()
     {
         Reports.printPopulationDataCountry(null);
     }
 
+    /**
+     * Attempt to print a Continent Population report with a null list.
+     */
     @Test
     void printPopulationDataContinentTestNull()
     {
         Reports.printPopulationDataContinent(null);
     }
 
+    /**
+     * Attempt to print a Region Population data report with a null list.
+     */
     @Test
     void printPopulationDataRegionTestNull()
     {
         Reports.printPopulationDataRegion(null);
     }
 
+    /**
+     * Attempt to print a Country Population data report with a list that contains only a single null entry.
+     */
     @Test
     void printPopulationDataCountriesTestContainsNull()
     {
@@ -262,6 +316,9 @@ public class AppTest
         Reports.printPopulationDataCountry(populationData);
     }
 
+    /**
+     * Attempt to print a Continent Population data report with a list that contains only a single null entry.
+     */
     @Test
     void printPopulationDataContinentTestContainsNull()
     {
@@ -270,6 +327,9 @@ public class AppTest
         Reports.printPopulationDataContinent(populationData);
     }
 
+    /**
+     * Attempt to print a Region Population data report with a list that contains only a single null entry.
+     */
     @Test
     void printPopulationDataRegionTestContainsNull()
     {
@@ -278,6 +338,9 @@ public class AppTest
         Reports.printPopulationDataRegion(populationData);
     }
 
+    /**
+     * Create a simple Country Population Data object and attempt to print a report for it.
+     */
     @Test
     void printPopulationDataCountriesTest()
     {
@@ -293,6 +356,9 @@ public class AppTest
         Reports.printPopulationDataCountry(populationData);
     }
 
+    /**
+     * Create a simple Continent Population Data object and attempt to print a report for it.
+     */
     @Test
     void printPopulationDataContinentTest()
     {
@@ -308,6 +374,9 @@ public class AppTest
         Reports.printPopulationDataContinent(populationData);
     }
 
+    /**
+     * Create a simple Region Population Data object and attempt to print a report for it.
+     */
     @Test
     void printPopulationDataRegionTest()
     {
