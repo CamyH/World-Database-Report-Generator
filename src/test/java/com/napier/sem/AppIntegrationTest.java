@@ -28,7 +28,7 @@ public class AppIntegrationTest {
     Connection con = dbc.getConnection();
 
     /**
-     * Preparing for the tests by initialising the App and Reports classes.
+     * Prepare for the tests by initialising the App and Reports classes.
      */
     @BeforeAll
     static void init() {

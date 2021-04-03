@@ -23,6 +23,9 @@ public class AppTest
     static App app;
     static Reports reports;
 
+    /**
+     * Prepare for the tests by initialising the App and Reports classes.
+     */
     @BeforeAll
     static void init()
     {
@@ -33,7 +36,13 @@ public class AppTest
     }
 
     //************** COUNTRIES UNIT TESTS ***************** Author Luke */
+    /*
+     * Series of unit tests regarding the Country-based functions as authored by Luke.
+     */
 
+    /**
+     * Attempt to print an empty Countries report.
+     */
     @Test
     void printCountriesTestEmpty()
     {
@@ -41,12 +50,18 @@ public class AppTest
         Reports.printCountries(countries);
     }
 
+    /**
+     * Attempt to print a null Countries report.
+     */
     @Test
     void printCountriesTestNull()
     {
         Reports.printCountries(null);
     }
 
+    /**
+     * Attempt to print a Countries report with a single entry which is null.
+     */
     @Test
     void printCountriesTestContainsNull()
     {
@@ -55,6 +70,9 @@ public class AppTest
         Reports.printCountries(countries);
     }
 
+    /**
+     * Create a simple Country object and attempt to print it.
+     */
     @Test
     void printCountriesTest()
     {
@@ -71,7 +89,13 @@ public class AppTest
     }
 
     //************** CAPITAL CITIES UNIT TESTS ***************** Author Del */
+    /*
+     * Series of unit tests regarding the Capital-based functions as authored by Luke.
+     */
 
+    /**
+     * Attempt to print an empty Capitals report.
+     */
     @Test
     void printCapitalsEmptyTest()
     {
@@ -80,6 +104,15 @@ public class AppTest
     }
 
     @Test
+    void printCapitalsNullTest()
+    {
+        Reports.printCapitals(null);
+    }
+
+    /**
+     * Attempt to print a Capitals report with one null entry.
+     */
+    @Test
     void printCapitalsContainsNullTest()
     {
         ArrayList<City> city = new ArrayList<>();
@@ -87,7 +120,27 @@ public class AppTest
         Reports.printCities(city);
     }
 
+    /**
+     * Create a simple Capital object and attempt to print it.
+     */
+    @Test
+    void printCapitalsTest()
+    {
+        ArrayList<City> capital = new ArrayList<>();
+        City cap = new City();
+        cap.setName("Athens");
+        cap.setCountry("Greece");
+        cap.setDistrict("Central Greece");
+        cap.setPopulation(3153000);
+        capital.add(cap);
+        Reports.printCapitals(capital);
+    }
+
     //************** CITIES UNIT TESTS ***************** Author Colin */
+    /*
+     * Series of unit tests regarding the Capital-based functions as authored by Luke.
+     */
+
 
     @Test
     void printCityTestEmpty()
