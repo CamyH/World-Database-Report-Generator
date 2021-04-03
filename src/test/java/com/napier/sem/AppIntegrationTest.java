@@ -14,6 +14,12 @@ import org.junit.jupiter.api.Test;
 import java.sql.Connection;
 import java.util.ArrayList;
 
+/**
+ * Project Authors: Colin, Cameron, Luke, Del
+ * Date last modified: 03/04/2021
+ * Purpose of program: Execute a suite of integration tests for the application.
+ * Last modified by: Del
+ */
 public class AppIntegrationTest {
     static App app;
     static Reports reports;
@@ -21,6 +27,9 @@ public class AppIntegrationTest {
     DbConnection dbc = new DbConnection();
     Connection con = dbc.getConnection();
 
+    /**
+     * Preparing for the tests by initialising the App and Reports classes.
+     */
     @BeforeAll
     static void init() {
         // Init new instances of App & Reports
@@ -29,8 +38,16 @@ public class AppIntegrationTest {
 
     }
 
-    //************** COUNTRY INTEGRATION TESTS ***************** Author Luke */
+    //************** COUNTRY INTEGRATION TESTS ***************** Author Luke//
 
+    /*
+     * Series of integration tests regarding the Country-based queries as authored by Luke.
+     */
+
+    /**
+     *Query the database for all the countries in the world, sorted by population.
+     *Confirm successful return by checking population of the first country.
+     */
     @Test
     void getAllCountriesInWorld(){
         ArrayList<Country> check = Sql.getAllCountriesInWorld(con);
@@ -38,6 +55,10 @@ public class AppIntegrationTest {
         Assertions.assertEquals(check.get(0).getPopulation(),testPopulation);
     }
 
+    /**
+     *Query the database for all the countries in a continent, sorted by population.
+     *Confirm successful return by checking population of the first country.
+     */
     @Test
     void getAllCountriesInContinent(){
         String continent = "Asia";
@@ -47,6 +68,10 @@ public class AppIntegrationTest {
 
     }
 
+    /**
+     *Query the database for all the countries in a region, sorted by population.
+     *Confirm successful return by checking population of the first country.
+     */
     @Test
     void getAllCountriesByRegion(){
         String region = "Caribbean";
@@ -55,7 +80,10 @@ public class AppIntegrationTest {
         Assertions.assertEquals(check.get(0).getPopulation(),testPopulation);
     }
 
-
+    /**
+     *Query the database for the most populous countries in the world, sorted by population.
+     *Confirm successful return by checking population of the first country.
+     */
     @Test
     void getTopPopulatedCountriesInWorld(){
         int testPopulation = 1277558000;
@@ -64,6 +92,10 @@ public class AppIntegrationTest {
         Assertions.assertEquals(check.get(0).getPopulation(),testPopulation);
     }
 
+    /**
+     *Query the database for the most populous countries in a continent, sorted by population.
+     *Confirm successful return by checking population of the first country.
+     */
     @Test
     void getTopPopulatedCountriesInContinent(){
         int testPopulation = 146934000;
@@ -73,6 +105,10 @@ public class AppIntegrationTest {
         Assertions.assertEquals(check.get(0).getPopulation(),testPopulation);
     }
 
+    /**
+     *Query the database for the most populous countries in a region, sorted by population.
+     *Confirm successful return by checking population of the first country.
+     */
     @Test
     void getTopPopulatedCountriesInRegion(){
         int testPopulation = 11201000;
@@ -82,8 +118,15 @@ public class AppIntegrationTest {
         Assertions.assertEquals(check.get(0).getPopulation(),testPopulation);
     }
 
-    //************** CITIES INTEGRATION TESTS ***************** Author Colin */
+    //************** CITIES INTEGRATION TESTS ***************** Author Colin//
+    /*
+     * Series of integration tests regarding the City-based queries as authored by Colin.
+     */
 
+    /**
+     *Query the database for all the cities in the world, sorted by population.
+     *Confirm successful return by checking population of the first city.
+     */
     @Test
     void getAllCitiesInWorld(){
         ArrayList<City> check = Sql.getAllCitiesInWorld(con);
@@ -91,6 +134,10 @@ public class AppIntegrationTest {
         Assertions.assertEquals(check.get(0).getPopulation(),testPopulation);
     }
 
+    /**
+     *Query the database for all the cities in a continent, sorted by population.
+     *Confirm successful return by checking population of the first city.
+     */
     @Test
     void getAllCitiesInContinent(){
         String continent = "Asia";
@@ -100,6 +147,10 @@ public class AppIntegrationTest {
 
     }
 
+    /**
+     *Query the database for all the cities in a region, sorted by population.
+     *Confirm successful return by checking population of the first city.
+     */
     @Test
     void getAllCitiesInRegion(){
         String region = "Caribbean";
@@ -108,6 +159,10 @@ public class AppIntegrationTest {
         Assertions.assertEquals(check.get(0).getPopulation(),testPopulation);
     }
 
+    /**
+     *Query the database for all the cities in a country, sorted by population.
+     *Confirm successful return by checking population of the first city.
+     */
     @Test
     void getAllCitiesInCountry(){
         String country = "Brazil";
@@ -116,6 +171,10 @@ public class AppIntegrationTest {
         Assertions.assertEquals(check.get(0).getPopulation(),testPopulation);
     }
 
+    /**
+     *Query the database for all the cities in a district, sorted by population.
+     *Confirm successful return by checking population of the first city.
+     */
     @Test
     void getAllCitiesInDistrict(){
         String district = "Scotland";
@@ -124,6 +183,10 @@ public class AppIntegrationTest {
         Assertions.assertEquals(check.get(0).getPopulation(),testPopulation);
     }
 
+    /**
+     *Query the database for the most populous cities in the world, sorted by population.
+     *Confirm successful return by checking population of the first city.
+     */
     @Test
     void getTopPopulatedCitiesInWorld(){
         int limit = 10;
@@ -132,6 +195,10 @@ public class AppIntegrationTest {
         Assertions.assertEquals(check.get(0).getPopulation(),testPopulation);
     }
 
+    /**
+     *Query the database for the most populous cities in a continent, sorted by population.
+     *Confirm successful return by checking population of the first city.
+     */
     @Test
     void getTopPopulatedCitiesInContinent(){
         int limit = 10;
@@ -141,6 +208,10 @@ public class AppIntegrationTest {
         Assertions.assertEquals(check.get(0).getPopulation(),testPopulation);
     }
 
+    /**
+     *Query the database for the most populous cities in a region, sorted by population.
+     *Confirm successful return by checking population of the first city.
+     */
     @Test
     void getTopPopulatedCitiesInRegion(){
         int limit = 10;
@@ -150,6 +221,10 @@ public class AppIntegrationTest {
         Assertions.assertEquals(check.get(0).getPopulation(),testPopulation);
     }
 
+    /**
+     *Query the database for the most populous cities in a country, sorted by population.
+     *Confirm successful return by checking population of the first city.
+     */
     @Test
     void getTopPopulatedCitiesInCountry(){
         int limit = 10;
@@ -159,6 +234,10 @@ public class AppIntegrationTest {
         Assertions.assertEquals(check.get(0).getPopulation(),testPopulation);
     }
 
+    /**
+     *Query the database for the most populous cities in a district, sorted by population.
+     *Confirm successful return by checking population of the first city.
+     */
     @Test
     void getTopPopulatedCitiesInDistrict(){
         int limit = 4;
@@ -168,7 +247,15 @@ public class AppIntegrationTest {
         Assertions.assertEquals(check.get(0).getPopulation(),testPopulation);
     }
 
-    //************** CAPITAL INTEGRATION TESTS ***************** Author Del */
+    //************** CAPITAL INTEGRATION TESTS ***************** Author Del//
+    /*
+     * Series of integration tests regarding the Capital-based queries as authored by Del.
+     */
+
+    /**
+     *Query the database for the most populous cities in a continent, sorted by population.
+     *Confirm successful return by checking population of the first capital.
+     */
     @Test
     void biggestWorldCapitalsTest(){
         ArrayList<City> biggestWorldCapitals = Sql.getBiggestWorldCapitals(con);
@@ -176,6 +263,10 @@ public class AppIntegrationTest {
         Assertions.assertEquals(9981619, biggestWorldCapitals.get(0).getPopulation());
     }
 
+    /**
+    *Query the database for all the capital cities in a continent, sorted by population.
+    *Confirm successful return by checking population of the first capital.
+    */
     @Test
     void biggestContinentCapitalsTest(){
         ArrayList<City> biggestContinentCapitals = Sql.getBiggestContinentCapitals(con, "Europe");
@@ -183,6 +274,10 @@ public class AppIntegrationTest {
         Assertions.assertEquals(8389200, biggestContinentCapitals.get(0).getPopulation());
     }
 
+    /**
+     *Query the database for all the capital cities in a region, sorted by population.
+     *Confirm successful return by checking population of the first capital.
+     */
     @Test
     void biggestRegionCapitalsTest(){
         ArrayList<City> biggestRegionCapitals = Sql.getBiggestRegionCapitals(con, "Southeast Asia");
@@ -190,6 +285,10 @@ public class AppIntegrationTest {
         Assertions.assertEquals(9604900, biggestRegionCapitals.get(0).getPopulation());
     }
 
+    /**
+     *Query the database for the 5 biggest capitals in the world, sorted by population.
+     *Confirm successful return by checking population of the first capital.
+     */
     @Test
     void biggestNWorldCapitalsTest(){
         ArrayList<City> biggestNWorldCapitals = Sql.getNBiggestWorldCapitals(con, 5);
@@ -197,6 +296,10 @@ public class AppIntegrationTest {
         Assertions.assertEquals(9981619, biggestNWorldCapitals.get(0).getPopulation());
     }
 
+    /**
+     *Query the database for the 5 biggest capitals in a continent, sorted by population.
+     *Confirm successful return by checking population of the first capital.
+     */
     @Test
     void biggestNContinentCapitalsTest(){
         ArrayList<City> biggestNContinentCapitals = Sql.getNBiggestContinentCapitals(con, 5, "Europe");
@@ -204,6 +307,10 @@ public class AppIntegrationTest {
         Assertions.assertEquals(8389200, biggestNContinentCapitals.get(0).getPopulation());
     }
 
+    /**
+     *Query the database for the 5 biggest capitals in a region, sorted by population.
+     *Confirm successful return by checking population of the first capital.
+     */
     @Test
     void biggestRegionNCapitalsTest(){
         ArrayList<City> biggestNRegionCapitals = Sql.getNBiggestRegionCapitals(con, 5, "Southeast Asia");
@@ -211,8 +318,15 @@ public class AppIntegrationTest {
         Assertions.assertEquals(9604900, biggestNRegionCapitals.get(0).getPopulation());
     }
 
-    //************** LANGUAGE INTEGRATION TESTS ***************** Author Cameron */
+    //************** LANGUAGE INTEGRATION TESTS ***************** Author Cameron//
+    /*
+     * Series of integration tests regarding the Language-based queries as authored by Cameron.
+     */
 
+    /**
+     *Query the database for the 5 biggest capitals in a continent, sorted by population.
+     *Confirm successful return by checking population of the first capital.
+     */
     @Test
     void testGetNumberOfLanguageSpeakers()
     {
@@ -223,7 +337,14 @@ public class AppIntegrationTest {
 
 
     //************** POPULATION INTEGRATION TESTS ***************** Author Luke */
+    /*
+     * Series of integration tests regarding the Population-based queries as authored by Luke.
+     */
 
+    /**
+     *Query the database for the population data of each country.
+     *Confirm successful return by checking population of the first country.
+     */
     @Test
     void getPopulationDataCountry(){
         int testPopulation = 2332100;
@@ -246,7 +367,14 @@ public class AppIntegrationTest {
     }
 
     //************** ADDITIONAL FUNCTIONS INTEGRATION TESTS ***************** Author Cameron */
+    /*
+     * Series of integration tests regarding additional functions as authored by Cameron.
+     */
 
+    /**
+     * Query the database for the cumulative population of the whole world.
+     * Confirm successful return by comparing returned value to expected correct value.
+     */
     @Test
     void testGetWorldPopulation()
     {
@@ -255,6 +383,10 @@ public class AppIntegrationTest {
         Assertions.assertEquals(worldPop, testPop, 1);
     }
 
+    /**
+     * Query the database for the cumulative population of a specific continent.
+     * Confirm successful return by comparing returned value to expected correct value.
+     */
     @Test
     void testGetPopulationOfContinent()
     {
@@ -263,6 +395,10 @@ public class AppIntegrationTest {
         Assertions.assertEquals(continentPop, testPop, 1);
     }
 
+    /**
+     * Query the database for the cumulative population of a specific region.
+     * Confirm successful return by comparing returned value to expected correct value.
+     */
     @Test
     void testGetPopulationOfRegion()
     {
@@ -271,6 +407,10 @@ public class AppIntegrationTest {
         Assertions.assertEquals(regionPop, testPop, 1);
     }
 
+    /**
+     * Query the database for the cumulative population of a specific country.
+     * Confirm successful return by comparing returned value to expected correct value.
+     */
     @Test
     void testGetPopulationOfCountry()
     {
@@ -279,6 +419,10 @@ public class AppIntegrationTest {
         Assertions.assertEquals(countryPop, testPop, 1);
     }
 
+    /**
+     * Query the database for the cumulative population of a specific district.
+     * Confirm successful return by comparing returned value to expected correct value.
+     */
     @Test
     void testGetDistrictPopulation()
     {
@@ -287,6 +431,10 @@ public class AppIntegrationTest {
         Assertions.assertEquals(districtPop, testPop, 1);
     }
 
+    /**
+     * Query the database for the cumulative population of a specific city.
+     * Confirm successful return by comparing returned value to expected correct value.
+     */
     @Test
     void testGetCityPopulation()
     {

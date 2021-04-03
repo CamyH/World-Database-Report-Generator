@@ -12,6 +12,12 @@ import org.junit.jupiter.api.Test;
 import java.sql.Connection;
 import java.util.ArrayList;
 
+/**
+ * Project Authors: Colin, Cameron, Luke, Del
+ * Date last modified: 03/04/2021
+ * Purpose of program: Execute a suite of functional tests for the application.
+ * Last modified by: Del
+ */
 public class AppTest
 {
     static App app;
