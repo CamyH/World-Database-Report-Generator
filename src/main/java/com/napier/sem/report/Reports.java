@@ -51,13 +51,17 @@ public class Reports {
             System.out.printf("%-30s %-30s %-30s%n", "Name", "Country", "Population");
             // Loop over all capitals in the list
             for (City city : capitals) {
-                String city_string =
-                        String.format("%-30s %-30s %-30s",
-                                city.getName(), city.getCountry(), city.getPopulation());
-                System.out.println(city_string);
+                if(city != null) {
+                    String city_string =
+                            String.format("%-30s %-30s %-30s",
+                                    city.getName(), city.getCountry(), city.getPopulation());
+                    System.out.println(city_string);
+                }else{
+                    System.out.println("City is null");
+                }
             }
         }else{
-            System.out.println("Argument is null");
+            System.out.println("Cities list is null");
         }
     }
 
