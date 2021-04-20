@@ -14,8 +14,9 @@ import java.util.ArrayList;
 
 /**
  * Project Authors: Colin, Cameron, Luke, Del
- * Date last modified: 05/04/2021
+ * Date last modified: 20/04/2021
  * Purpose of program: Run SQL queries to satisfy the given requirements
+ * Please remove comments for any other queries you would like to see
  * Last modified by: Colin
  */
 
@@ -23,8 +24,8 @@ public class App
 {
     public static void main(String[] args) {
         // Status update
-        System.out.println("Printing Screenshots & updating app if else != null");
-
+        System.out.println("Final Example with 4 functions");
+        System.out.println("Database Connection has 2 attempts...");
         // Database connection setup
         DbConnection dbc = new DbConnection();
         Connection con = dbc.getConnection();
@@ -42,9 +43,9 @@ public class App
         //ArrayList<Country> allCountriesInWorld = Sql.getAllCountriesInWorld(con);
         // Display report from allCountriesInWorld
         //if (allCountriesInWorld != null) {
-        //   Reports.printCountries(allCountriesInWorld);
+         //  Reports.printCountries(allCountriesInWorld);
         //}else{
-            //System.out.println("Error getting all countries in the world");
+        //    System.out.println("Error getting all countries in the world");
         //}
 
         // Report 1.2 - Return all countries in a continent to allCountriesInContinent object
@@ -53,8 +54,8 @@ public class App
         //if (allCountriesInContinent != null) {
         //    Reports.printCountries(allCountriesInContinent);
         //}else{
-            //System.out.println("Error getting all countries in continent");
-        // }
+         //   System.out.println("Error getting all countries in continent");
+         //}
 
         // Report 1.3 - Return all countries in a region to allCountriesByRegion object
         //ArrayList<Country> allCountriesByRegion = Sql.getAllCountriesByRegion(con, "Caribbean");
@@ -62,26 +63,26 @@ public class App
         //if (allCountriesByRegion != null){
         //    Reports.printCountries(allCountriesByRegion);
         //}else{
-            //System.out.println("Error getting all countries by region");
+         //   System.out.println("Error getting all countries by region");
         //}
 
         // Report 1.4 - Return the top N countries in the world to topPopulatedCountriesInWorld object
         //ArrayList<Country> topPopulatedCountriesInWorld = Sql.getTopPopulatedCountriesInWorld(con, 20);
         // Display report from topPopulatedCountriesInWorld
         //if (topPopulatedCountriesInWorld != null) {
-        //    Reports.printCountries(topPopulatedCountriesInWorld);
+          //  Reports.printCountries(topPopulatedCountriesInWorld);
         //}else{
-            //System.out.println("Error getting top populated countries in world");
-        //}
+         //   System.out.println("Error getting top populated countries in world");
+       // }
 
         // Report 1.5 - Return the top N countries in a continent to topPopulatedCountriesInContinent object
-        //ArrayList<Country> topPopulatedCountriesInContinent = Sql.getTopPopulatedCountriesInContinent(con, "Europe", 20);
+        ArrayList<Country> topPopulatedCountriesInContinent = Sql.getTopPopulatedCountriesInContinent(con, "Europe", 20);
         // Display report from topPopulatedCountriesInContinent
-        //if (topPopulatedCountriesInContinent != null) {
-        //    Reports.printCountries(topPopulatedCountriesInContinent);
-        //}else {
-            //System.out.println("Error getting top populated countries in continent");
-        //}
+        if (topPopulatedCountriesInContinent != null) {
+            Reports.printCountries(topPopulatedCountriesInContinent);
+        }else {
+            System.out.println("Error getting top populated countries in continent");
+        }
 
         // Report 1.6 - Return the top N countries in a region to topPopulatedCountriesInRegion object
         //ArrayList<Country> topPopulatedCountriesInRegion = Sql.getTopPopulatedCountriesInRegion(con, "Caribbean", 20);
@@ -89,7 +90,7 @@ public class App
         //if (topPopulatedCountriesInRegion != null) {
         //    Reports.printCountries(topPopulatedCountriesInRegion);
         //}else{
-            //System.out.println("Error getting top populated countries in region");
+        //    System.out.println("Error getting top populated countries in region");
         //}
 
         // ************** CITIES FUNCTIONS ***************** Author: Colin //
@@ -98,9 +99,9 @@ public class App
         //ArrayList<City> allCitiesInWorld = Sql.getAllCitiesInWorld(con);
         // Display report from allCitiesInWorld
         //if (allCitiesInWorld != null) {
-        //    Reports.printCities(allCitiesInWorld);
+         //   Reports.printCities(allCitiesInWorld);
         //}else {
-            //System.out.println("Error getting all cities in world");
+        //    System.out.println("Error getting all cities in world");
         //}
 
         // Report 2.2 - Return all cities in a continent to allCitiesInContinent object
@@ -109,7 +110,7 @@ public class App
         //if (allCitiesInContinent != null) {
         //    Reports.printCities(allCitiesInContinent);
         //}else{
-            //System.out.println("Error getting all cities in continent");
+        //    System.out.println("Error getting all cities in continent");
         //}
 
 
@@ -119,7 +120,7 @@ public class App
         //if (allCitiesInRegion != null) {
         //    Reports.printCities(allCitiesInRegion);
         //}else{
-            //System.out.println("Error getting all cities in region");
+        //    System.out.println("Error getting all cities in region");
 
         //}
 
@@ -130,7 +131,7 @@ public class App
         //if (allCitiesInCountry != null) {
         //    Reports.printCities(allCitiesInCountry);
         //}else{
-            //System.out.println("Error getting all cities in country");
+        //    System.out.println("Error getting all cities in country");
 
         //}
 
@@ -139,9 +140,9 @@ public class App
         //ArrayList<City> allCitiesInDistrict = Sql.getAllCitiesInDistrict(con, "Scotland");
         // Display report from allCitiesInDistrict
         //if (allCitiesInDistrict != null) {
-        //    Reports.printCities(allCitiesInDistrict);
+         //   Reports.printCities(allCitiesInDistrict);
         //}else{
-            //System.out.println("Error getting all cities in district");
+        //    System.out.println("Error getting all cities in district");
 
         //}
 
@@ -150,7 +151,7 @@ public class App
         //ArrayList<City> topPopulatedCitiesInWorld = Sql.getTopPopulatedCitiesInWorld(con, 20);
         // Display report from topPopulatedCitiesInWorld
         //if(topPopulatedCitiesInWorld != null) {
-         //   Reports.printCities(topPopulatedCitiesInWorld);
+        //    Reports.printCities(topPopulatedCitiesInWorld);
         //}else{
         //   System.out.println("Error getting top 10 most populous cities in the world");
         //}
@@ -159,9 +160,9 @@ public class App
         //ArrayList<City> topPopulatedCitiesInContinent = Sql.getTopPopulatedCitiesInContinent(con, 20, "Asia");
         // Display report from topPopulatedCitiesInContinent
         //if (topPopulatedCitiesInContinent != null) {
-         //   Reports.printCities(topPopulatedCitiesInContinent);
+        //    Reports.printCities(topPopulatedCitiesInContinent);
         //}else {
-            //   System.out.println("Error getting top N most populous cities in continent");
+         //   System.out.println("Error getting top N most populous cities in continent");
 
         //}
 
@@ -170,9 +171,9 @@ public class App
         //ArrayList<City> topPopulatedCitiesInRegion = Sql.getTopPopulatedCitiesInRegion(con, 20, "Caribbean");
         // Display report from topPopulatedCitiesInRegion
         //if (topPopulatedCitiesInRegion != null) {
-         //   Reports.printCities(topPopulatedCitiesInRegion);
+        //    Reports.printCities(topPopulatedCitiesInRegion);
         //}else {
-            //   System.out.println("Error getting top N most populous cities in region");
+         //   System.out.println("Error getting top N most populous cities in region");
 
         //}
 
@@ -181,22 +182,22 @@ public class App
         //ArrayList<City> topPopulatedCitiesInCountry = Sql.getTopPopulatedCitiesInCountry(con, 20, "Brazil");
         // Display report from topPopulatedCitiesInCountry
         //if (topPopulatedCitiesInCountry != null) {
-        //    Reports.printCities(topPopulatedCitiesInCountry);
+         //   Reports.printCities(topPopulatedCitiesInCountry);
         //}else{
-            //   System.out.println("Error getting top N most populous cities in country");
+         //   System.out.println("Error getting top N most populous cities in country");
 
         //}
 
 
         // Report 2.10 - Return top N populated cities in the world to topPopulatedCitiesInDistrict object
-        //ArrayList<City> topPopulatedCitiesInDistrict = Sql.getTopPopulatedCitiesInDistrict(con, 20, "England");
+        ArrayList<City> topPopulatedCitiesInDistrict = Sql.getTopPopulatedCitiesInDistrict(con, 20, "England");
         //Display report from topPopulatedCitiesInDistrict
-        //if (topPopulatedCitiesInDistrict != null) {
-        //    Reports.printCities(topPopulatedCitiesInDistrict);
-        //}else {
-            //   System.out.println("Error getting top N most populous cities in district");
+        if (topPopulatedCitiesInDistrict != null) {
+            Reports.printCities(topPopulatedCitiesInDistrict);
+        }else {
+            System.out.println("Error getting top N most populous cities in district");
 
-        //}
+        }
 
 
         // ************** CAPITAL CITIES FUNCTIONS ***************** Author: Del //
@@ -206,7 +207,7 @@ public class App
         //if (biggestCapitals != null) {
         //    Reports.printCapitals(biggestCapitals);
         //}else{
-        //       System.out.println("Error getting all capitals in the world");
+        //    System.out.println("Error getting all capitals in the world");
 
         //}
 
@@ -216,7 +217,7 @@ public class App
         //if (biggestEuropeCapitals != null) {
         //    Reports.printCapitals(biggestEuropeCapitals);
         //}else{
-        //           System.out.println("Error getting all capital cities in a continent");
+        //    System.out.println("Error getting all capital cities in a continent");
 
         //}
 
@@ -226,7 +227,7 @@ public class App
         //if (biggestSEAsiaCapitals != null) {
         //    Reports.printCapitals(biggestSEAsiaCapitals);
         //}else{
-        //               System.out.println("Error getting all capital cities in a region");
+        //    System.out.println("Error getting all capital cities in a region");
 
         //}
 
@@ -245,19 +246,19 @@ public class App
         //if (biggest3EuropeCapitals != null) {
         //    Reports.printCapitals(biggest3EuropeCapitals);
         //}else {
-       //        System.out.println("Error getting N biggest capitals in a continent");
+       //     System.out.println("Error getting N biggest capitals in a continent");
 
         //}
 
 
         // Report 3.6 - Return the top 3 largest capitals in Southeast Asia by descending population
-        //ArrayList<City> biggest3SEAsiaCapitals = Sql.getNBiggestRegionCapitals(con, 20, "Southeast Asia");
-        //if (biggest3SEAsiaCapitals != null) {
-        //    Reports.printCapitals(biggest3SEAsiaCapitals);
-        //}else{
-        //            System.out.println("Error getting N biggest capitals in a region");
+        ArrayList<City> biggest3SEAsiaCapitals = Sql.getNBiggestRegionCapitals(con, 20, "Southeast Asia");
+        if (biggest3SEAsiaCapitals != null) {
+            Reports.printCapitals(biggest3SEAsiaCapitals);
+        }else{
+            System.out.println("Error getting N biggest capitals in a region");
 
-        //}
+        }
 
 
 
@@ -284,13 +285,13 @@ public class App
 
 
         // Report 4.3 - The population of people, people living in cities, and people not living in cities in each country.
-        //ArrayList<PopulationData> countryPopulationDataList = Sql.getPopulationDataCountry(con);
-        //if (countryPopulationDataList != null ) {
-        //    Reports.printPopulationDataCountry(countryPopulationDataList);
-        //}else{
-        //        System.out.println("Error getting total, urban and rural population per country.");
+        ArrayList<PopulationData> countryPopulationDataList = Sql.getPopulationDataCountry(con);
+        if (countryPopulationDataList != null ) {
+            Reports.printPopulationDataCountry(countryPopulationDataList);
+        }else{
+            System.out.println("Error getting total, urban and rural population per country.");
 
-        //}
+        }
 
         // ************** ADDITIONAL FUNCTIONS ***************** Author Cameron //
         // Report 5.1 - Get population of the world
@@ -354,7 +355,15 @@ public class App
         //    System.out.println("Error getting Language Data for the Hindi language.");
         //}
 
-        // Report 6.4 - Return all the who speak Arabic from greatest to smallest + percentage of world population:
+        // Report 6.4 - Return all the who speak Spanish from greatest to smallest + percentage of world population:
+        //ArrayList<Languages> languageDataSpanish = Sql.getNumberOfLanguageSpeakers(con, "Spanish");
+        //if(languageDataSpanish != null){
+        //    Reports.printLanguageData(languageDataSpanish);
+        //}else {
+        //    System.out.println("Error getting Language Data for the Spanish language.");
+        //}
+
+        // Report 6.5 - Return all the who speak Arabic from greatest to smallest + percentage of world population:
         //ArrayList<Languages> languageDataArabic = Sql.getNumberOfLanguageSpeakers(con, "Arabic");
         //if(languageDataArabic != null){
         //    Reports.printLanguageData(languageDataArabic);
@@ -362,13 +371,7 @@ public class App
         //    System.out.println("Error getting Language Data for the Arabic language.");
         //}
 
-        // Report 6.5 - Return all the who speak Spanish from greatest to smallest + percentage of world population:
-        //ArrayList<Languages> languageDataSpanish = Sql.getNumberOfLanguageSpeakers(con, "Spanish");
-        //if(languageDataSpanish != null){
-        //    Reports.printLanguageData(languageDataSpanish);
-        //}else {
-        //    System.out.println("Error getting Language Data for the Spanish language.");
-        //}
+
 
         // Disconnect from database
         dbc.disconnect();
