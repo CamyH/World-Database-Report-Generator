@@ -16,16 +16,15 @@ import java.util.ArrayList;
 
 /**
  * Project Authors: Colin, Cameron, Luke, Del
- * Date last modified: 03/04/2021
+ * Date last modified: 21/04/2021
  * Purpose of program: Execute a suite of integration tests for the application.
- * Last modified by: Del
+ * Last modified by: Colin
  */
 public class AppIntegrationTest {
     static App app;
     static Reports reports;
+    private static Connection con;
 
-    DbConnection dbc = new DbConnection();
-    Connection con = dbc.getConnection();
 
     /**
      * Prepare for the tests by initialising the App and Reports classes.
@@ -35,6 +34,9 @@ public class AppIntegrationTest {
         // Init new instances of App & Reports
         app = new App();
         reports = new Reports();
+
+        DbConnection dbc = new DbConnection();
+        con = dbc.getConnection();
 
     }
 
