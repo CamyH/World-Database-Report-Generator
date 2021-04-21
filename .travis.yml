@@ -47,11 +47,7 @@ jobs:
         file: $TRAVIS_BUILD_DIR/target/sem-set08103.jar
         skip_cleanup: true
 
-stages:
-  - unit tests
-  - integration tests
-  - name: GitHub Release
-    if: branch = master
-
+script:
+  - mvn clean package
 after_success:
   - bash <(curl -s https://codecov.io/bash)
