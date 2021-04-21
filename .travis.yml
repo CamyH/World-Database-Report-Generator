@@ -13,6 +13,7 @@ install:
   - docker build -t database db/.
   - docker run --rm -d -e MYSQL_ROOT_PASSWORD=example -p 33060:3306 database
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+  - pip install codecov
 
 before_script:
   - mvn clean
@@ -54,4 +55,4 @@ stages:
     if: branch = master
 
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+  - codecov
