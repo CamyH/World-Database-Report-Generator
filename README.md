@@ -12,7 +12,7 @@
 ### Release: [![Releases](https://img.shields.io/github/release/CamyH/SEM-SET08103/all.svg?style=flat-square)](https://github.com/CamyH/SEM-SET08103/releases)
 ### Code Coverage: [![codecov](https://codecov.io/gh/CamyH/SEM-SET08103/branch/master/graph/badge.svg?token=8FQDF2JNLL)](https://codecov.io/gh/CamyH/SEM-SET08103)
 
-There are 36 requirements in total. 36 have been implemented which is 100%. 
+There are 36 requirements in total. All 36 have been implemented. 
 
 | ID | Name | Met | Screenshot | Conditions |
 | --- | --- | --- | --- | --- |
